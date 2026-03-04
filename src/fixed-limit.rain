@@ -1,0 +1,139 @@
+version: 4
+
+orderbooks:
+  fixed-limit-arbitrum:
+    network: arbitrum
+    subgraph: arbitrum
+    address: 0x2f209e5b67A33B8fE96E28f24628dF6Da301c8eB
+    deployment-block: 352866209
+    local-db-remote: raindex
+
+deployers:
+  fixed-limit-arbitrum:
+    network: arbitrum
+    address: 0x5e9e22154d71f9fd4b5fd1ee36852a4c9fcdcc9e
+
+orders:
+  base:
+    orderbook: base
+    inputs:
+      - token: token1
+    outputs:
+      - token: token2
+  fixed-limit-arbitrum:
+    orderbook: fixed-limit-arbitrum
+    inputs:
+      - token: token1
+    outputs:
+      - token: token2
+  polygon:
+    orderbook: polygon
+    inputs:
+      - token: token1
+    outputs:
+      - token: token2
+scenarios:
+  fixed-limit-arbitrum:
+    orderbook: fixed-limit-arbitrum
+    runs: 1
+    bindings:
+      raindex-subparser: 0xe80e7438ce6b1055c8e9CDE1b6336a4F9D53C666
+      fixed-io-output-token: ${order.outputs.0.token.address}
+  polygon:
+    orderbook: polygon
+    runs: 1
+    bindings:
+      raindex-subparser: 0xAD4DeD9BBda1B409536906Fa48fe2b261bBaBde1
+      fixed-io-output-token: ${order.outputs.0.token.address}
+  base:
+    orderbook: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      fixed-io-output-token: ${order.outputs.0.token.address}
+deployments:
+  base:
+    order: base
+    scenario: base
+  fixed-limit-arbitrum:
+    order: fixed-limit-arbitrum
+    scenario: fixed-limit-arbitrum
+  polygon:
+    order: polygon
+    scenario: polygon
+gui:
+  name: Fixed limit
+  description: A very simple order that places a limit order at a fixed price.
+  short-description: A very simple order that places a limit order at a fixed price.
+  deployments:
+    base:
+      name: Base
+      description: Deploy a limit order on Base.
+      deposits:
+        - token: token2
+      fields:
+        - binding: fixed-io
+          name: ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+          description: Fixed exchange rate (${order.inputs.0.token.symbol} received per 1 ${order.outputs.0.token.symbol} sold)
+      select-tokens:
+        - key: token1
+          name: Token to Buy
+          description: Select the token you want to purchase
+        - key: token2
+          name: Token to Sell
+          description: Select the token you want to sell
+    polygon:
+      name: Polygon
+      description: Deploy a limit order on Polygon.
+      deposits:
+        - token: token2
+      fields:
+        - binding: fixed-io
+          name: ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+          description: Fixed exchange rate (${order.inputs.0.token.symbol} received per 1 ${order.outputs.0.token.symbol} sold)
+      select-tokens:
+        - key: token1
+          name: Token to Buy
+          description: Select the token you want to purchase
+        - key: token2
+          name: Token to Sell
+          description: Select the token you want to sell
+    fixed-limit-arbitrum:
+      name: Arbitrum
+      description: Deploy a limit order on Arbitrum.
+      deposits:
+        - token: token2
+      fields:
+        - binding: fixed-io
+          name: ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+          description: Fixed exchange rate (${order.inputs.0.token.symbol} received per 1 ${order.outputs.0.token.symbol} sold)
+      select-tokens:
+        - key: token1
+          name: Token to Buy
+          description: Select the token you want to purchase
+        - key: token2
+          name: Token to Sell
+          description: Select the token you want to sell
+---
+#raindex-subparser !The subparser to use.
+
+#fixed-io !The io ratio for the limit order.
+#fixed-io-output-token !The output token that the fixed io is for. If this doesn't match the runtime output then the fixed-io will be inverted.
+
+#calculate-io
+using-words-from raindex-subparser
+max-output: max-positive-value(),
+io: if(
+  equal-to(
+    output-token()
+    fixed-io-output-token
+  )
+  fixed-io
+  inv(fixed-io)
+);
+
+#handle-io
+:;
+
+#handle-add-order
+:;

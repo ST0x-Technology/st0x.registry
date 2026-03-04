@@ -1,0 +1,167 @@
+version: 4
+
+orders:
+  arbitrum:
+    orderbook: arbitrum
+    inputs:
+      - token: token1
+    outputs:
+      - token: token2
+scenarios:
+  arbitrum:
+    orderbook: arbitrum
+    bindings:
+      raindex-subparser: 0xe80e7438ce6b1055c8e9CDE1b6336a4F9D53C666
+      tranche-space-min-headroom: 0.25
+      tranche-space-recharge-delay: 300
+deployments:
+  arbitrum:
+    order: arbitrum
+    scenario: arbitrum
+gui:
+  name: Grid
+  description: https://raw.githubusercontent.com/rainlanguage/rain.strategies/e25bc4876b5ffb8bb28097b0ca66de291c75ff56/src/grid.md
+  short-description: Places automated orders at fixed price intervals with optional automatic refilling over time.
+  deployments:
+    base:
+      name: Base
+      description:
+        Deploy a grid order on Base.
+      deposits:
+        - token: token2
+      fields:
+        - binding: baseline-io-ratio
+          name: Baseline ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+        - binding: io-ratio-growth
+          name: IO ratio growth per tranche
+        - binding: tranche-size
+          name: Tranche size in ${order.outputs.0.token.symbol}
+        - binding: seconds-per-tranche
+          name: Time to recharge one grid tranche in seconds (0 is disabled).
+          show-custom-field: true
+          default: 0
+          presets:
+            - name: Disabled (0)
+              value: 0
+            - name: 1 hour (3600)
+              value: 3600
+            - name: 6 hours (21600)
+              value: 21600
+            - name: 12 hours (43200)
+              value: 43200
+            - name: 24 hours (86400)
+              value: 86400
+      select-tokens:
+        - key: token1
+          name: Token to buy
+          description: Select the token you want to purchase.
+        - key: token2
+          name: Token to sell
+          description: Select the token you want to sell.
+
+    polygon:
+      name: Polygon
+      description:
+        Deploy a grid order on Polygon.
+      deposits:
+        - token: token2
+      fields:
+        - binding: baseline-io-ratio
+          name: Baseline ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+        - binding: io-ratio-growth
+          name: IO ratio growth per tranche
+        - binding: tranche-size
+          name: Tranche size in ${order.outputs.0.token.symbol}
+        - binding: seconds-per-tranche
+          name: Time to recharge one grid tranche in seconds (0 is disabled).
+          show-custom-field: true
+          default: 0
+          presets:
+            - name: Disabled (0)
+              value: 0
+            - name: 1 hour (3600)
+              value: 3600
+            - name: 6 hours (21600)
+              value: 21600
+            - name: 12 hours (43200)
+              value: 43200
+            - name: 24 hours (86400)
+              value: 86400
+      select-tokens:
+        - key: token1
+          name: Token to buy
+          description: Select the token you want to purchase.
+        - key: token2
+          name: Token to sell
+          description: Select the token you want to sell.
+
+---
+
+#raindex-subparser !The subparser for Raindex.
+
+#baseline-io-ratio !The IO ratio that the order starts at. The quote token is the output so that the IO ratio looks like a CEX price.
+#io-ratio-growth !The growth rate of the IO ratio.
+#tranche-size !The size of each tranche in amount token.
+
+#tranche-space-min-headroom !The minimum headroom for the tranche space.
+#tranche-space-recharge-delay !The delay before the tranche space recharges.
+#seconds-per-tranche !The number of seconds per tranche to recharge.
+
+#handle-add-order
+:;
+
+#calculate-io
+using-words-from raindex-subparser
+current-tranche-floor
+current-tranche-headroom
+tranche-total-size:
+  call<'calculate-tranche>(),
+tranche-io-ratio: call<'linear-growth>(baseline-io-ratio io-ratio-growth current-tranche-floor),
+amount-available: mul(tranche-total-size current-tranche-headroom),
+io-ratio: tranche-io-ratio;
+
+#handle-io
+tranche-space-before
+_
+_
+tranche-total-size: call<'calculate-tranche>(),
+tranche-amount-diff: output-vault-decrease(),
+tranche-space-diff: div(tranche-amount-diff tranche-total-size),
+tranche-space-after: add(tranche-space-before tranche-space-diff),
+:ensure(
+  any(
+    is-zero(frac(tranche-space-after))
+    greater-than-or-equal-to(headroom(tranche-space-after) tranche-space-min-headroom)
+  )
+  "Trade causes dust."
+),
+:call<'set-last-tranche-space>(tranche-space-after),
+:call<'set-last-trade-time>();
+
+#calculate-tranche
+last-tranche-space: call<'get-last-tranche-space>(),
+last-trade-time: call<'get-last-trade-time>(),
+current-time: now(),
+recharge-duration: saturating-sub(current-time add(last-trade-time tranche-space-recharge-delay)),
+recharged-tranche-space: every(seconds-per-tranche div(recharge-duration any(seconds-per-tranche max-value()))),
+tranche-space-now: saturating-sub(last-tranche-space recharged-tranche-space),
+current-tranche-floor: floor(tranche-space-now),
+current-tranche-headroom: headroom(tranche-space-now),
+tranche-total-size: tranche-size;
+
+#linear-growth
+base rate t:,
+_: linear-growth(base rate t);
+
+#get-last-tranche-space
+_: get(order-hash());
+
+#set-last-tranche-space
+tranche-space:,
+:set(order-hash() tranche-space);
+
+#get-last-trade-time
+_: get(hash(order-hash()));
+
+#set-last-trade-time
+:set(hash(order-hash()) now());

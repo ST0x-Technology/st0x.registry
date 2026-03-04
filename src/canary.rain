@@ -1,0 +1,106 @@
+version: 4
+
+orderbooks:
+  canary-arbitrum:
+    network: arbitrum
+    subgraph: arbitrum
+    address: 0x2f209e5b67A33B8fE96E28f24628dF6Da301c8eB
+    deployment-block: 352866209
+    local-db-remote: raindex
+deployers:
+  canary-arbitrum:
+    network: arbitrum
+    address: 0x5e9e22154d71f9fd4b5fd1ee36852a4c9fcdcc9e
+orders:
+  canary-arbitrum:
+    orderbook: canary-arbitrum
+    inputs:
+      # Input is irrelevant because we always set the IO ratio to 0.
+      - token: input
+    outputs:
+      - token: output
+scenarios:
+  canary-arbitrum:
+    orderbook: canary-arbitrum
+    runs: 1
+    bindings:
+      raindex-subparser: 0xe80e7438ce6b1055c8e9CDE1b6336a4F9D53C666
+deployments:
+  canary-arbitrum:
+    order: canary-arbitrum
+    scenario: canary-arbitrum
+gui:
+  name: Canary
+  description: https://raw.githubusercontent.com/rainlanguage/rain.strategies/e25bc4876b5ffb8bb28097b0ca66de291c75ff56/src/canary.md
+  short-description: Does nothing except give a bounty to the solver regularly.
+  deployments:
+    canary-arbitrum:
+      name: Canary on Arbitrum.
+      description:
+        A simple order that gives a bounty to the solver regularly.
+      deposits:
+        - token: output
+      fields:
+        - binding: cooldown
+          name: Cooldown between possible trades in seconds.
+          show-custom-field: true
+          default: 300
+          presets:
+            - name: Two minutes (120)
+              value: 120
+            - name: Five minutes (300)
+              value: 300
+            - name: 1 hour (3600)
+              value: 3600
+        - binding: min-bounty
+          name: Minimum bounty to give to the solver
+        - binding: max-bounty
+          name: Maximum bounty to give to the solver
+        - binding: time-per-epoch
+          name: Total auction duration in seconds.
+          show-custom-field: true
+          default: 900
+          presets:
+            - name: 5 minutes
+              value: 300
+            - name: 15 minutes
+              value: 900
+            - name: 1 hour
+              value: 3600
+      select-tokens:
+        - key: output
+          name: Output Token
+        - key: input
+          name: Input Token
+
+---
+#raindex-subparser !The subparser contract address for Raindex.
+#cooldown !The time in seconds between possible trades.
+#min-bounty !The minimum bounty to give to the solver.
+#max-bounty !The maximum bounty to give to the solver.
+#time-per-epoch !The time in seconds for an epoch. There is only one epoch in this order.
+
+#calculate-io
+using-words-from raindex-subparser
+last-trade: get(order-hash()),
+open-trade-time: add(last-trade cooldown),
+:ensure(
+  greater-than(
+    now()
+    open-trade-time
+  )
+  "Cooldown"
+),
+:set(order-hash() now()),
+duration: sub(now() open-trade-time),
+epoch: div(duration time-per-epoch),
+auction-bounty: linear-growth(min-bounty sub(max-bounty min-bounty) epoch),
+bounty: min(max-bounty auction-bounty),
+ratio: 0;
+
+#handle-io
+:;
+
+#handle-add-order
+using-words-from raindex-subparser
+:set(order-hash() now());
