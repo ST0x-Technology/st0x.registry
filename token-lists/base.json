@@ -35,6 +35,7 @@
               "legacyAddress": "0x69fca9f7fad46a7eef3acef5beac9df5b7eca73b",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:NVDA",
+              "isin": "US67066G1040",
               "tradingViewMarket": "america"
           }
       },
@@ -53,6 +54,7 @@
               "legacyAddress": "0x8d8c315db61f60dcc3c66cdb48ca87fc643e35ea",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:AMZN",
+              "isin": "US0231351067",
               "tradingViewMarket": "america"
           }
       },
@@ -71,6 +73,7 @@
               "legacyAddress": "0x470b06815a2e286df8c38c9c73280e0760088623",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:TSLA",
+              "isin": "US88160R1014",
               "tradingViewMarket": "america"
           }
       },
@@ -89,6 +92,7 @@
               "legacyAddress": "0xff647ad8c4b065bd746911bb9ea1a33c38c63604",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:MSTR",
+              "isin": "US5949724083",
               "tradingViewMarket": "america"
           }
       },
@@ -107,6 +111,7 @@
               "legacyAddress": "0xd0a90b7c9ae5facbe09ca4c576a3795eda53b397",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:IAU",
+              "isin": "US4642852044",
               "tradingViewMarket": "america"
           }
       },
@@ -125,6 +130,7 @@
               "legacyAddress": "0xb616f8b391d1adc118fd7e4063526d5530d49b10",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:COIN",
+              "isin": "US19260Q1076",
               "tradingViewMarket": "america"
           }
       },
@@ -143,7 +149,8 @@
               "legacyAddress": "0x2289249984f1fa2ce86c4e8867e7eb819ea7df95",
               "legacySymbol": "tSPYM",
               "category": "ST0x",
-              "tradingViewSymbol": "AMEX:SPLG",
+              "tradingViewSymbol": "AMEX:SPYM",
+              "isin": "US78464A8541",
               "tradingViewMarket": "america"
           }
       },
@@ -162,6 +169,7 @@
               "legacyAddress": "0x826a85de1f7b70f4c7450c0f882a6db06000ed80",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:SIVR",
+              "isin": "US0032641088",
               "tradingViewMarket": "america"
           }
       },
@@ -180,6 +188,7 @@
               "legacyAddress": "0x43422a9d11a6640ef0d5f65292ef8adf87cf8522",
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:CRCL",
+              "isin": "US1725731079",
               "tradingViewMarket": "america"
           }
       },
@@ -198,6 +207,7 @@
               "legacyAddress": "0xf8fdfd6a686346d34b3143fc23072aa45c9e8386",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:BMNR",
+              "isin": "US09175A2069",
               "tradingViewMarket": "america"
           }
       },
@@ -216,6 +226,7 @@
               "legacyAddress": "0x6192539a2036c786aba3ca6a2222ff7a0f9c287e",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:PPLT",
+              "isin": "US0032601066",
               "tradingViewMarket": "america"
           }
       }
@@ -236,6 +247,7 @@
               "legacyAddress": "0x69fca9f7fad46a7eef3acef5beac9df5b7eca73b",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:NVDA",
+              "isin": "US67066G1040",
               "tradingViewMarket": "america"
           }
       },
@@ -254,6 +266,7 @@
               "legacyAddress": "0x8d8c315db61f60dcc3c66cdb48ca87fc643e35ea",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:AMZN",
+              "isin": "US0231351067",
               "tradingViewMarket": "america"
           }
       },
@@ -290,6 +303,7 @@
               "legacyAddress": "0xff647ad8c4b065bd746911bb9ea1a33c38c63604",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:MSTR",
+              "isin": "US5949724083",
               "tradingViewMarket": "america"
           }
       },
@@ -308,6 +322,7 @@
               "legacyAddress": "0xd0a90b7c9ae5facbe09ca4c576a3795eda53b397",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:IAU",
+              "isin": "US4642852044",
               "tradingViewMarket": "america"
           }
       },
@@ -326,6 +341,7 @@
               "legacyAddress": "0xb616f8b391d1adc118fd7e4063526d5530d49b10",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:COIN",
+              "isin": "US19260Q1076",
               "tradingViewMarket": "america"
           }
       },
@@ -344,7 +360,8 @@
               "legacyAddress": "0x2289249984f1fa2ce86c4e8867e7eb819ea7df95",
               "legacySymbol": "tSPYM",
               "category": "ST0x",
-              "tradingViewSymbol": "AMEX:SPLG",
+              "tradingViewSymbol": "AMEX:SPYM",
+              "isin": "US78464A8541",
               "tradingViewMarket": "america"
           }
       },
@@ -363,6 +380,7 @@
               "legacyAddress": "0x826a85de1f7b70f4c7450c0f882a6db06000ed80",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:SIVR",
+              "isin": "US0032641088",
               "tradingViewMarket": "america"
           }
       },
@@ -381,6 +399,7 @@
               "legacyAddress": "0x43422a9d11a6640ef0d5f65292ef8adf87cf8522",
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:CRCL",
+              "isin": "US1725731079",
               "tradingViewMarket": "america"
           }
       },
@@ -399,6 +418,7 @@
               "legacyAddress": "0xf8fdfd6a686346d34b3143fc23072aa45c9e8386",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:BMNR",
+              "isin": "US09175A2069",
               "tradingViewMarket": "america"
           }
       },
@@ -417,6 +437,7 @@
               "legacyAddress": "0x6192539a2036c786aba3ca6a2222ff7a0f9c287e",
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:PPLT",
+              "isin": "US0032601066",
               "tradingViewMarket": "america"
           }
       }
