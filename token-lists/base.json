@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-02-11T12:30:00.000Z",
+    "timestamp": "2026-04-01T07:03:29.000Z",
     "version": {
         "major": 1,
         "minor": 0,
-        "patch": 0
+        "patch": 1
     },
     "keywords": [
         "st0x",
@@ -234,7 +234,7 @@
             "chainId": 8453,
             "address": "0xf73894603e92d6f91b1f156e98cca38fd1f78dbf",
             "decimals": 18,
-            "name": "iShares iBonds 2027 Term High Yield and Income ETF ST0x",
+            "name": "Wrapped iShares iBonds 2027 Term High Yield and Income ETF ST0x",
             "symbol": "wtIBHG",
             "logoURI": "https://st0x.io/images/IBHG.png",
             "tags": [
@@ -242,7 +242,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0x3c0F093aa1eD511910279b2C8d56eF5c96f1a6cF",
-                "legacyAddress": "",
+                "legacyAddress": null,
                 "category": "ST0x",
                 "tradingViewSymbol": "CBOE:IBHG",
                 "isin": "US46436E4787",
@@ -253,7 +253,7 @@
             "chainId": 8453,
             "address": "0x78c31580c97101694c70022c83d570150c11e935",
             "decimals": 18,
-            "name": "Shares 0-3 Month Treasury Bond ETF ST0x",
+            "name": "Wrapped iShares 0-3 Month Treasury Bond ETF ST0x",
             "symbol": "wtSGOV",
             "logoURI": "https://st0x.io/images/SGOV.png",
             "tags": [
@@ -261,7 +261,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
-                "legacyAddress": "",
+                "legacyAddress": null,
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:SGOV",
                 "isin": "US46436E7186",
@@ -483,7 +483,7 @@
             "chainId": 8453,
             "address": "0xf73894603e92d6f91b1f156e98cca38fd1f78dbf",
             "decimals": 18,
-            "name": "iShares iBonds 2027 Term High Yield and Income ETF ST0x",
+            "name": "Wrapped iShares iBonds 2027 Term High Yield and Income ETF ST0x",
             "symbol": "wtIBHG",
             "logoURI": "https://st0x.io/images/IBHG.png",
             "tags": [
@@ -491,7 +491,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0x3c0F093aa1eD511910279b2C8d56eF5c96f1a6cF",
-                "legacyAddress": "",
+                "legacyAddress": null,
                 "category": "ST0x",
                 "tradingViewSymbol": "CBOE:IBHG",
                 "isin": "US46436E4787",
@@ -502,7 +502,7 @@
             "chainId": 8453,
             "address": "0x78c31580c97101694c70022c83d570150c11e935",
             "decimals": 18,
-            "name": "Shares 0-3 Month Treasury Bond ETF ST0x",
+            "name": "Wrapped iShares 0-3 Month Treasury Bond ETF ST0x",
             "symbol": "wtSGOV",
             "logoURI": "https://st0x.io/images/SGOV.png",
             "tags": [
@@ -510,7 +510,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
-                "legacyAddress": "",
+                "legacyAddress": null,
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:SGOV",
                 "isin": "US46436E7186",
