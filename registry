@@ -1,9 +1,9 @@
-https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/settings.yaml
-fixed-limit https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/fixed-limit.rain
-auction-dca https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/auction-dca.rain
-grid https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/grid.rain
-dynamic-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/dynamic-spread.rain
-canary https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/canary.rain
-claims https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/claims.rain
-fixed-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/fixed-spread.rain
-folio https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c18d8ebfd05afa6a64a10f08b9141b88790036cb/src/folio.rain
+https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/settings.yaml
+fixed-limit https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/fixed-limit.rain
+auction-dca https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/auction-dca.rain
+grid https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/grid.rain
+dynamic-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/dynamic-spread.rain
+canary https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/canary.rain
+claims https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/claims.rain
+fixed-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/fixed-spread.rain
+folio https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8cab2802347600e9276709bf0aed91de66666012/src/folio.rain
