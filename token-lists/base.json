@@ -236,7 +236,7 @@
             "decimals": 18,
             "name": "Wrapped iShares iBonds 2027 Term High Yield and Income ETF ST0x",
             "symbol": "wtIBHG",
-            "logoURI": "https://st0x.io/images/IBHG.png",
+            "logoURI": "https://st0x.io/images/IAU.png",
             "tags": [
                 "st0x"
             ],
@@ -255,7 +255,7 @@
             "decimals": 18,
             "name": "Wrapped iShares 0-3 Month Treasury Bond ETF ST0x",
             "symbol": "wtSGOV",
-            "logoURI": "https://st0x.io/images/SGOV.png",
+            "logoURI": "https://st0x.io/images/IAU.png",
             "tags": [
                 "st0x"
             ],
@@ -486,7 +486,7 @@
             "decimals": 18,
             "name": "Wrapped iShares iBonds 2027 Term High Yield and Income ETF ST0x",
             "symbol": "wtIBHG",
-            "logoURI": "https://st0x.io/images/IBHG.png",
+            "logoURI": "https://st0x.io/images/IAU.png",
             "tags": [
                 "st0x"
             ],
@@ -505,7 +505,7 @@
             "decimals": 18,
             "name": "Wrapped iShares 0-3 Month Treasury Bond ETF ST0x",
             "symbol": "wtSGOV",
-            "logoURI": "https://st0x.io/images/SGOV.png",
+            "logoURI": "https://st0x.io/images/IAU.png",
             "tags": [
                 "st0x"
             ],
