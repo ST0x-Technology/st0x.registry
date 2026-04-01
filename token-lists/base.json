@@ -323,6 +323,7 @@
                 "legacyAddress": "0x470b06815a2e286df8c38c9c73280e0760088623",
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TSLA",
+                "isin": "US88160R1014",
                 "tradingViewMarket": "america"
             }
         },
