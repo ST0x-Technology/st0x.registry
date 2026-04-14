@@ -1,0 +1,291 @@
+version: 4
+
+orders:
+  base:
+    orderbook: base
+    inputs:
+      - token: input
+    outputs:
+      - token: output
+
+scenarios:
+  gated-pyth-baseline-base:
+    orderbook: base
+    deployer: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      subparser-0: 0x21026b98bA3909E34e9a42295A812614bb0C7F21
+      baseline-fn: '''pyth-price-baseline'
+  gated-pyth-baseline-base-inv:
+    orderbook: base
+    deployer: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      subparser-0: 0x21026b98bA3909E34e9a42295A812614bb0C7F21
+      baseline-fn: '''pyth-price-baseline-inv'
+
+
+deployments:
+  base-gated-pyth:
+    order: base
+    scenario: gated-pyth-baseline-base
+  base-gated-pyth-inv:
+    order: base
+    scenario: gated-pyth-baseline-base-inv
+
+
+gui:
+  name: Gated pyth fixed spread limit
+  description: >
+    A fixed-spread pyth strategy variant gated to API-signed callers.
+    The order reverts unless the take-order carries a SignedContextV1
+    produced by a trusted API signer, authorising the specific
+    counterparty, order hash, and expiry. Used to reserve a separate
+    pot of liquidity for API consumers without competing against
+    arbitrage bots on the public book.
+  short-description: >
+    A pyth-priced fixed-spread order gated by an API-issued SignedContext.
+  deployments:
+    base-gated-pyth:
+      name: Base gated pyth sell shares
+      description: Deploy an API-gated fixed-spread strategy on Base using Pyth price feeds to sell shares.
+      deposits:
+        - token: output
+      fields:
+        - binding: api-signer
+          name: API signer
+          description: |
+            Trusted EOA whose SignedContextV1 signature authorises takers.
+            The off-chain API holds the corresponding private key and signs
+            per-order authorisations; any order missing a valid signature
+            from this address will revert.
+          show-custom-field: true
+        - binding: pyth-pair
+          name: Pyth price feed pair
+          description: |
+            The Pyth price feed pair to use for the auction.
+            This is used to determine the baseline and initial IO ratios for the auction.
+            For example, if you are selling WETH and buying USDC then you would use the WETH/USD price feed.
+          show-custom-field: false
+          presets:
+            - name: Equity.US.GOOG/USD
+              value: 0x924571756974792e55532e474f4f472f55534400000000000000000000000000
+            - name: Equity.US.AMZN/USD
+              value: 0x924571756974792e55532e414d5a4e2f55534400000000000000000000000000
+            - name: Equity.US.AAPL/USD
+              value: 0x924571756974792e55532e4141504c2f55534400000000000000000000000000
+            - name: Equity.US.MSFT/USD
+              value: 0x924571756974792e55532e4d5346542f55534400000000000000000000000000
+            - name: Equity.US.TSLA/USD
+              value: 0x924571756974792e55532e54534c412f55534400000000000000000000000000
+            - name: Equity.US.NVDA/USD
+              value: 0x924571756974792e55532e4e5644412f55534400000000000000000000000000
+            - name: Equity.US.META/USD
+              value: 0x924571756974792e55532e4d4554412f55534400000000000000000000000000
+            - name: Equity.US.GME/USD
+              value: 0x914571756974792e55532e474d452f5553440000000000000000000000000000
+            - name: Equity.US.MSTR/USD
+              value: 0x924571756974792e55532e4d5354522f55534400000000000000000000000000
+            - name: Equity.US.BRK-B/USD
+              value: 0x934571756974792e55532e42524b2d422f555344000000000000000000000000
+            - name: Equity.US.SPLG/USD
+              value: 0x924571756974792e55532e53504c472f55534400000000000000000000000000
+            - name: Equity.US.IAU/USD
+              value: 0x914571756974792e55532e4941552f5553440000000000000000000000000000
+            - name: Equity.US.COIN/USD
+              value: 0x924571756974792e55532e434f494e2f55534400000000000000000000000000
+            - name: Equity.US.SIVR/USD
+              value: 0x924571756974792e55532e534956522f55534400000000000000000000000000
+            - name: Equity.US.CRCL/USD
+              value: 0x924571756974792e55532e4352434c2f55534400000000000000000000000000
+            - name: Equity.US.BMNR/USD
+              value: 0x924571756974792e55532e424d4e522f55534400000000000000000000000000
+            - name: Equity.US.PPLT/USD
+              value: 0x924571756974792e55532e50504c542f55534400000000000000000000000000
+            - name: Equity.US.RKLB/USD
+              value: 0x924571756974792e55532e524b4c422f55534400000000000000000000000000
+        - binding: baseline-multiplier
+          name: Benchmark price multiplier
+          description: |
+            The multiplier to be applied to the benchmark when calculating the price the strategy will offer at
+          show-custom-field: true
+          default: 1.001
+          presets:
+            - name: 1.001x
+              value: 1.001
+            - name: 1.005x
+              value: 1.005
+            - name: 1.0025x
+              value: 1.0025
+        - binding: oracle-price-timeout
+          name: Oracle Price Timeout
+          description: |
+            How fresh (recent) the pyth price is.
+          show-custom-field: true
+          default: 300
+          presets:
+            - name: 5 minutes (300)
+              value: 300
+            - name: 1 hour (3600)
+              value: 3600
+            - name: 8 hour (28800)
+              value: 28800
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to purchase
+    base-gated-pyth-inv:
+      name: Base gated pyth buy shares
+      description: Deploy an API-gated fixed-spread strategy on Base using Pyth price feeds to buy shares.
+      deposits:
+        - token: output
+      fields:
+        - binding: api-signer
+          name: API signer
+          description: |
+            Trusted EOA whose SignedContextV1 signature authorises takers.
+            The off-chain API holds the corresponding private key and signs
+            per-order authorisations; any order missing a valid signature
+            from this address will revert.
+          show-custom-field: true
+        - binding: pyth-pair
+          name: Pyth price feed pair
+          description: |
+            The Pyth price feed pair to use for the auction.
+          show-custom-field: false
+          presets:
+            - name: Equity.US.GOOG/USD
+              value: 0x924571756974792e55532e474f4f472f55534400000000000000000000000000
+            - name: Equity.US.AMZN/USD
+              value: 0x924571756974792e55532e414d5a4e2f55534400000000000000000000000000
+            - name: Equity.US.AAPL/USD
+              value: 0x924571756974792e55532e4141504c2f55534400000000000000000000000000
+            - name: Equity.US.MSFT/USD
+              value: 0x924571756974792e55532e4d5346542f55534400000000000000000000000000
+            - name: Equity.US.TSLA/USD
+              value: 0x924571756974792e55532e54534c412f55534400000000000000000000000000
+            - name: Equity.US.NVDA/USD
+              value: 0x924571756974792e55532e4e5644412f55534400000000000000000000000000
+            - name: Equity.US.META/USD
+              value: 0x924571756974792e55532e4d4554412f55534400000000000000000000000000
+            - name: Equity.US.GME/USD
+              value: 0x914571756974792e55532e474d452f5553440000000000000000000000000000
+            - name: Equity.US.MSTR/USD
+              value: 0x924571756974792e55532e4d5354522f55534400000000000000000000000000
+            - name: Equity.US.BRK-B/USD
+              value: 0x934571756974792e55532e42524b2d422f555344000000000000000000000000
+            - name: Equity.US.SPLG/USD
+              value: 0x924571756974792e55532e53504c472f55534400000000000000000000000000
+            - name: Equity.US.IAU/USD
+              value: 0x914571756974792e55532e4941552f5553440000000000000000000000000000
+            - name: Equity.US.COIN/USD
+              value: 0x924571756974792e55532e434f494e2f55534400000000000000000000000000
+            - name: Equity.US.SIVR/USD
+              value: 0x924571756974792e55532e534956522f55534400000000000000000000000000
+            - name: Equity.US.CRCL/USD
+              value: 0x924571756974792e55532e4352434c2f55534400000000000000000000000000
+            - name: Equity.US.BMNR/USD
+              value: 0x924571756974792e55532e424d4e522f55534400000000000000000000000000
+            - name: Equity.US.PPLT/USD
+              value: 0x924571756974792e55532e50504c542f55534400000000000000000000000000
+            - name: Equity.US.RKLB/USD
+              value: 0x924571756974792e55532e524b4c422f55534400000000000000000000000000
+        - binding: baseline-multiplier
+          name: Benchmark price multiplier
+          description: |
+            The multiplier to be applied to the benchmark when calculating the price the strategy will offer at
+          show-custom-field: true
+          default: 1.001
+          presets:
+            - name: 1.001x
+              value: 1.001
+            - name: 1.005x
+              value: 1.005
+            - name: 1.0025x
+              value: 1.0025
+        - binding: oracle-price-timeout
+          name: Oracle Price Timeout
+          description: |
+            How fresh (recent) the pyth price is.
+          show-custom-field: true
+          default: 300
+          presets:
+            - name: 5 minutes (300)
+              value: 300
+            - name: 1 hour (3600)
+              value: 3600
+            - name: 8 hour (28800)
+              value: 28800
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to purchase
+
+
+---
+#raindex-subparser !Raindex subparser.
+#subparser-0 !Subparser 0.
+#api-signer !The trusted EOA whose SignedContextV1 entry authorises takers.
+#pyth-pair !The pyth pair to use for the price feed.
+#baseline-fn !Function that returns the benchmark IO (e.g. pyth baseline).
+#baseline-multiplier !WAD multiplier to apply to the baseline (e.g. 1.001).
+#oracle-price-timeout !Fetch price no older than for pyth oracle in seconds.
+
+
+#pyth-price-baseline
+price _: pyth-price(pyth-pair oracle-price-timeout),
+_: price;
+
+
+#pyth-price-baseline-inv
+price _: pyth-price(pyth-pair oracle-price-timeout),
+_: inv(price);
+
+
+#calculate-io
+using-words-from raindex-subparser subparser-0
+
+/* API gating: a SignedContextV1 at index 0 must be present, produced by
+ * `api-signer`, authorising this exact counterparty, order hash, and a
+ * not-yet-expired deadline. Layout of the signed context:
+ *   <0 0>: recipient         — must match order-counterparty()
+ *   <0 1>: order hash        — must match order-hash()
+ *   <0 2>: expiry timestamp  — must be >= now()
+ *   <0 3>: api-key id        — keccak256(api key id), signed for off-chain
+ *                              attribution only, not asserted here.
+ */
+:ensure(
+  equal-to(signer<0>() api-signer)
+  "Untrusted API signer"
+),
+:ensure(
+  equal-to(signed-context<0 0>() order-counterparty())
+  "Wrong recipient"
+),
+:ensure(
+  equal-to(signed-context<0 1>() order-hash())
+  "Wrong order hash"
+),
+:ensure(
+  greater-than-or-equal-to(signed-context<0 2>() now())
+  "Authorization expired"
+),
+
+offer-amount: max-positive-value(),
+io: mul(call<'baseline-fn>() baseline-multiplier);
+
+
+#handle-io
+:;
+
+
+#handle-add-order
+:;
