@@ -21,6 +21,13 @@ deployers:
   base:
     address: 0xd905B56949284Bb1d28eeFC05be78Af69cCf3668
     network: base
+tokens:
+  USDC:
+    network: base
+    address: 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913
+    decimals: 6
+    label: USD Coin
+    symbol: USDC
 local-db-remotes:
   raindex: https://raindex-bootstrap-db.lon1.digitaloceanspaces.com/manifest.yaml
 local-db-sync:
