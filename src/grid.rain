@@ -54,10 +54,10 @@ builder:
       select-tokens:
         - key: token1
           name: Token to buy
-          description: The token you want to purchase — the token that will be deposited into your input vault when someone takes a tranche.
+          description: The token you want to purchase - the token that will be deposited into your input vault when someone takes a tranche.
         - key: token2
           name: Token to sell
-          description: The token you want to sell — the token that will be withdrawn from your output vault when someone takes a tranche.
+          description: The token you want to sell - the token that will be withdrawn from your output vault when someone takes a tranche.
 
 ---
 

@@ -31,14 +31,14 @@ builder:
       fields:
         - binding: fixed-io
           name: ${order.inputs.0.token.symbol || 'Token to Buy'} per ${order.outputs.0.token.symbol || 'Token to Sell'}
-          description: Fixed exchange rate — how many ${order.inputs.0.token.symbol || 'Token to Buy'} you receive for 1 ${order.outputs.0.token.symbol || 'Token to Sell'} sold.
+          description: Fixed exchange rate - how many ${order.inputs.0.token.symbol || 'Token to Buy'} you receive for 1 ${order.outputs.0.token.symbol || 'Token to Sell'} sold.
       select-tokens:
         - key: token1
           name: Token to Buy
-          description: The token you want to purchase — the token that will be deposited into your input vault when someone takes the order.
+          description: The token you want to purchase - the token that will be deposited into your input vault when someone takes the order.
         - key: token2
           name: Token to Sell
-          description: The token you want to sell — the token that will be withdrawn from your output vault when someone takes the order.
+          description: The token you want to sell - the token that will be withdrawn from your output vault when someone takes the order.
 ---
 #raindex-subparser !The subparser to use.
 

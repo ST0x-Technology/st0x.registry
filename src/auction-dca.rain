@@ -193,7 +193,7 @@ builder:
           description: |
             The on-chain identifier for the Pyth price feed. Use one of the presets below.
 
-            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network — it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
+            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network - it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
           show-custom-field: false
           presets:
             - name: Equity.US.GOOG/USD
@@ -311,7 +311,7 @@ builder:
           description: |
             The on-chain identifier for the Pyth price feed. Use one of the presets below.
 
-            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network — it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
+            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network - it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
           show-custom-field: false
           presets:
             - name: Equity.US.GOOG/USD
