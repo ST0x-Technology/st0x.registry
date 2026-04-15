@@ -1,0 +1,97 @@
+version: 4
+
+orders:
+  base:
+    orderbook: base
+    inputs:
+      - token: input
+    outputs:
+      - token: output
+
+scenarios:
+  gated-fixed-base:
+    orderbook: base
+    deployer: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+
+
+deployments:
+  base-gated-fixed:
+    order: base
+    scenario: gated-fixed-base
+
+
+builder:
+  name: Gated fixed-io limit (smoke test)
+  description: >
+    Smoke-test variant of the API-gated strategy: the IO ratio is a
+    single static binding, so the order's quote does not depend on any
+    external oracle. Used to verify the SignedContext gating pipeline
+    end-to-end without being blocked by pyth freshness or equity-market
+    hours. NOT for production use.
+  short-description: Fixed-IO gated order for smoke-testing the API-signed gating pipeline.
+  deployments:
+    base-gated-fixed:
+      name: Base gated fixed-io
+      description: Deploy a fixed-IO gated order on Base for smoke testing.
+      deposits:
+        - token: output
+      fields:
+        - binding: api-signer
+          name: API signer
+          description: Trusted EOA whose SignedContextV1 entry authorises takers.
+          show-custom-field: true
+        - binding: fixed-io
+          name: Fixed IO ratio
+          description: Constant IO ratio (output-per-input in WAD) the order offers.
+          show-custom-field: true
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to purchase
+
+
+---
+#raindex-subparser !Raindex subparser.
+#api-signer !Trusted EOA whose SignedContextV1 entry authorises takers.
+#fixed-io !Static IO ratio (WAD) the order offers regardless of external price.
+
+
+#calculate-io
+using-words-from raindex-subparser
+
+/* Gating: SignedContextV1 at index 0 signed by `api-signer`, committing to
+ * counterparty, order-hash, and a not-yet-expired deadline. See gated-pyth.rain
+ * for the full rationale. */
+:ensure(
+  equal-to(signer<0>() api-signer)
+  "Untrusted API signer"
+),
+:ensure(
+  equal-to(signed-context<0 0>() order-counterparty())
+  "Wrong recipient"
+),
+:ensure(
+  equal-to(signed-context<0 1>() order-hash())
+  "Wrong order hash"
+),
+:ensure(
+  greater-than-or-equal-to(signed-context<0 2>() now())
+  "Authorization expired"
+),
+
+offer-amount: max-positive-value(),
+io: fixed-io;
+
+
+#handle-io
+:;
+
+
+#handle-add-order
+:;
