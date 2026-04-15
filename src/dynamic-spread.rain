@@ -34,24 +34,24 @@ builder:
       description: Deploy a two-sided dynamic spread order on Base.
       fields:
         - binding: amount-is-fast-exit
-          name: Fast exit ${order.inputs.0.token.symbol}?
-          description: If enabled, the order will attempt to exit any ${order.inputs.0.token.symbol} position it builds up in a single trade, as soon as it can do so profitably.
+          name: Fast exit ${order.inputs.0.token.symbol || 'Token to Buy'}?
+          description: If enabled, the order will attempt to exit any ${order.inputs.0.token.symbol || 'Token to Buy'} position it builds up in a single trade, as soon as it can do so profitably.
           presets:
             - name: Yes
               value: 1
             - name: No
               value: 0
         - binding: not-amount-is-fast-exit
-          name: Fast exit ${order.inputs.1.token.symbol}?
-          description: If enabled, the order will attempt to exit any ${order.inputs.1.token.symbol} position it builds up in a single trade, as soon as it can do so profitably.
+          name: Fast exit ${order.inputs.1.token.symbol || 'Other token'}?
+          description: If enabled, the order will attempt to exit any ${order.inputs.1.token.symbol || 'Other token'} position it builds up in a single trade, as soon as it can do so profitably.
           presets:
             - name: Yes
               value: 1
             - name: No
               value: 0
         - binding: initial-io
-          name: Initial price (${order.inputs.0.token.symbol} per ${order.inputs.1.token.symbol})
-          description: This should be the ${order.inputs.0.token.symbol} price you see for ${order.inputs.1.token.symbol} on Dextools.
+          name: Initial price (${order.inputs.0.token.symbol || 'Token to Buy'} per ${order.inputs.1.token.symbol || 'Other token'})
+          description: This should be the ${order.inputs.0.token.symbol || 'Token to Buy'} price you see for ${order.inputs.1.token.symbol || 'Other token'} on Dextools.
         - binding: next-trade-multiplier
           name: Next trade multiplier
           description: This is the most the order will move the price in a single trade. Larger numbers will capture larger price jumps but trade less often, smaller numbers will trade more often but be less defensive against large price jumps in the market.
@@ -96,10 +96,10 @@ builder:
               value: 28800
         - binding: max-amount
           name: Max amount
-          description: The maximum amount of ${order.inputs.0.token.symbol} that will be offered in a single auction.
+          description: The maximum amount of ${order.inputs.0.token.symbol || 'Token to Buy'} that will be offered in a single auction.
         - binding: min-amount
           name: Minimum amount
-          description: The minimum amount of ${order.inputs.0.token.symbol} that will be offered in a single auction.
+          description: The minimum amount of ${order.inputs.0.token.symbol || 'Token to Buy'} that will be offered in a single auction.
       deposits:
         - token: token1
         - token: token2

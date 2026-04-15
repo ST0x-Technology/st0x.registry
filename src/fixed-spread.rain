@@ -51,9 +51,9 @@ builder:
         - binding: pyth-pair
           name: Pyth price feed pair
           description: |
-            The Pyth price feed pair to use for the auction.
-            This is used to determine the baseline and initial IO ratios for the auction.
-            For example, if you are selling WETH and buying USDC then you would use the WETH/USD price feed.
+            The on-chain identifier for the Pyth price feed. Use one of the presets below.
+
+            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network — it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
           show-custom-field: false
           presets:
             - name: Equity.US.GOOG/USD
@@ -164,9 +164,9 @@ builder:
         - binding: pyth-pair
           name: Pyth price feed pair
           description: |
-            The Pyth price feed pair to use for the auction.
-            This is used to determine the baseline and initial IO ratios for the auction.
-            For example, if you are buying WETH and selling USDC then you would use the WETH/USD price feed.
+            The on-chain identifier for the Pyth price feed. Use one of the presets below.
+
+            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network — it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
           show-custom-field: false
           presets:
             - name: Equity.US.GOOG/USD

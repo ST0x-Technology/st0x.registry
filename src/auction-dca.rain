@@ -82,19 +82,19 @@ builder:
             - name: Per 365 days (31536000)
               value: 31536000
         - binding: amount-per-epoch
-          name: Budget (${order.outputs.0.token.symbol} per period)
+          name: Budget (${order.outputs.0.token.symbol || 'Token to Sell'} per period)
           description: |
-            The amount of ${order.outputs.0.token.symbol} to spend each budget period.
+            The amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to spend each budget period.
 
-            For example, if the budget is daily and this is 10 then 10 ${order.outputs.0.token.symbol} will be sold for ${order.inputs.0.token.symbol} each day.
+            For example, if the budget is daily and this is 10 then 10 ${order.outputs.0.token.symbol || 'Token to Sell'} will be sold for ${order.inputs.0.token.symbol || 'Token to Buy'} each day.
         - binding: max-trade-amount
-          name: Maximum trade size (${order.outputs.0.token.symbol})
+          name: Maximum trade size (${order.outputs.0.token.symbol || 'Token to Sell'})
           description: |
-            The maximum amount of ${order.outputs.0.token.symbol} to sell in a single auction.
+            The maximum amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to sell in a single auction.
         - binding: min-trade-amount
-          name: Minimum trade size (${order.outputs.0.token.symbol})
+          name: Minimum trade size (${order.outputs.0.token.symbol || 'Token to Sell'})
           description: |
-            The minimum amount of ${order.outputs.0.token.symbol} to sell in a single auction.
+            The minimum amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to sell in a single auction.
         - binding: time-per-trade-epoch
           name: Auction period (in seconds)
           description: |
@@ -119,20 +119,20 @@ builder:
             - name: Every 24 hours (86400)
               value: 86400
         - binding: baseline
-          name: Baseline ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+          name: Baseline ${order.inputs.0.token.symbol || 'Token to Buy'} per ${order.outputs.0.token.symbol || 'Token to Sell'}
           description: |
-            The absolute minimum amount of ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol} that the auction will trade at.
+            The absolute minimum amount of ${order.inputs.0.token.symbol || 'Token to Buy'} per ${order.outputs.0.token.symbol || 'Token to Sell'} that the auction will trade at.
 
-            I.e. for each 1 ${order.outputs.0.token.symbol} sold you will receive at least this many ${order.inputs.0.token.symbol}.
+            I.e. for each 1 ${order.outputs.0.token.symbol || 'Token to Sell'} sold you will receive at least this many ${order.inputs.0.token.symbol || 'Token to Buy'}.
 
-            I.e. this is calculated as the ${order.outputs.0.token.symbol} $ price divided by the ${order.inputs.0.token.symbol} $ price.
+            I.e. this is calculated as the ${order.outputs.0.token.symbol || 'Token to Sell'} $ price divided by the ${order.inputs.0.token.symbol || 'Token to Buy'} $ price.
             You can find $ prices for most tokens on dex tools, dex screener and gecko terminal.
 
             For more information about IO ratios and how to calculate them see [Understanding IO Ratios](https://youtu.be/NdPOi1ZDnDk).
         - binding: initial-io
-          name: Kickoff ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+          name: Kickoff ${order.inputs.0.token.symbol || 'Token to Buy'} per ${order.outputs.0.token.symbol || 'Token to Sell'}
           description: |
-            The initial ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol} to kickoff the first auction.
+            The initial ${order.inputs.0.token.symbol || 'Token to Buy'} per ${order.outputs.0.token.symbol || 'Token to Sell'} to kickoff the first auction.
 
             This ratio is calculated in the same way as the baseline ratio.
 
@@ -191,9 +191,9 @@ builder:
         - binding: pyth-pair
           name: Pyth price feed pair
           description: |
-            The Pyth price feed pair to use for the auction.
-            This is used to determine the baseline and initial IO ratios for the auction.
-            For example, if you are selling WETH and buying USDC then you would use the WETH/USD price feed.
+            The on-chain identifier for the Pyth price feed. Use one of the presets below.
+
+            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network — it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
           show-custom-field: false
           presets:
             - name: Equity.US.GOOG/USD
@@ -241,19 +241,19 @@ builder:
             - name: Per 365 days (31536000)
               value: 31536000
         - binding: amount-per-epoch
-          name: Budget (${order.outputs.0.token.symbol} per period)
+          name: Budget (${order.outputs.0.token.symbol || 'Token to Sell'} per period)
           description: |
-            The amount of ${order.outputs.0.token.symbol} to spend each budget period.
+            The amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to spend each budget period.
 
-            For example, if the budget is daily and this is 10 then 10 ${order.outputs.0.token.symbol} will be sold for ${order.inputs.0.token.symbol} each day.
+            For example, if the budget is daily and this is 10 then 10 ${order.outputs.0.token.symbol || 'Token to Sell'} will be sold for ${order.inputs.0.token.symbol || 'Token to Buy'} each day.
         - binding: max-trade-amount
-          name: Maximum trade size (${order.outputs.0.token.symbol})
+          name: Maximum trade size (${order.outputs.0.token.symbol || 'Token to Sell'})
           description: |
-            The maximum amount of ${order.outputs.0.token.symbol} to sell in a single auction.
+            The maximum amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to sell in a single auction.
         - binding: min-trade-amount
-          name: Minimum trade size (${order.outputs.0.token.symbol})
+          name: Minimum trade size (${order.outputs.0.token.symbol || 'Token to Sell'})
           description: |
-            The minimum amount of ${order.outputs.0.token.symbol} to sell in a single auction.
+            The minimum amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to sell in a single auction.
         - binding: time-per-trade-epoch
           name: Auction period (in seconds)
           description: |
@@ -309,9 +309,9 @@ builder:
         - binding: pyth-pair
           name: Pyth price feed pair
           description: |
-            The Pyth price feed pair to use for the auction.
-            This is used to determine the baseline and initial IO ratios for the auction.
-            For example, if you are buying WETH and selling USDC then you would use the WETH/USD price feed.
+            The on-chain identifier for the Pyth price feed. Use one of the presets below.
+
+            Note: this is NOT a canonical Pyth feed ID from hermes.pyth.network — it's a length-prefixed ASCII encoding of the pair name that the on-chain subparser expects. Always pick a preset.
           show-custom-field: false
           presets:
             - name: Equity.US.GOOG/USD
@@ -359,19 +359,19 @@ builder:
             - name: Per 365 days (31536000)
               value: 31536000
         - binding: amount-per-epoch
-          name: Budget (${order.outputs.0.token.symbol} per period)
+          name: Budget (${order.outputs.0.token.symbol || 'Token to Sell'} per period)
           description: |
-            The amount of ${order.outputs.0.token.symbol} to spend each budget period.
+            The amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to spend each budget period.
 
-            For example, if the budget is daily and this is 10 then 10 ${order.outputs.0.token.symbol} will be sold for ${order.inputs.0.token.symbol} each day.
+            For example, if the budget is daily and this is 10 then 10 ${order.outputs.0.token.symbol || 'Token to Sell'} will be sold for ${order.inputs.0.token.symbol || 'Token to Buy'} each day.
         - binding: max-trade-amount
-          name: Maximum trade size (${order.outputs.0.token.symbol})
+          name: Maximum trade size (${order.outputs.0.token.symbol || 'Token to Sell'})
           description: |
-            The maximum amount of ${order.outputs.0.token.symbol} to sell in a single auction.
+            The maximum amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to sell in a single auction.
         - binding: min-trade-amount
-          name: Minimum trade size (${order.outputs.0.token.symbol})
+          name: Minimum trade size (${order.outputs.0.token.symbol || 'Token to Sell'})
           description: |
-            The minimum amount of ${order.outputs.0.token.symbol} to sell in a single auction.
+            The minimum amount of ${order.outputs.0.token.symbol || 'Token to Sell'} to sell in a single auction.
         - binding: time-per-trade-epoch
           name: Auction period (in seconds)
           description: |
