@@ -6,5 +6,6 @@ dynamic-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a
 canary https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ac4594e349b09b687cf13b249cb97754e07bfbd6/src/canary.rain
 claims https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ac4594e349b09b687cf13b249cb97754e07bfbd6/src/claims.rain
 fixed-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ac4594e349b09b687cf13b249cb97754e07bfbd6/src/fixed-spread.rain
-gated-pyth https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/4ceeecbc08a319a87db7522cefc4117afb10e37e/src/gated-pyth.rain
+gated-pyth https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/b643470db9ed51506c2db18f653733d92433cbd3/src/gated-pyth.rain
 folio https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ac4594e349b09b687cf13b249cb97754e07bfbd6/src/folio.rain
+gated-fixed https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/b643470db9ed51506c2db18f653733d92433cbd3/src/gated-fixed.rain
