@@ -256,10 +256,10 @@ using-words-from raindex-subparser subparser-0
 /* API gating: a SignedContextV1 at index 0 must be present, produced by
  * `api-signer`, authorising this exact counterparty, order hash, and a
  * not-yet-expired deadline. Layout of the signed context:
- *   <0 0>: recipient         — must match order-counterparty()
- *   <0 1>: order hash        — must match order-hash()
- *   <0 2>: expiry timestamp  — must be >= now()
- *   <0 3>: api-key id        — keccak256(api key id), signed for off-chain
+ *   <0 0>: recipient         - must match order-counterparty()
+ *   <0 1>: order hash        - must match order-hash()
+ *   <0 2>: expiry timestamp  - must be >= now()
+ *   <0 3>: api-key id        - keccak256(api key id), signed for off-chain
  *                              attribution only, not asserted here.
  */
 :ensure(
