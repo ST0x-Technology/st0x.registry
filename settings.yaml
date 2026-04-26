@@ -17,7 +17,7 @@ orderbooks:
     subgraph: base
     deployment-block: 41747644
     local-db-remote: raindex
-deployers:
+rainlangs:
   base:
     address: 0xd905B56949284Bb1d28eeFC05be78Af69cCf3668
     network: base
