@@ -3,6 +3,8 @@ networks:
   base:
     rpcs:
       - https://base-rpc.publicnode.com
+      - https://base.drpc.org
+      - https://mainnet.base.org
     chain-id: 8453
     network-id: 8453
     currency: ETH
