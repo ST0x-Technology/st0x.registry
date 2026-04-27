@@ -1,8 +1,10 @@
-version: 4
+version: 5
 networks:
   base:
     rpcs:
       - https://base-rpc.publicnode.com
+      - https://base.drpc.org
+      - https://mainnet.base.org
     chain-id: 8453
     network-id: 8453
     currency: ETH
@@ -17,9 +19,9 @@ orderbooks:
     subgraph: base
     deployment-block: 41747644
     local-db-remote: raindex
-deployers:
+rainlangs:
   base:
-    address: 0xd905B56949284Bb1d28eeFC05be78Af69cCf3668
+    address: 0x22508460712C350e914b49155982d3A92D923b10
     network: base
 local-db-remotes:
   raindex: https://raindex-bootstrap-db.lon1.digitaloceanspaces.com/manifest.yaml
