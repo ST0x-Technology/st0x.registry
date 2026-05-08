@@ -1,9 +1,9 @@
 {
   "name": "ST0x Base Token List",
-  "timestamp": "2026-02-11T12:30:00.000Z",
+  "timestamp": "2026-05-06T00:00:00.000Z",
   "version": {
       "major": 1,
-      "minor": 0,
+      "minor": 1,
       "patch": 0
   },
   "keywords": [
@@ -240,6 +240,63 @@
               "isin": "US0032601066",
               "tradingViewMarket": "america"
           }
+      },
+      {
+          "chainId": 8453,
+          "address": "0x823FF7Bbde2869aAe73A6CD53e7f614442836757",
+          "decimals": 18,
+          "name": "Wrapped Invesco NASDAQ 100 ETF ST0x",
+          "symbol": "wtQQQM",
+          "logoURI": "https://st0x.io/images/QQQM.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x09ee803ba675052e10a54bfc8e18c0f67793056b",
+              "receiptAddress": "0x6dcca0af274eb97f15ecc22d01a4f980f23f5e56",
+              "category": "ST0x",
+              "tradingViewSymbol": "NASDAQ:QQQM",
+              "isin": "US46138G6492",
+              "tradingViewMarket": "america"
+          }
+      },
+      {
+          "chainId": 8453,
+          "address": "0x23ec6886b49D7ab123E9ee8e474D2fa7AB6Cbc2d",
+          "decimals": 18,
+          "name": "Wrapped Vanguard Emerging Markets Stock Index Fund ST0x",
+          "symbol": "wtVWO",
+          "logoURI": "https://st0x.io/images/VWO.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x0acfea6833c4a3f41bf2fbd736aa9eea547d90ee",
+              "receiptAddress": "0x3ec7c053fd515353df294b43f4c4d81f76ef0924",
+              "category": "ST0x",
+              "tradingViewSymbol": "AMEX:VWO",
+              "isin": "US9220428588",
+              "tradingViewMarket": "america"
+          }
+      },
+      {
+          "chainId": 8453,
+          "address": "0x9FfF48B4535AF3765Ac9E1b164720EDc01DF8EE7",
+          "decimals": 18,
+          "name": "Wrapped ARK Innovation ETF ST0x",
+          "symbol": "wtARKK",
+          "logoURI": "https://st0x.io/images/ARKK.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x323804af6f3bb463d688b854667c6870a0fc06ad",
+              "receiptAddress": "0x5c497a52857b71538a7b57e6f57322877ed792b2",
+              "category": "ST0x",
+              "tradingViewSymbol": "AMEX:ARKK",
+              "isin": "US00214Q1040",
+              "tradingViewMarket": "america"
+          }
       }
   ],
   "tokenMap": {
@@ -461,6 +518,63 @@
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:PPLT",
               "isin": "US0032601066",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x823FF7Bbde2869aAe73A6CD53e7f614442836757": {
+          "chainId": 8453,
+          "address": "0x823FF7Bbde2869aAe73A6CD53e7f614442836757",
+          "decimals": 18,
+          "name": "Wrapped Invesco NASDAQ 100 ETF ST0x",
+          "symbol": "wtQQQM",
+          "logoURI": "https://st0x.io/images/QQQM.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x09ee803ba675052e10a54bfc8e18c0f67793056b",
+              "receiptAddress": "0x6dcca0af274eb97f15ecc22d01a4f980f23f5e56",
+              "category": "ST0x",
+              "tradingViewSymbol": "NASDAQ:QQQM",
+              "isin": "US46138G6492",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x23ec6886b49D7ab123E9ee8e474D2fa7AB6Cbc2d": {
+          "chainId": 8453,
+          "address": "0x23ec6886b49D7ab123E9ee8e474D2fa7AB6Cbc2d",
+          "decimals": 18,
+          "name": "Wrapped Vanguard Emerging Markets Stock Index Fund ST0x",
+          "symbol": "wtVWO",
+          "logoURI": "https://st0x.io/images/VWO.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x0acfea6833c4a3f41bf2fbd736aa9eea547d90ee",
+              "receiptAddress": "0x3ec7c053fd515353df294b43f4c4d81f76ef0924",
+              "category": "ST0x",
+              "tradingViewSymbol": "AMEX:VWO",
+              "isin": "US9220428588",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x9FfF48B4535AF3765Ac9E1b164720EDc01DF8EE7": {
+          "chainId": 8453,
+          "address": "0x9FfF48B4535AF3765Ac9E1b164720EDc01DF8EE7",
+          "decimals": 18,
+          "name": "Wrapped ARK Innovation ETF ST0x",
+          "symbol": "wtARKK",
+          "logoURI": "https://st0x.io/images/ARKK.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x323804af6f3bb463d688b854667c6870a0fc06ad",
+              "receiptAddress": "0x5c497a52857b71538a7b57e6f57322877ed792b2",
+              "category": "ST0x",
+              "tradingViewSymbol": "AMEX:ARKK",
+              "isin": "US00214Q1040",
               "tradingViewMarket": "america"
           }
       }
