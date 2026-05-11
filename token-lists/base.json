@@ -629,6 +629,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0x09ee803ba675052e10a54bfc8e18c0f67793056b",
+                "receiptAddress": "0x6dcca0af274eb97f15ecc22d01a4f980f23f5e56",
                 "legacyAddress": null,
                 "priceFeedId": {
                     "hi": "0x433b196b3b026f46f76b5e901c84c575",
@@ -652,6 +653,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0x0acfea6833c4a3f41bf2fbd736aa9eea547d90ee",
+                "receiptAddress": "0x3ec7c053fd515353df294b43f4c4d81f76ef0924",
                 "legacyAddress": null,
                 "priceFeedId": {
                     "hi": "0x2f91d775954c0c828d4563448d253cf0",
@@ -675,6 +677,7 @@
             ],
             "extensions": {
                 "unwrappedAddress": "0x323804af6f3bb463d688b854667c6870a0fc06ad",
+                "receiptAddress": "0x5c497a52857b71538a7b57e6f57322877ed792b2",
                 "legacyAddress": null,
                 "priceFeedId": {
                     "hi": "0xb2fe0af6c828efefda3ffda664f91982",
