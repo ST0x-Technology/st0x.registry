@@ -1,0 +1,68 @@
+name: Upload private registry
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    name: Upload private registry artifact
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Check out registry
+        uses: actions/checkout@v4
+
+      - name: Build private registry artifact
+        env:
+          PRIVATE_BASE_RPC_URLS: ${{ secrets.PRIVATE_BASE_RPC_URLS }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${PRIVATE_BASE_RPC_URLS}" ]; then
+            echo "PRIVATE_BASE_RPC_URLS secret is required" >&2
+            exit 1
+          fi
+
+          scripts/build-private-registry-artifact.sh \
+            --private-base-rpc-urls "${PRIVATE_BASE_RPC_URLS}" \
+            --output "${RUNNER_TEMP}/private-registry-artifact.b64"
+
+          registry_artifact_b64="$(cat "${RUNNER_TEMP}/private-registry-artifact.b64")"
+          printf '{"registry_artifact":"data:text/plain;base64,%s","source_commit":"%s"}\n' \
+            "${registry_artifact_b64}" \
+            "${GITHUB_SHA}" \
+            > "${RUNNER_TEMP}/private-registry-upload.json"
+
+      - name: Upload private registry artifact
+        env:
+          ST0X_REST_API_URL: ${{ secrets.ST0X_REST_API_URL }}
+          ST0X_REST_API_ADMIN_KEY_ID: ${{ secrets.ST0X_REST_API_ADMIN_KEY_ID }}
+          ST0X_REST_API_ADMIN_SECRET: ${{ secrets.ST0X_REST_API_ADMIN_SECRET }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${ST0X_REST_API_URL}" ]; then
+            echo "ST0X_REST_API_URL secret is required" >&2
+            exit 1
+          fi
+          if [ -z "${ST0X_REST_API_ADMIN_KEY_ID}" ]; then
+            echo "ST0X_REST_API_ADMIN_KEY_ID secret is required" >&2
+            exit 1
+          fi
+          if [ -z "${ST0X_REST_API_ADMIN_SECRET}" ]; then
+            echo "ST0X_REST_API_ADMIN_SECRET secret is required" >&2
+            exit 1
+          fi
+
+          api_url="${ST0X_REST_API_URL%/}"
+          curl --silent --show-error --fail \
+            --request PUT "${api_url}/admin/registry" \
+            --user "${ST0X_REST_API_ADMIN_KEY_ID}:${ST0X_REST_API_ADMIN_SECRET}" \
+            --header "Content-Type: application/json" \
+            --data-binary "@${RUNNER_TEMP}/private-registry-upload.json" \
+            --output /dev/null
+
+          echo "Uploaded private registry artifact for ${GITHUB_SHA}"
