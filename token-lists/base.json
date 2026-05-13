@@ -146,7 +146,7 @@
           "decimals": 18,
           "name": "Wrapped SPDR Portfolio S&P 500 ETF ST0x",
           "symbol": "wtSPYM",
-          "logoURI": "https://st0x.io/images/SPLG.png",
+          "logoURI": "https://st0x.io/images/state_street.png",
           "tags": [
               "st0x"
           ],
@@ -167,7 +167,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Silver Shares ETF ST0x",
           "symbol": "wtSIVR",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -227,7 +227,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Platinum Shares ETF ST0x",
           "symbol": "wtPPLT",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -426,7 +426,7 @@
           "decimals": 18,
           "name": "Wrapped SPDR Portfolio S&P 500 ETF ST0x",
           "symbol": "wtSPYM",
-          "logoURI": "https://st0x.io/images/SPLG.png",
+          "logoURI": "https://st0x.io/images/state_street.png",
           "tags": [
               "st0x"
           ],
@@ -447,7 +447,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Silver Shares ETF ST0x",
           "symbol": "wtSIVR",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -507,7 +507,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Platinum Shares ETF ST0x",
           "symbol": "wtPPLT",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
