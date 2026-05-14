@@ -106,7 +106,7 @@
           "decimals": 18,
           "name": "Wrapped iShares Gold Trust ST0x",
           "symbol": "wtIAU",
-          "logoURI": "https://st0x.io/images/IAU.png",
+          "logoURI": "https://st0x.io/images/ishares.png",
           "tags": [
               "st0x"
           ],
@@ -146,7 +146,7 @@
           "decimals": 18,
           "name": "Wrapped SPDR Portfolio S&P 500 ETF ST0x",
           "symbol": "wtSPYM",
-          "logoURI": "https://st0x.io/images/SPLG.png",
+          "logoURI": "https://st0x.io/images/state_street.png",
           "tags": [
               "st0x"
           ],
@@ -167,7 +167,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Silver Shares ETF ST0x",
           "symbol": "wtSIVR",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -227,7 +227,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Platinum Shares ETF ST0x",
           "symbol": "wtPPLT",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -247,7 +247,7 @@
           "decimals": 18,
           "name": "Wrapped Invesco NASDAQ 100 ETF ST0x",
           "symbol": "wtQQQM",
-          "logoURI": "https://st0x.io/images/QQQM.png",
+          "logoURI": "https://st0x.io/images/invesco.png",
           "tags": [
               "st0x"
           ],
@@ -266,7 +266,7 @@
           "decimals": 18,
           "name": "Wrapped Vanguard Emerging Markets Stock Index Fund ST0x",
           "symbol": "wtVWO",
-          "logoURI": "https://st0x.io/images/VWO.png",
+          "logoURI": "https://st0x.io/images/vanguard.png",
           "tags": [
               "st0x"
           ],
@@ -386,7 +386,7 @@
           "decimals": 18,
           "name": "Wrapped iShares Gold Trust ST0x",
           "symbol": "wtIAU",
-          "logoURI": "https://st0x.io/images/IAU.png",
+          "logoURI": "https://st0x.io/images/ishares.png",
           "tags": [
               "st0x"
           ],
@@ -426,7 +426,7 @@
           "decimals": 18,
           "name": "Wrapped SPDR Portfolio S&P 500 ETF ST0x",
           "symbol": "wtSPYM",
-          "logoURI": "https://st0x.io/images/SPLG.png",
+          "logoURI": "https://st0x.io/images/state_street.png",
           "tags": [
               "st0x"
           ],
@@ -447,7 +447,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Silver Shares ETF ST0x",
           "symbol": "wtSIVR",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -507,7 +507,7 @@
           "decimals": 18,
           "name": "Wrapped abrdn Physical Platinum Shares ETF ST0x",
           "symbol": "wtPPLT",
-          "logoURI": "https://st0x.io/images/SIVR.png",
+          "logoURI": "https://st0x.io/images/abrdn.png",
           "tags": [
               "st0x"
           ],
@@ -527,7 +527,7 @@
           "decimals": 18,
           "name": "Wrapped Invesco NASDAQ 100 ETF ST0x",
           "symbol": "wtQQQM",
-          "logoURI": "https://st0x.io/images/QQQM.png",
+          "logoURI": "https://st0x.io/images/invesco.png",
           "tags": [
               "st0x"
           ],
@@ -546,7 +546,7 @@
           "decimals": 18,
           "name": "Wrapped Vanguard Emerging Markets Stock Index Fund ST0x",
           "symbol": "wtVWO",
-          "logoURI": "https://st0x.io/images/VWO.png",
+          "logoURI": "https://st0x.io/images/vanguard.png",
           "tags": [
               "st0x"
           ],

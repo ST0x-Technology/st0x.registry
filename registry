@@ -1,10 +1,10 @@
-https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/settings.yaml
-fixed-limit https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/fixed-limit.rain
-auction-dca https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/auction-dca.rain
-grid https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/grid.rain
-dynamic-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/dynamic-spread.rain
-canary https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/canary.rain
-claims https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/claims.rain
-fixed-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/fixed-spread.rain
-gated-pyth https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/gated-pyth.rain
-folio https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c47a56d424d4f6d6613d0fa726e4247fc98145ef/src/folio.rain
+https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/settings.yaml
+fixed-limit https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/fixed-limit.rain
+auction-dca https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/auction-dca.rain
+grid https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/grid.rain
+dynamic-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/dynamic-spread.rain
+canary https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/canary.rain
+claims https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/claims.rain
+fixed-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/fixed-spread.rain
+gated-pyth https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/gated-pyth.rain
+folio https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d7a420fb9acb90613629bfb317eff2fe805ae09/src/folio.rain
