@@ -216,7 +216,7 @@
               "legacyAddress": "0xf8fdfd6a686346d34b3143fc23072aa45c9e8386",
               "receiptAddress": "0x67aeafd8c274f62933fec34e8c0724189aad01fc",
               "category": "ST0x",
-              "tradingViewSymbol": "AMEX:BMNR",
+              "tradingViewSymbol": "NYSE:BMNR",
               "isin": "US09175A2069",
               "tradingViewMarket": "america"
           }
@@ -496,7 +496,7 @@
               "legacyAddress": "0xf8fdfd6a686346d34b3143fc23072aa45c9e8386",
               "receiptAddress": "0x67aeafd8c274f62933fec34e8c0724189aad01fc",
               "category": "ST0x",
-              "tradingViewSymbol": "AMEX:BMNR",
+              "tradingViewSymbol": "NYSE:BMNR",
               "isin": "US09175A2069",
               "tradingViewMarket": "america"
           }
