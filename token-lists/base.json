@@ -1,6 +1,6 @@
 {
   "name": "ST0x Base Token List",
-  "timestamp": "2026-05-06T00:00:00.000Z",
+  "timestamp": "2026-05-18T00:00:00.000Z",
   "version": {
       "major": 1,
       "minor": 1,
@@ -297,6 +297,60 @@
               "isin": "US00214Q1040",
               "tradingViewMarket": "america"
           }
+      },
+      {
+          "chainId": 8453,
+          "address": "0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3",
+          "decimals": 18,
+          "name": "Wrapped Constellation Energy Corporation ST0x",
+          "symbol": "wtCEG",
+          "logoURI": "https://st0x.io/images/CEG.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
+              "category": "ST0x",
+              "tradingViewSymbol": "NYSE:CEG",
+              "isin": "US21037T1097",
+              "tradingViewMarket": "america"
+          }
+      },
+      {
+          "chainId": 8453,
+          "address": "0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8",
+          "decimals": 18,
+          "name": "Wrapped Roundhill Memory ETF ST0x",
+          "symbol": "wtDRAM",
+          "logoURI": "https://st0x.io/images/roundhill.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x96DE077262609298CD891E4Ab21bd34837dE33aB",
+              "category": "ST0x",
+              "tradingViewSymbol": "CBOE:DRAM",
+              "isin": "US77926X3200",
+              "tradingViewMarket": "america"
+          }
+      },
+      {
+          "chainId": 8453,
+          "address": "0x71C66449d2528E23514A9c197BFD55Ae9DB3B714",
+          "decimals": 18,
+          "name": "Wrapped Taiwan Semiconductor Manufacturing Company ST0x",
+          "symbol": "wtTSM",
+          "logoURI": "https://st0x.io/images/TSM.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x7001e2974F775f0Fd73a3D2e5914e591f3EC3fBB",
+              "category": "ST0x",
+              "tradingViewSymbol": "NYSE:TSM",
+              "isin": "US8740391003",
+              "tradingViewMarket": "america"
+          }
       }
   ],
   "tokenMap": {
@@ -575,6 +629,60 @@
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:ARKK",
               "isin": "US00214Q1040",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3": {
+          "chainId": 8453,
+          "address": "0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3",
+          "decimals": 18,
+          "name": "Wrapped Constellation Energy Corporation ST0x",
+          "symbol": "wtCEG",
+          "logoURI": "https://st0x.io/images/CEG.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
+              "category": "ST0x",
+              "tradingViewSymbol": "NYSE:CEG",
+              "isin": "US21037T1097",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8": {
+          "chainId": 8453,
+          "address": "0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8",
+          "decimals": 18,
+          "name": "Wrapped Roundhill Memory ETF ST0x",
+          "symbol": "wtDRAM",
+          "logoURI": "https://st0x.io/images/roundhill.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x96DE077262609298CD891E4Ab21bd34837dE33aB",
+              "category": "ST0x",
+              "tradingViewSymbol": "CBOE:DRAM",
+              "isin": "US77926X3200",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x71C66449d2528E23514A9c197BFD55Ae9DB3B714": {
+          "chainId": 8453,
+          "address": "0x71C66449d2528E23514A9c197BFD55Ae9DB3B714",
+          "decimals": 18,
+          "name": "Wrapped Taiwan Semiconductor Manufacturing Company ST0x",
+          "symbol": "wtTSM",
+          "logoURI": "https://st0x.io/images/TSM.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x7001e2974F775f0Fd73a3D2e5914e591f3EC3fBB",
+              "category": "ST0x",
+              "tradingViewSymbol": "NYSE:TSM",
+              "isin": "US8740391003",
               "tradingViewMarket": "america"
           }
       }
