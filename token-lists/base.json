@@ -310,6 +310,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
+              "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:CEG",
               "isin": "US21037T1097",
@@ -328,6 +329,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x96DE077262609298CD891E4Ab21bd34837dE33aB",
+              "receiptAddress": "0x728734768a772c137a5364b10e61943de13921c4",
               "category": "ST0x",
               "tradingViewSymbol": "CBOE:DRAM",
               "isin": "US77926X3200",
@@ -346,6 +348,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x7001e2974F775f0Fd73a3D2e5914e591f3EC3fBB",
+              "receiptAddress": "0x6553f9a5352ec3ca808138eab56fe4cc496ea5a9",
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:TSM",
               "isin": "US8740391003",
@@ -644,6 +647,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
+              "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:CEG",
               "isin": "US21037T1097",
@@ -662,6 +666,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x96DE077262609298CD891E4Ab21bd34837dE33aB",
+              "receiptAddress": "0x728734768a772c137a5364b10e61943de13921c4",
               "category": "ST0x",
               "tradingViewSymbol": "CBOE:DRAM",
               "isin": "US77926X3200",
@@ -680,6 +685,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x7001e2974F775f0Fd73a3D2e5914e591f3EC3fBB",
+              "receiptAddress": "0x6553f9a5352ec3ca808138eab56fe4cc496ea5a9",
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:TSM",
               "isin": "US8740391003",
