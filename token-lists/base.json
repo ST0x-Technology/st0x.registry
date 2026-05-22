@@ -1,6 +1,6 @@
 {
   "name": "ST0x Base Token List",
-  "timestamp": "2026-05-20T00:00:00.000Z",
+  "timestamp": "2026-05-22T00:00:00.000Z",
   "version": {
       "major": 1,
       "minor": 1,
@@ -300,61 +300,80 @@
       },
       {
           "chainId": 8453,
-          "address": "0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3",
+          "address": "0x78c31580c97101694C70022c83D570150c11e935",
           "decimals": 18,
-          "name": "Wrapped Constellation Energy Corporation ST0x",
-          "symbol": "wtCEG",
-          "logoURI": "https://st0x.io/images/CEG.png",
+          "name": "Wrapped iShares 0-3 Month Treasury Bond ETF ST0x",
+          "symbol": "wtSGOV",
+          "logoURI": "https://st0x.io/images/ishares.png",
           "tags": [
               "st0x"
           ],
           "extensions": {
-              "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
-              "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
+              "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
+              "receiptAddress": "0x5c28F1Dd98dC2D61F289545c3be85cafdb4cB111",
               "category": "ST0x",
-              "tradingViewSymbol": "NYSE:CEG",
-              "isin": "US21037T1097",
+              "tradingViewSymbol": "AMEX:SGOV",
+              "isin": "US46436E7186",
               "tradingViewMarket": "america"
           }
       },
       {
-          "chainId": 8453,
-          "address": "0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8",
-          "decimals": 18,
-          "name": "Wrapped Roundhill Memory ETF ST0x",
-          "symbol": "wtDRAM",
-          "logoURI": "https://st0x.io/images/roundhill.png",
-          "tags": [
-              "st0x"
-          ],
-          "extensions": {
-              "unwrappedAddress": "0x96DE077262609298CD891E4Ab21bd34837dE33aB",
-              "receiptAddress": "0x728734768a772c137a5364b10e61943de13921c4",
-              "category": "ST0x",
-              "tradingViewSymbol": "CBOE:DRAM",
-              "isin": "US77926X3200",
-              "tradingViewMarket": "america"
-          }
-      },
-      {
-          "chainId": 8453,
-          "address": "0x71C66449d2528E23514A9c197BFD55Ae9DB3B714",
-          "decimals": 18,
-          "name": "Wrapped Taiwan Semiconductor Manufacturing Company ST0x",
-          "symbol": "wtTSM",
-          "logoURI": "https://st0x.io/images/TSM.png",
-          "tags": [
-              "st0x"
-          ],
-          "extensions": {
-              "unwrappedAddress": "0x7001e2974F775f0Fd73a3D2e5914e591f3EC3fBB",
-              "receiptAddress": "0x6553f9a5352ec3ca808138eab56fe4cc496ea5a9",
-              "category": "ST0x",
-              "tradingViewSymbol": "NYSE:TSM",
-              "isin": "US8740391003",
-              "tradingViewMarket": "america"
-          }
-      }
+        "chainId": 8453,
+        "address": "0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3",
+        "decimals": 18,
+        "name": "Wrapped Constellation Energy Corporation ST0x",
+        "symbol": "wtCEG",
+        "logoURI": "https://st0x.io/images/CEG.png",
+        "tags": [
+            "st0x"
+        ],
+        "extensions": {
+            "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
+            "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
+            "category": "ST0x",
+            "tradingViewSymbol": "NYSE:CEG",
+            "isin": "US21037T1097",
+            "tradingViewMarket": "america"
+        }
+    },
+    {
+        "chainId": 8453,
+        "address": "0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8",
+        "decimals": 18,
+        "name": "Wrapped Roundhill Memory ETF ST0x",
+        "symbol": "wtDRAM",
+        "logoURI": "https://st0x.io/images/roundhill.png",
+        "tags": [
+            "st0x"
+        ],
+        "extensions": {
+            "unwrappedAddress": "0x96DE077262609298CD891E4Ab21bd34837dE33aB",
+            "receiptAddress": "0x728734768a772c137a5364b10e61943de13921c4",
+            "category": "ST0x",
+            "tradingViewSymbol": "CBOE:DRAM",
+            "isin": "US77926X3200",
+            "tradingViewMarket": "america"
+        }
+    },
+    {
+        "chainId": 8453,
+        "address": "0x71C66449d2528E23514A9c197BFD55Ae9DB3B714",
+        "decimals": 18,
+        "name": "Wrapped Taiwan Semiconductor Manufacturing Company ST0x",
+        "symbol": "wtTSM",
+        "logoURI": "https://st0x.io/images/TSM.png",
+        "tags": [
+            "st0x"
+        ],
+        "extensions": {
+            "unwrappedAddress": "0x7001e2974F775f0Fd73a3D2e5914e591f3EC3fBB",
+            "receiptAddress": "0x6553f9a5352ec3ca808138eab56fe4cc496ea5a9",
+            "category": "ST0x",
+            "tradingViewSymbol": "NYSE:TSM",
+            "isin": "US8740391003",
+            "tradingViewMarket": "america"
+        }
+    }
   ],
   "tokenMap": {
       "8453_0xFb5B41acdbA20a3230F84BE995173CFb98b8D6E7": {
@@ -632,6 +651,25 @@
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:ARKK",
               "isin": "US00214Q1040",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x78c31580c97101694C70022c83D570150c11e935": {
+          "chainId": 8453,
+          "address": "0x78c31580c97101694C70022c83D570150c11e935",
+          "decimals": 18,
+          "name": "Wrapped iShares 0-3 Month Treasury Bond ETF ST0x",
+          "symbol": "wtSGOV",
+          "logoURI": "https://st0x.io/images/ishares.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
+              "receiptAddress": "0x5c28F1Dd98dC2D61F289545c3be85cafdb4cB111",
+              "category": "ST0x",
+              "tradingViewSymbol": "AMEX:SGOV",
+              "isin": "US46436E7186",
               "tradingViewMarket": "america"
           }
       },
