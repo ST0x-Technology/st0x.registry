@@ -25,7 +25,7 @@ rainlangs:
     address: 0xd905B56949284Bb1d28eeFC05be78Af69cCf3668
     network: base
 local-db-remotes:
-  raindex: https://raindex-bootstrap-db.lon1.digitaloceanspaces.com/local-db-manifests/1779638167599/manifest.yaml
+  raindex: https://raindex-bootstrap-db.lon1.digitaloceanspaces.com/local-db-manifests/1779812963870/manifest.yaml
 local-db-sync:
   base:
     batch-size: 50
@@ -37,4 +37,4 @@ local-db-sync:
     bootstrap-block-threshold: 300
     sync-interval-ms: 5000
 using-tokens-from:
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/b498c0c4b6d4fe874167158a852ee0edcdd07426/token-lists/base.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/153d552832abbf09b2831d93d96a103a4bb572a8/token-lists/base.json
