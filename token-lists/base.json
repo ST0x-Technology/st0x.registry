@@ -319,6 +319,25 @@
       },
       {
           "chainId": 8453,
+          "address": "0x19F89aaEf8a93f38A974beca9776f09aB844887F",
+          "decimals": 18,
+          "name": "Wrapped Space Exploration Technologies Corp. ST0x",
+          "symbol": "wtSPCX",
+          "logoURI": "https://st0x.io/images/SPCX.svg",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0xc585AeB8B76c5F5e4215470A7625258e86ED7746",
+              "receiptAddress": "0xba81B21F8a22bD99900E00Ed1373EC77C0772F55",
+              "category": "ST0x",
+              "tradingViewSymbol": "NASDAQ:SPCX",
+              "isin": "US84615Q1031",
+              "tradingViewMarket": "america"
+          }
+      },
+      {
+          "chainId": 8453,
           "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
           "decimals": 6,
           "name": "USD Coin",
@@ -621,6 +640,25 @@
               "category": "ST0x",
               "tradingViewSymbol": "AMEX:SGOV",
               "isin": "US46436E7186",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x19F89aaEf8a93f38A974beca9776f09aB844887F": {
+          "chainId": 8453,
+          "address": "0x19F89aaEf8a93f38A974beca9776f09aB844887F",
+          "decimals": 18,
+          "name": "Wrapped Space Exploration Technologies Corp. ST0x",
+          "symbol": "wtSPCX",
+          "logoURI": "https://st0x.io/images/SPCX.svg",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0xc585AeB8B76c5F5e4215470A7625258e86ED7746",
+              "receiptAddress": "0xba81B21F8a22bD99900E00Ed1373EC77C0772F55",
+              "category": "ST0x",
+              "tradingViewSymbol": "NASDAQ:SPCX",
+              "isin": "US84615Q1031",
               "tradingViewMarket": "america"
           }
       },
