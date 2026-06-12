@@ -11,6 +11,7 @@ networks:
     currency: ETH
 subgraphs:
   base: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/ob4-base/2026-02-05-c4ef/gn
+  sft-base: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-base/1.0.10/gn
 metaboards:
   base: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/metadata-base/2025-07-06-594f/gn
 raindexes:
@@ -37,4 +38,4 @@ local-db-sync:
     bootstrap-block-threshold: 300
     sync-interval-ms: 5000
 using-tokens-from:
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/397d9e620ed88c87d562002105600908bd014f77/token-lists/base.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/80cf4b027deccc2bc9671c49cdae05f4f4e0ed75/token-lists/base.json
