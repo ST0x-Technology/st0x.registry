@@ -2,6 +2,15 @@ name: Upload private registry
 
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: "API environment to update"
+        required: true
+        type: choice
+        default: "staging"
+        options:
+          - staging
+          - production
 
 permissions:
   contents: read
@@ -10,10 +19,20 @@ jobs:
   upload:
     name: Upload private registry artifact
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
     steps:
+      - name: Validate target branch
+        env:
+          TARGET: ${{ inputs.target }}
+        run: |
+          set -euo pipefail
+
+          if [ "${TARGET}" = "production" ] && [ "${GITHUB_REF}" != "refs/heads/main" ]; then
+            echo "Production registry uploads must run from main, got ${GITHUB_REF}" >&2
+            exit 1
+          fi
+
       - name: Check out registry
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Build private registry artifact
         env:
@@ -38,31 +57,52 @@ jobs:
 
       - name: Upload private registry artifact
         env:
-          ST0X_REST_API_URL: ${{ secrets.ST0X_REST_API_URL }}
-          ST0X_REST_API_ADMIN_KEY_ID: ${{ secrets.ST0X_REST_API_ADMIN_KEY_ID }}
-          ST0X_REST_API_ADMIN_SECRET: ${{ secrets.ST0X_REST_API_ADMIN_SECRET }}
+          TARGET: ${{ inputs.target }}
+          PRODUCTION_ST0X_REST_API_URL: ${{ secrets.ST0X_REST_API_URL }}
+          PRODUCTION_ST0X_REST_API_ADMIN_KEY_ID: ${{ secrets.ST0X_REST_API_ADMIN_KEY_ID }}
+          PRODUCTION_ST0X_REST_API_ADMIN_SECRET: ${{ secrets.ST0X_REST_API_ADMIN_SECRET }}
+          STAGING_ST0X_REST_API_URL: ${{ secrets.STAGING_ST0X_REST_API_URL }}
+          STAGING_ST0X_REST_API_ADMIN_KEY_ID: ${{ secrets.STAGING_ST0X_REST_API_ADMIN_KEY_ID }}
+          STAGING_ST0X_REST_API_ADMIN_SECRET: ${{ secrets.STAGING_ST0X_REST_API_ADMIN_SECRET }}
         run: |
           set -euo pipefail
 
-          if [ -z "${ST0X_REST_API_URL}" ]; then
-            echo "ST0X_REST_API_URL secret is required" >&2
+          case "${TARGET}" in
+            production)
+              api_url="${PRODUCTION_ST0X_REST_API_URL}"
+              admin_key_id="${PRODUCTION_ST0X_REST_API_ADMIN_KEY_ID}"
+              admin_secret="${PRODUCTION_ST0X_REST_API_ADMIN_SECRET}"
+              ;;
+            staging)
+              api_url="${STAGING_ST0X_REST_API_URL}"
+              admin_key_id="${STAGING_ST0X_REST_API_ADMIN_KEY_ID}"
+              admin_secret="${STAGING_ST0X_REST_API_ADMIN_SECRET}"
+              ;;
+            *)
+              echo "Unsupported target: ${TARGET}" >&2
+              exit 1
+              ;;
+          esac
+
+          if [ -z "${api_url}" ]; then
+            echo "${TARGET} API URL secret is required" >&2
             exit 1
           fi
-          if [ -z "${ST0X_REST_API_ADMIN_KEY_ID}" ]; then
-            echo "ST0X_REST_API_ADMIN_KEY_ID secret is required" >&2
+          if [ -z "${admin_key_id}" ]; then
+            echo "${TARGET} API admin key ID secret is required" >&2
             exit 1
           fi
-          if [ -z "${ST0X_REST_API_ADMIN_SECRET}" ]; then
-            echo "ST0X_REST_API_ADMIN_SECRET secret is required" >&2
+          if [ -z "${admin_secret}" ]; then
+            echo "${TARGET} API admin secret is required" >&2
             exit 1
           fi
 
-          api_url="${ST0X_REST_API_URL%/}"
+          api_url="${api_url%/}"
           curl --silent --show-error --fail \
             --request PUT "${api_url}/admin/registry" \
-            --user "${ST0X_REST_API_ADMIN_KEY_ID}:${ST0X_REST_API_ADMIN_SECRET}" \
+            --user "${admin_key_id}:${admin_secret}" \
             --header "Content-Type: application/json" \
             --data-binary "@${RUNNER_TEMP}/private-registry-upload.json" \
             --output /dev/null
 
-          echo "Uploaded private registry artifact for ${GITHUB_SHA}"
+          echo "Uploaded private registry artifact for ${GITHUB_SHA} to ${TARGET}"
