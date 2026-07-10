@@ -1,6 +1,6 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-05-26T00:00:00.000Z",
+    "timestamp": "2026-07-10T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 2,
@@ -376,6 +376,44 @@
         },
         {
             "chainId": 8453,
+            "address": "0x8200c6d9AB9E02A25D7F2099244C476d99a085ef",
+            "decimals": 18,
+            "name": "Wrapped ASML Holding N.V. New York Registry Shares ST0x",
+            "symbol": "wtASML",
+            "logoURI": "https://st0x.io/images/ASML.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x722Cb373f1871A176fb5DC3953046f2EAE22F619",
+                "receiptAddress": "0x17021e305d28c4cfa8ec02817ad22b2ef432dc85",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:ASML",
+                "isin": "USN070592100",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9",
+            "decimals": 18,
+            "name": "Wrapped SK hynix Inc. ADR ST0x",
+            "symbol": "wtSKHY",
+            "logoURI": "https://st0x.io/images/SKHY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x4DBA41f0feb390F208a85e96168fF5d8aC2b6F5c",
+                "receiptAddress": "0xe26105d49e57ced5ce83d20ca5f04c3b0dcc876c",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:SKHY",
+                "isin": "US78392B2060",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
             "address": "0x19F89aaEf8a93f38A974beca9776f09aB844887F",
             "decimals": 18,
             "name": "Wrapped Space Exploration Technologies Corp. ST0x",
@@ -695,7 +733,7 @@
                 "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
                 "receiptAddress": "0x5c28F1Dd98dC2D61F289545c3be85cafdb4cB111",
                 "category": "ST0x",
-                "tradingViewSymbol": "NYSE:SGOV",
+                "tradingViewSymbol": "AMEX:SGOV",
                 "isin": "US46436E7186",
                 "tradingViewMarket": "america"
             }
@@ -714,7 +752,7 @@
                 "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
                 "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
                 "category": "ST0x",
-                "tradingViewSymbol": "NYSE:CEG",
+                "tradingViewSymbol": "NASDAQ:CEG",
                 "isin": "US21037T1097",
                 "tradingViewMarket": "america"
             }
@@ -754,6 +792,44 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:TSM",
                 "isin": "US8740391003",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x8200c6d9AB9E02A25D7F2099244C476d99a085ef": {
+            "chainId": 8453,
+            "address": "0x8200c6d9AB9E02A25D7F2099244C476d99a085ef",
+            "decimals": 18,
+            "name": "Wrapped ASML Holding N.V. New York Registry Shares ST0x",
+            "symbol": "wtASML",
+            "logoURI": "https://st0x.io/images/ASML.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x722Cb373f1871A176fb5DC3953046f2EAE22F619",
+                "receiptAddress": "0x17021e305d28c4cfa8ec02817ad22b2ef432dc85",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:ASML",
+                "isin": "USN070592100",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9": {
+            "chainId": 8453,
+            "address": "0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9",
+            "decimals": 18,
+            "name": "Wrapped SK hynix Inc. ADR ST0x",
+            "symbol": "wtSKHY",
+            "logoURI": "https://st0x.io/images/SKHY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x4DBA41f0feb390F208a85e96168fF5d8aC2b6F5c",
+                "receiptAddress": "0xe26105d49e57ced5ce83d20ca5f04c3b0dcc876c",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:SKHY",
+                "isin": "US78392B2060",
                 "tradingViewMarket": "america"
             }
         },
