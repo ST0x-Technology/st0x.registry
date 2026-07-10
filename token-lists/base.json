@@ -386,7 +386,7 @@
         ],
         "extensions": {
             "unwrappedAddress": "0x722Cb373f1871A176fb5DC3953046f2EAE22F619",
-            "receiptAddress": "0x35f9fA9d80aAF2B0fB27f0FF015641B3408d7456",
+            "receiptAddress": "0x17021e305d28c4cfa8ec02817ad22b2ef432dc85",
             "category": "ST0x",
             "tradingViewSymbol": "NASDAQ:ASML",
             "isin": "USN070592100",
@@ -769,7 +769,7 @@
           ],
           "extensions": {
               "unwrappedAddress": "0x722Cb373f1871A176fb5DC3953046f2EAE22F619",
-              "receiptAddress": "0x35f9fA9d80aAF2B0fB27f0FF015641B3408d7456",
+              "receiptAddress": "0x17021e305d28c4cfa8ec02817ad22b2ef432dc85",
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:ASML",
               "isin": "USN070592100",
