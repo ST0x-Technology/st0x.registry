@@ -4,7 +4,7 @@
   "version": {
       "major": 1,
       "minor": 2,
-      "patch": 1
+      "patch": 2
   },
   "keywords": [
       "st0x",
@@ -393,6 +393,25 @@
             "tradingViewMarket": "america"
         }
     },
+    {
+        "chainId": 8453,
+        "address": "0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9",
+        "decimals": 18,
+        "name": "Wrapped SK hynix Inc. ADR ST0x",
+        "symbol": "wtSKHY",
+        "logoURI": "https://st0x.io/images/SKHY.png",
+        "tags": [
+            "st0x"
+        ],
+        "extensions": {
+            "unwrappedAddress": "0x4DBA41f0feb390F208a85e96168fF5d8aC2b6F5c",
+            "receiptAddress": "0xe26105d49e57ced5ce83d20ca5f04c3b0dcc876c",
+            "category": "ST0x",
+            "tradingViewSymbol": "NASDAQ:SKHY",
+            "isin": "US78392B2060",
+            "tradingViewMarket": "america"
+        }
+    },
       {
           "chainId": 8453,
           "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
@@ -773,6 +792,25 @@
               "category": "ST0x",
               "tradingViewSymbol": "NASDAQ:ASML",
               "isin": "USN070592100",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9": {
+          "chainId": 8453,
+          "address": "0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9",
+          "decimals": 18,
+          "name": "Wrapped SK hynix Inc. ADR ST0x",
+          "symbol": "wtSKHY",
+          "logoURI": "https://st0x.io/images/SKHY.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x4DBA41f0feb390F208a85e96168fF5d8aC2b6F5c",
+              "receiptAddress": "0xe26105d49e57ced5ce83d20ca5f04c3b0dcc876c",
+              "category": "ST0x",
+              "tradingViewSymbol": "NASDAQ:SKHY",
+              "isin": "US78392B2060",
               "tradingViewMarket": "america"
           }
       },
