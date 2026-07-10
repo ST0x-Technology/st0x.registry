@@ -331,7 +331,7 @@
             "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
             "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
             "category": "ST0x",
-            "tradingViewSymbol": "NYSE:CEG",
+            "tradingViewSymbol": "NASDAQ:CEG",
             "isin": "US21037T1097",
             "tradingViewMarket": "america"
         }
@@ -733,7 +733,7 @@
               "unwrappedAddress": "0x9a5D3cAeC90b0332b18C0B93fEF42F3F8C918289",
               "receiptAddress": "0xc6bc19df197ccd0db4c02ccd6aaff7b2ce698e08",
               "category": "ST0x",
-              "tradingViewSymbol": "NYSE:CEG",
+              "tradingViewSymbol": "NASDAQ:CEG",
               "isin": "US21037T1097",
               "tradingViewMarket": "america"
           }
