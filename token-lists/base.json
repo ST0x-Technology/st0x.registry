@@ -312,7 +312,7 @@
                 "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
                 "receiptAddress": "0x5c28F1Dd98dC2D61F289545c3be85cafdb4cB111",
                 "category": "ST0x",
-                "tradingViewSymbol": "AMEX:SGOV",
+                "tradingViewSymbol": "NYSE:SGOV",
                 "isin": "US46436E7186",
                 "tradingViewMarket": "america"
             }
@@ -695,7 +695,7 @@
                 "unwrappedAddress": "0xc941C1506B7555Ba8C506Fb6c9b9CC259902d612",
                 "receiptAddress": "0x5c28F1Dd98dC2D61F289545c3be85cafdb4cB111",
                 "category": "ST0x",
-                "tradingViewSymbol": "AMEX:SGOV",
+                "tradingViewSymbol": "NYSE:SGOV",
                 "isin": "US46436E7186",
                 "tradingViewMarket": "america"
             }
