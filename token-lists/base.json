@@ -1,10 +1,10 @@
 {
   "name": "ST0x Base Token List",
-  "timestamp": "2026-05-26T00:00:00.000Z",
+  "timestamp": "2026-07-10T00:00:00.000Z",
   "version": {
       "major": 1,
       "minor": 2,
-      "patch": 0
+      "patch": 1
   },
   "keywords": [
       "st0x",
@@ -374,6 +374,25 @@
             "tradingViewMarket": "america"
         }
     },
+    {
+        "chainId": 8453,
+        "address": "0x8200c6d9AB9E02A25D7F2099244C476d99a085ef",
+        "decimals": 18,
+        "name": "Wrapped ASML Holding N.V. New York Registry Shares ST0x",
+        "symbol": "wtASML",
+        "logoURI": "https://st0x.io/images/ASML.png",
+        "tags": [
+            "st0x"
+        ],
+        "extensions": {
+            "unwrappedAddress": "0x722Cb373f1871A176fb5DC3953046f2EAE22F619",
+            "receiptAddress": "0x35f9fA9d80aAF2B0fB27f0FF015641B3408d7456",
+            "category": "ST0x",
+            "tradingViewSymbol": "NASDAQ:ASML",
+            "isin": "USN070592100",
+            "tradingViewMarket": "america"
+        }
+    },
       {
           "chainId": 8453,
           "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
@@ -735,6 +754,25 @@
               "category": "ST0x",
               "tradingViewSymbol": "NYSE:TSM",
               "isin": "US8740391003",
+              "tradingViewMarket": "america"
+          }
+      },
+      "8453_0x8200c6d9AB9E02A25D7F2099244C476d99a085ef": {
+          "chainId": 8453,
+          "address": "0x8200c6d9AB9E02A25D7F2099244C476d99a085ef",
+          "decimals": 18,
+          "name": "Wrapped ASML Holding N.V. New York Registry Shares ST0x",
+          "symbol": "wtASML",
+          "logoURI": "https://st0x.io/images/ASML.png",
+          "tags": [
+              "st0x"
+          ],
+          "extensions": {
+              "unwrappedAddress": "0x722Cb373f1871A176fb5DC3953046f2EAE22F619",
+              "receiptAddress": "0x35f9fA9d80aAF2B0fB27f0FF015641B3408d7456",
+              "category": "ST0x",
+              "tradingViewSymbol": "NASDAQ:ASML",
+              "isin": "USN070592100",
               "tradingViewMarket": "america"
           }
       },
