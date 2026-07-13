@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-10T00:00:00.000Z",
+    "timestamp": "2026-07-13T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 2,
-        "patch": 1
+        "patch": 2
     },
     "keywords": [
         "st0x",
@@ -37,7 +37,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:NVDA",
                 "isin": "US67066G1040",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xb1073854ed24cbc755dc527418f52b7d271f6cc967bbf8d8129112b18860a593"
             }
         },
         {
@@ -57,7 +58,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:AMZN",
                 "isin": "US0231351067",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xb5d0e0fa58a1f8b81498ae670ce93c872d14434b72c364885d4fa1b257cbb07a"
             }
         },
         {
@@ -77,7 +79,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TSLA",
                 "isin": "US88160R1014",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x16dad506d7db8da01c87581c87ca897a012a153557d4d578c3b9c9e1bc0632f1"
             }
         },
         {
@@ -97,7 +100,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:MSTR",
                 "isin": "US5949724083",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xe1e80251e5f5184f2195008382538e847fafc36f751896889dd3d1b1f6111f09"
             }
         },
         {
@@ -117,7 +121,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:IAU",
                 "isin": "US4642852044",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xf703fbded84f7da4bd9ff4661b5d1ffefa8a9c90b7fa12f247edc8251efac914"
             }
         },
         {
@@ -137,7 +142,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:COIN",
                 "isin": "US19260Q1076",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xfee33f2a978bf32dd6b662b65ba8083c6773b494f8401194ec1870c640860245"
             }
         },
         {
@@ -158,7 +164,12 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SPYM",
                 "isin": "US78464A8541",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 82.5,
+                "previousSymbols": [
+                    "wtSPLG",
+                    "tSPLG"
+                ]
             }
         },
         {
@@ -178,7 +189,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SIVR",
                 "isin": "US0032641088",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x0a5ee42b0f7287a777926d08bc185a6a60f42f40a9b63d78d85d4a03ee2e3737"
             }
         },
         {
@@ -198,7 +210,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:CRCL",
                 "isin": "US1725731079",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x92b8527aabe59ea2b12230f7b532769b133ffb118dfbd48ff676f14b273f1365"
             }
         },
         {
@@ -218,7 +231,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:BMNR",
                 "isin": "US09175A2069",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x54e2e127c93950de5a710100fd1cd387aba1ec8920850efdb05da5fee57d2e32"
             }
         },
         {
@@ -238,7 +252,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:PPLT",
                 "isin": "US0032601066",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x782410278b6c8aa2d437812281526012808404aa14c243f73fb9939eeb88d430"
             }
         },
         {
@@ -257,7 +272,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:QQQM",
                 "isin": "US46138G6492",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x433b196b3b026f46f76b5e901c84c575a7280dcba0f4272edefe0529b599ad64"
             }
         },
         {
@@ -276,7 +292,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:VWO",
                 "isin": "US9220428588",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x2f91d775954c0c828d4563448d253cf09df218b620825242775d878d1d5956c7"
             }
         },
         {
@@ -295,7 +312,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:ARKK",
                 "isin": "US00214Q1040",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xb2fe0af6c828efefda3ffda664f919825a535aa28a0f19fc238945c7aff540b1"
             }
         },
         {
@@ -314,7 +332,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:SGOV",
                 "isin": "US46436E7186",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x8d6a29bb5ed522931d711bb12c4bbf92af986936e52af582032913b5ffcbf4d5"
             }
         },
         {
@@ -333,7 +352,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:CEG",
                 "isin": "US21037T1097",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xa541bc5c4b69961442e45e9198c7cce151ff9c2a1003f620c6d4a9785c77a4d9"
             }
         },
         {
@@ -352,7 +372,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "CBOE:DRAM",
                 "isin": "US77926X3200",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 50
             }
         },
         {
@@ -371,7 +392,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:TSM",
                 "isin": "US8740391003",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xe722560a66e4ab00522ef20a38fa2ba5d1b41f1c5404723ed895d202a7af7cc4"
             }
         },
         {
@@ -390,7 +412,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:ASML",
                 "isin": "USN070592100",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x1a6e324589a0e355919fb1c0389edc3fdf4c46034626bd82aad4e47714cfa94f"
             }
         },
         {
@@ -409,7 +432,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SKHY",
                 "isin": "US78392B2060",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 149
             }
         },
         {
@@ -428,7 +452,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SPCX",
                 "isin": "US84615Q1031",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 135
             }
         },
         {
@@ -437,7 +462,11 @@
             "decimals": 6,
             "name": "USD Coin",
             "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "extensions": {
+                "priceFeedId": "0xeaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a",
+                "category": "CRYPTO"
+            }
         }
     ],
     "tokenMap": {
@@ -458,7 +487,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:NVDA",
                 "isin": "US67066G1040",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xb1073854ed24cbc755dc527418f52b7d271f6cc967bbf8d8129112b18860a593"
             }
         },
         "8453_0x997baE3EC193a249596d3708C3fAB7C501Bb8a53": {
@@ -478,7 +508,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:AMZN",
                 "isin": "US0231351067",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xb5d0e0fa58a1f8b81498ae670ce93c872d14434b72c364885d4fa1b257cbb07a"
             }
         },
         "8453_0x219A8d384a10BF19b9f24cB5cC53F79Dd0e5A03D": {
@@ -498,7 +529,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TSLA",
                 "isin": "US88160R1014",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x16dad506d7db8da01c87581c87ca897a012a153557d4d578c3b9c9e1bc0632f1"
             }
         },
         "8453_0xFF05E1bD696900dc6A52CA35Ca61Bb1024eDa8e2": {
@@ -518,7 +550,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:MSTR",
                 "isin": "US5949724083",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xe1e80251e5f5184f2195008382538e847fafc36f751896889dd3d1b1f6111f09"
             }
         },
         "8453_0x1E46d7eFef64A833AFB1CD49299a7AD5B439f4d8": {
@@ -538,7 +571,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:IAU",
                 "isin": "US4642852044",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xf703fbded84f7da4bd9ff4661b5d1ffefa8a9c90b7fa12f247edc8251efac914"
             }
         },
         "8453_0x5cDa0E1CA4ce2af96315f7F8963C85399c172204": {
@@ -558,7 +592,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:COIN",
                 "isin": "US19260Q1076",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xfee33f2a978bf32dd6b662b65ba8083c6773b494f8401194ec1870c640860245"
             }
         },
         "8453_0x31C2C14134e6E3B7ef9478297F199331133Fc2d8": {
@@ -579,7 +614,12 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SPYM",
                 "isin": "US78464A8541",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 82.5,
+                "previousSymbols": [
+                    "wtSPLG",
+                    "tSPLG"
+                ]
             }
         },
         "8453_0xEB7F3E4093C9d68253b6104FbbfF561F3eC0442F": {
@@ -599,7 +639,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SIVR",
                 "isin": "US0032641088",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x0a5ee42b0f7287a777926d08bc185a6a60f42f40a9b63d78d85d4a03ee2e3737"
             }
         },
         "8453_0x8AFba81DEc38DE0A18E2Df5E1967a7493651eebf": {
@@ -619,7 +660,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:CRCL",
                 "isin": "US1725731079",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x92b8527aabe59ea2b12230f7b532769b133ffb118dfbd48ff676f14b273f1365"
             }
         },
         "8453_0x2512EC661f0bA089c275EA105E31bAD6FcFcf319": {
@@ -639,7 +681,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:BMNR",
                 "isin": "US09175A2069",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x54e2e127c93950de5a710100fd1cd387aba1ec8920850efdb05da5fee57d2e32"
             }
         },
         "8453_0x82f5BAEE1076334357a34A19E04f7c282D51cE47": {
@@ -659,7 +702,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:PPLT",
                 "isin": "US0032601066",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x782410278b6c8aa2d437812281526012808404aa14c243f73fb9939eeb88d430"
             }
         },
         "8453_0x823FF7Bbde2869aAe73A6CD53e7f614442836757": {
@@ -678,7 +722,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:QQQM",
                 "isin": "US46138G6492",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x433b196b3b026f46f76b5e901c84c575a7280dcba0f4272edefe0529b599ad64"
             }
         },
         "8453_0x23ec6886b49D7ab123E9ee8e474D2fa7AB6Cbc2d": {
@@ -697,7 +742,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:VWO",
                 "isin": "US9220428588",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x2f91d775954c0c828d4563448d253cf09df218b620825242775d878d1d5956c7"
             }
         },
         "8453_0x9FfF48B4535AF3765Ac9E1b164720EDc01DF8EE7": {
@@ -716,7 +762,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:ARKK",
                 "isin": "US00214Q1040",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xb2fe0af6c828efefda3ffda664f919825a535aa28a0f19fc238945c7aff540b1"
             }
         },
         "8453_0x78c31580c97101694C70022c83D570150c11e935": {
@@ -735,7 +782,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:SGOV",
                 "isin": "US46436E7186",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x8d6a29bb5ed522931d711bb12c4bbf92af986936e52af582032913b5ffcbf4d5"
             }
         },
         "8453_0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3": {
@@ -754,7 +802,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:CEG",
                 "isin": "US21037T1097",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xa541bc5c4b69961442e45e9198c7cce151ff9c2a1003f620c6d4a9785c77a4d9"
             }
         },
         "8453_0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8": {
@@ -773,7 +822,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "CBOE:DRAM",
                 "isin": "US77926X3200",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 50
             }
         },
         "8453_0x71C66449d2528E23514A9c197BFD55Ae9DB3B714": {
@@ -792,7 +842,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:TSM",
                 "isin": "US8740391003",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0xe722560a66e4ab00522ef20a38fa2ba5d1b41f1c5404723ed895d202a7af7cc4"
             }
         },
         "8453_0x8200c6d9AB9E02A25D7F2099244C476d99a085ef": {
@@ -811,7 +862,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:ASML",
                 "isin": "USN070592100",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "priceFeedId": "0x1a6e324589a0e355919fb1c0389edc3fdf4c46034626bd82aad4e47714cfa94f"
             }
         },
         "8453_0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9": {
@@ -830,7 +882,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SKHY",
                 "isin": "US78392B2060",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 149
             }
         },
         "8453_0x19F89aaEf8a93f38A974beca9776f09aB844887F": {
@@ -849,7 +902,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SPCX",
                 "isin": "US84615Q1031",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 135
             }
         },
         "8453_0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
@@ -858,7 +912,11 @@
             "decimals": 6,
             "name": "USD Coin",
             "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "extensions": {
+                "priceFeedId": "0xeaa020c61cc479712813461ce153894a96a6c00b21ed0cfc2798d1f9a9e9c94a",
+                "category": "CRYPTO"
+            }
         }
     }
 }
