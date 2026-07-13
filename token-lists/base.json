@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-10T00:00:00.000Z",
+    "timestamp": "2026-07-13T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 2,
-        "patch": 1
+        "patch": 2
     },
     "keywords": [
         "st0x",
@@ -158,7 +158,12 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SPYM",
                 "isin": "US78464A8541",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 82.5,
+                "previousSymbols": [
+                    "wtSPLG",
+                    "tSPLG"
+                ]
             }
         },
         {
@@ -352,7 +357,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "CBOE:DRAM",
                 "isin": "US77926X3200",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 50
             }
         },
         {
@@ -409,7 +415,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SKHY",
                 "isin": "US78392B2060",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 149
             }
         },
         {
@@ -428,7 +435,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SPCX",
                 "isin": "US84615Q1031",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 135
             }
         },
         {
@@ -437,7 +445,10 @@
             "decimals": 6,
             "name": "USD Coin",
             "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "extensions": {
+                "category": "CRYPTO"
+            }
         }
     ],
     "tokenMap": {
@@ -579,7 +590,12 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SPYM",
                 "isin": "US78464A8541",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 82.5,
+                "previousSymbols": [
+                    "wtSPLG",
+                    "tSPLG"
+                ]
             }
         },
         "8453_0xEB7F3E4093C9d68253b6104FbbfF561F3eC0442F": {
@@ -773,7 +789,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "CBOE:DRAM",
                 "isin": "US77926X3200",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 50
             }
         },
         "8453_0x71C66449d2528E23514A9c197BFD55Ae9DB3B714": {
@@ -830,7 +847,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SKHY",
                 "isin": "US78392B2060",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 149
             }
         },
         "8453_0x19F89aaEf8a93f38A974beca9776f09aB844887F": {
@@ -849,7 +867,8 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SPCX",
                 "isin": "US84615Q1031",
-                "tradingViewMarket": "america"
+                "tradingViewMarket": "america",
+                "fallbackPrice": 135
             }
         },
         "8453_0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
@@ -858,7 +877,10 @@
             "decimals": 6,
             "name": "USD Coin",
             "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "extensions": {
+                "category": "CRYPTO"
+            }
         }
     }
 }
