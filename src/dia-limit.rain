@@ -40,13 +40,13 @@ builder:
   name: DIA limit
   description: https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/main/src/dia-limit.md
   short-description: >
-    Offers min(DIA price × spread, fixed limit) using on-chain DIA oracle feeds.
+    Offers min(DIA price x spread, fixed limit) using on-chain DIA oracle feeds.
   deployments:
     base-dia-limit:
       name: Base DIA sell shares
       description: >
         Deploy a DIA-priced order on Base. Offers the minimum of
-        (DIA price × benchmark multiplier) and a fixed limit when selling shares.
+        (DIA price x benchmark multiplier) and a fixed limit when selling shares.
       deposits:
         - token: output
       fields:
@@ -78,7 +78,7 @@ builder:
           name: Benchmark price multiplier
           description: |
             The multiplier to be applied to the DIA benchmark when calculating the market leg of the offer.
-            Final IO is min(DIA × this multiplier, fixed limit).
+            Final IO is min(DIA x this multiplier, fixed limit).
           show-custom-field: true
           default: 1.001
           presets:
@@ -91,7 +91,7 @@ builder:
         - binding: fixed-io
           name: Limit ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
           description: |
-            Fixed limit IO ratio. Final offer is min(DIA price × multiplier, this limit)
+            Fixed limit IO ratio. Final offer is min(DIA price x multiplier, this limit)
             (after any needed invert when selling the other side).
           show-custom-field: true
         - binding: oracle-price-timeout
@@ -121,7 +121,7 @@ builder:
       name: Base DIA buy shares
       description: >
         Deploy a DIA-priced order on Base with an inverted feed (buy shares).
-        Offers min(inv(DIA price) × multiplier, fixed limit).
+        Offers min(inv(DIA price) x multiplier, fixed limit).
       deposits:
         - token: output
       fields:
@@ -153,7 +153,7 @@ builder:
           name: Benchmark price multiplier
           description: |
             The multiplier to be applied to the inverted DIA benchmark.
-            Final IO is min(inv(DIA) × this multiplier, fixed limit).
+            Final IO is min(inv(DIA) x this multiplier, fixed limit).
           show-custom-field: true
           default: 1.001
           presets:
@@ -166,7 +166,7 @@ builder:
         - binding: fixed-io
           name: Limit ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
           description: |
-            Fixed limit IO ratio. Final offer is min(inv(DIA price) × multiplier, this limit)
+            Fixed limit IO ratio. Final offer is min(inv(DIA price) x multiplier, this limit)
             (with the usual fixed-io invert when selling the other side).
           show-custom-field: true
         - binding: oracle-price-timeout
