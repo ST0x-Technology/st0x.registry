@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-10T00:00:00.000Z",
+    "timestamp": "2026-07-20T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 2,
-        "patch": 1
+        "patch": 2
     },
     "keywords": [
         "st0x",
@@ -433,6 +433,120 @@
         },
         {
             "chainId": 8453,
+            "address": "0x89EcfE9E0728D6b3c5eb0EE7236f8C6F806C7B56",
+            "decimals": 18,
+            "name": "Wrapped Micron Technology, Inc. ST0x",
+            "symbol": "wtMU",
+            "logoURI": "https://st0x.io/images/MU.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x7d89a2dffdaf9f48a64337c725d925381b431ae2",
+                "receiptAddress": "0x0cc8b07e5bb99ef8c227a6c995c907b8448ed9a8",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:MU",
+                "isin": "US5951121038",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x648042Acd8638E12fEfd51C2b25A9f993f21a612",
+            "decimals": 18,
+            "name": "Wrapped Advanced Micro Devices, Inc. ST0x",
+            "symbol": "wtAMD",
+            "logoURI": "https://st0x.io/images/AMD.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x50b5225409a55b873fd6c2fd5880af5a11ace9b1",
+                "receiptAddress": "0x9a06e971b71334f1003bf7e601e3e1e398fa82a6",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AMD",
+                "isin": "US0079031078",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x70A182f481AEF05836666B6CfDbe84dCBCE8AC19",
+            "decimals": 18,
+            "name": "Wrapped Broadcom Inc. ST0x",
+            "symbol": "wtAVGO",
+            "logoURI": "https://st0x.io/images/AVGO.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6088f8ef741ae1f5a61882866f130631b41617e2",
+                "receiptAddress": "0x36e3612554857751c78fc70a31a9a40b130168c4",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AVGO",
+                "isin": "US11135F1012",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x522DC65c89C9Af4f410BAe01bbf53aF75854a9f9",
+            "decimals": 18,
+            "name": "Wrapped Applied Materials, Inc. ST0x",
+            "symbol": "wtAMAT",
+            "logoURI": "https://st0x.io/images/AMAT.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x98c02b58b7e65ef5a4262d9536162949e3b2e141",
+                "receiptAddress": "0xb50cf64462c87545e89eeb6da020ebf5dc971612",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AMAT",
+                "isin": "US0382221051",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x328B9aFFa511fE26673edBb4fEa37eDaF908A3bc",
+            "decimals": 18,
+            "name": "Wrapped Lam Research Corporation ST0x",
+            "symbol": "wtLRCX",
+            "logoURI": "https://st0x.io/images/LRCX.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xdde9346107609a05439a0b59ab6ed4f7f81a1fbf",
+                "receiptAddress": "0xda588acee0e45f29dff1e48988d5108122491388",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:LRCX",
+                "isin": "US5128073062",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x045Fb493D970f94a54FeaF931033622fC82192e6",
+            "decimals": 18,
+            "name": "Wrapped Take-Two Interactive Software, Inc. ST0x",
+            "symbol": "wtTTWO",
+            "logoURI": "https://st0x.io/images/TTWO.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x1a29ed11df8295d5f3b5f59849fd94cad615e024",
+                "receiptAddress": "0x0162bd328d45fae647fda01c33be54709b314c48",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:TTWO",
+                "isin": "US8740541094",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
             "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
             "decimals": 6,
             "name": "USD Coin",
@@ -849,6 +963,120 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:SPCX",
                 "isin": "US84615Q1031",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x89EcfE9E0728D6b3c5eb0EE7236f8C6F806C7B56": {
+            "chainId": 8453,
+            "address": "0x89EcfE9E0728D6b3c5eb0EE7236f8C6F806C7B56",
+            "decimals": 18,
+            "name": "Wrapped Micron Technology, Inc. ST0x",
+            "symbol": "wtMU",
+            "logoURI": "https://st0x.io/images/MU.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x7d89a2dffdaf9f48a64337c725d925381b431ae2",
+                "receiptAddress": "0x0cc8b07e5bb99ef8c227a6c995c907b8448ed9a8",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:MU",
+                "isin": "US5951121038",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x648042Acd8638E12fEfd51C2b25A9f993f21a612": {
+            "chainId": 8453,
+            "address": "0x648042Acd8638E12fEfd51C2b25A9f993f21a612",
+            "decimals": 18,
+            "name": "Wrapped Advanced Micro Devices, Inc. ST0x",
+            "symbol": "wtAMD",
+            "logoURI": "https://st0x.io/images/AMD.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x50b5225409a55b873fd6c2fd5880af5a11ace9b1",
+                "receiptAddress": "0x9a06e971b71334f1003bf7e601e3e1e398fa82a6",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AMD",
+                "isin": "US0079031078",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x70A182f481AEF05836666B6CfDbe84dCBCE8AC19": {
+            "chainId": 8453,
+            "address": "0x70A182f481AEF05836666B6CfDbe84dCBCE8AC19",
+            "decimals": 18,
+            "name": "Wrapped Broadcom Inc. ST0x",
+            "symbol": "wtAVGO",
+            "logoURI": "https://st0x.io/images/AVGO.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6088f8ef741ae1f5a61882866f130631b41617e2",
+                "receiptAddress": "0x36e3612554857751c78fc70a31a9a40b130168c4",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AVGO",
+                "isin": "US11135F1012",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x522DC65c89C9Af4f410BAe01bbf53aF75854a9f9": {
+            "chainId": 8453,
+            "address": "0x522DC65c89C9Af4f410BAe01bbf53aF75854a9f9",
+            "decimals": 18,
+            "name": "Wrapped Applied Materials, Inc. ST0x",
+            "symbol": "wtAMAT",
+            "logoURI": "https://st0x.io/images/AMAT.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x98c02b58b7e65ef5a4262d9536162949e3b2e141",
+                "receiptAddress": "0xb50cf64462c87545e89eeb6da020ebf5dc971612",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AMAT",
+                "isin": "US0382221051",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x328B9aFFa511fE26673edBb4fEa37eDaF908A3bc": {
+            "chainId": 8453,
+            "address": "0x328B9aFFa511fE26673edBb4fEa37eDaF908A3bc",
+            "decimals": 18,
+            "name": "Wrapped Lam Research Corporation ST0x",
+            "symbol": "wtLRCX",
+            "logoURI": "https://st0x.io/images/LRCX.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xdde9346107609a05439a0b59ab6ed4f7f81a1fbf",
+                "receiptAddress": "0xda588acee0e45f29dff1e48988d5108122491388",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:LRCX",
+                "isin": "US5128073062",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x045Fb493D970f94a54FeaF931033622fC82192e6": {
+            "chainId": 8453,
+            "address": "0x045Fb493D970f94a54FeaF931033622fC82192e6",
+            "decimals": 18,
+            "name": "Wrapped Take-Two Interactive Software, Inc. ST0x",
+            "symbol": "wtTTWO",
+            "logoURI": "https://st0x.io/images/TTWO.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x1a29ed11df8295d5f3b5f59849fd94cad615e024",
+                "receiptAddress": "0x0162bd328d45fae647fda01c33be54709b314c48",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:TTWO",
+                "isin": "US8740541094",
                 "tradingViewMarket": "america"
             }
         },
