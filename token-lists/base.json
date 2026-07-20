@@ -144,7 +144,7 @@
             "chainId": 8453,
             "address": "0x31C2C14134e6E3B7ef9478297F199331133Fc2d8",
             "decimals": 18,
-            "name": "Wrapped SPDR Portfolio S&P 500 ETF ST0x",
+            "name": "Wrapped State Street SPDR Portfolio S&P 500 ETF ST0x",
             "symbol": "wtSPYM",
             "logoURI": "https://st0x.io/images/state_street.png",
             "tags": [
@@ -359,7 +359,7 @@
             "chainId": 8453,
             "address": "0x71C66449d2528E23514A9c197BFD55Ae9DB3B714",
             "decimals": 18,
-            "name": "Wrapped Taiwan Semiconductor Manufacturing Company ST0x",
+            "name": "Wrapped Taiwan Semiconductor Manufacturing Company Limited ADR ST0x",
             "symbol": "wtTSM",
             "logoURI": "https://st0x.io/images/TSM.png",
             "tags": [
@@ -378,7 +378,7 @@
             "chainId": 8453,
             "address": "0x8200c6d9AB9E02A25D7F2099244C476d99a085ef",
             "decimals": 18,
-            "name": "Wrapped ASML Holding N.V. New York Registry Shares ST0x",
+            "name": "Wrapped ASML Holding N.V. ST0x",
             "symbol": "wtASML",
             "logoURI": "https://st0x.io/images/ASML.png",
             "tags": [
@@ -565,7 +565,7 @@
             "chainId": 8453,
             "address": "0x31C2C14134e6E3B7ef9478297F199331133Fc2d8",
             "decimals": 18,
-            "name": "Wrapped SPDR Portfolio S&P 500 ETF ST0x",
+            "name": "Wrapped State Street SPDR Portfolio S&P 500 ETF ST0x",
             "symbol": "wtSPYM",
             "logoURI": "https://st0x.io/images/state_street.png",
             "tags": [
@@ -780,7 +780,7 @@
             "chainId": 8453,
             "address": "0x71C66449d2528E23514A9c197BFD55Ae9DB3B714",
             "decimals": 18,
-            "name": "Wrapped Taiwan Semiconductor Manufacturing Company ST0x",
+            "name": "Wrapped Taiwan Semiconductor Manufacturing Company Limited ADR ST0x",
             "symbol": "wtTSM",
             "logoURI": "https://st0x.io/images/TSM.png",
             "tags": [
@@ -799,7 +799,7 @@
             "chainId": 8453,
             "address": "0x8200c6d9AB9E02A25D7F2099244C476d99a085ef",
             "decimals": 18,
-            "name": "Wrapped ASML Holding N.V. New York Registry Shares ST0x",
+            "name": "Wrapped ASML Holding N.V. ST0x",
             "symbol": "wtASML",
             "logoURI": "https://st0x.io/images/ASML.png",
             "tags": [
