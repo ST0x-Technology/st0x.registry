@@ -522,7 +522,7 @@
                 "receiptAddress": "0xDa588aceE0E45F29dfF1E48988D5108122491388",
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:LRCX",
-                "isin": "US5128071082",
+                "isin": "US5128073062",
                 "tradingViewMarket": "america"
             }
         },
@@ -1057,7 +1057,7 @@
                 "receiptAddress": "0xDa588aceE0E45F29dfF1E48988D5108122491388",
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:LRCX",
-                "isin": "US5128071082",
+                "isin": "US5128073062",
                 "tradingViewMarket": "america"
             }
         },
