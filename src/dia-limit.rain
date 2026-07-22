@@ -38,7 +38,7 @@ deployments:
 
 builder:
   name: DIA limit
-  description: https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6d9aa935642b44d32b184449ed549f510810437f/src/dia-limit.md
+  description: https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/10a94412ded0bfce3cf7da50cc520b5d428f9070/src/dia-limit.md
   short-description: >
     Offers min(DIA price x spread, fixed limit) using on-chain DIA oracle feeds.
   deployments:
