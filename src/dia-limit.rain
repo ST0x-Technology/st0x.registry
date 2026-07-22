@@ -15,7 +15,7 @@ scenarios:
     runs: 1
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
-      subparser-0: 0xb4bf51998aB1f1b733C9df4a06e131182dBDf447
+      dia-subparser: 0xDf96DF297C963622C523F6d59e90b4C28CF61C21
       fixed-io-output-token: ${order.outputs.0.token.address}
       baseline-fn: '''dia-price-baseline'
   dia-limit-base-inv:
@@ -24,7 +24,7 @@ scenarios:
     runs: 1
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
-      subparser-0: 0xb4bf51998aB1f1b733C9df4a06e131182dBDf447
+      dia-subparser: 0xDf96DF297C963622C523F6d59e90b4C28CF61C21
       fixed-io-output-token: ${order.outputs.0.token.address}
       baseline-fn: '''dia-price-baseline-inv'
 
@@ -194,7 +194,7 @@ builder:
 
 ---
 #raindex-subparser !Raindex subparser.
-#subparser-0 !DiaWords subparser (dia-price).
+#dia-subparser !DiaWords subparser (dia-price).
 #dia-id !The dia id to use for the price feed.
 #baseline-fn !Function that returns the benchmark IO (e.g. dia baseline).
 #baseline-multiplier !Multiplier to apply to the DIA baseline (e.g. 1.001).
@@ -211,7 +211,7 @@ price _: dia-price(dia-id oracle-price-timeout),
 _: inv(price);
 
 #calculate-io
-using-words-from raindex-subparser subparser-0
+using-words-from raindex-subparser dia-subparser
 market-io: mul(call<'baseline-fn>() baseline-multiplier),
 limit-io: if(
   equal-to(
