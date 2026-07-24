@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-21T00:00:00.000Z",
+    "timestamp": "2026-07-24T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 3,
+        "minor": 4,
         "patch": 0
     },
     "keywords": [
@@ -552,6 +552,25 @@
             "name": "USD Coin",
             "symbol": "USDC",
             "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+        },
+        {
+            "chainId": 8453,
+            "address": "0xF4f8c66085910d583c01f3b4e44Bf731D4e2c565",
+            "decimals": 18,
+            "name": "Wrapped Rocket Lab USA Inc ST0x",
+            "symbol": "wtRKLB",
+            "logoURI": "https://st0x.io/images/RKLB.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xf6744Fd94e27c2f58F6110aa9fDC77A87e41766B",
+                "receiptAddress": "0x34Bf3d8DFaa92e554FBCf48135E5d814210DA1dd",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:RKLB",
+                "isin": "US7731221062",
+                "tradingViewMarket": "america"
+            }
         }
     ],
     "tokenMap": {
@@ -1087,6 +1106,25 @@
             "name": "USD Coin",
             "symbol": "USDC",
             "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+        },
+        "8453_0xF4f8c66085910d583c01f3b4e44Bf731D4e2c565": {
+            "chainId": 8453,
+            "address": "0xF4f8c66085910d583c01f3b4e44Bf731D4e2c565",
+            "decimals": 18,
+            "name": "Wrapped Rocket Lab USA Inc ST0x",
+            "symbol": "wtRKLB",
+            "logoURI": "https://st0x.io/images/RKLB.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xf6744Fd94e27c2f58F6110aa9fDC77A87e41766B",
+                "receiptAddress": "0x34Bf3d8DFaa92e554FBCf48135E5d814210DA1dd",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:RKLB",
+                "isin": "US7731221062",
+                "tradingViewMarket": "america"
+            }
         }
     }
 }
