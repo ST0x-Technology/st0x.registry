@@ -4,6 +4,7 @@ networks:
     rpcs:
       - https://mainnet.base.org
       - https://base.drpc.org
+      - https://base-mainnet.g.alchemy.com/public
       - https://base-rpc.publicnode.com
       - https://developer-access-mainnet.base.org
     chain-id: 8453
