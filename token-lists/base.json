@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-21T00:00:00.000Z",
+    "timestamp": "2026-07-27T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 3,
+        "minor": 4,
         "patch": 0
     },
     "keywords": [
@@ -547,6 +547,120 @@
         },
         {
             "chainId": 8453,
+            "address": "0x6a2357Df4975C667B171bE53dA6FFe6deBf7030c",
+            "decimals": 18,
+            "name": "Wrapped Alphabet Inc. Class A ST0x",
+            "symbol": "wtGOOGL",
+            "logoURI": "https://st0x.io/images/GOOGL.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x15De944Cd020A18C8E5626fB0F81b36e73956199",
+                "receiptAddress": "0x85ac79F639C692B2f1290d0994c79eEffF350D00",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:GOOGL",
+                "isin": "US02079K3059",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xf567652fC2d7Db8D5469fD06AEbe8C9c4372d722",
+            "decimals": 18,
+            "name": "Wrapped Intel Corporation ST0x",
+            "symbol": "wtINTC",
+            "logoURI": "https://st0x.io/images/INTC.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xBDC237Aa3B67cC3088adAf117913F30Bf08157a3",
+                "receiptAddress": "0xAFEd850e458d331EF2A13569547258A84e2e42D2",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:INTC",
+                "isin": "US4581401001",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x1020EC8Aa3f709a1f3D8705cdBa89b950451bd88",
+            "decimals": 18,
+            "name": "Wrapped Apple Inc. ST0x",
+            "symbol": "wtAAPL",
+            "logoURI": "https://st0x.io/images/AAPL.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xD36056a4a03707D3743fCE4e9C08852820ADcfdC",
+                "receiptAddress": "0x3156EB08c9dd870979f1475C5CFe681b8f6A3b53",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AAPL",
+                "isin": "US0378331005",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x515A3Ac2a6aB590bDFa970caFFFd7fAdC680886E",
+            "decimals": 18,
+            "name": "Wrapped Microsoft Corporation ST0x",
+            "symbol": "wtMSFT",
+            "logoURI": "https://st0x.io/images/MSFT.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6a071E25fa25653cF15d1ee320eA3df771926Aa0",
+                "receiptAddress": "0x6862e34dE9AFE099ca19934fC768A8eB9a906b90",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:MSFT",
+                "isin": "US5949181045",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x892CcF5E75f4a7Ee6402971a1587F65BEE4d52bd",
+            "decimals": 18,
+            "name": "Wrapped Eli Lilly and Company ST0x",
+            "symbol": "wtLLY",
+            "logoURI": "https://st0x.io/images/LLY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xA41Ce7B8255A01062ED1AF23ea5E8137B9300554",
+                "receiptAddress": "0x7b345A02d56f989420EbEd4df647D1C673608F3C",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:LLY",
+                "isin": "US5324571083",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xb6D779A79E7493ed821a65D52bA419F0F6D5dD0a",
+            "decimals": 18,
+            "name": "Wrapped PIMCO Corporate & Income Opportunity Fund ST0x",
+            "symbol": "wtPTY",
+            "logoURI": "https://st0x.io/images/PTY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xb6021810971714cD48572af527307Acc324ecF61",
+                "receiptAddress": "0x019Ea210a98f5E74F03376712BDAab3801079b7F",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:PTY",
+                "isin": "US72201B1017",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
             "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
             "decimals": 6,
             "name": "USD Coin",
@@ -1077,6 +1191,120 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TTWO",
                 "isin": "US8740541094",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x6a2357Df4975C667B171bE53dA6FFe6deBf7030c": {
+            "chainId": 8453,
+            "address": "0x6a2357Df4975C667B171bE53dA6FFe6deBf7030c",
+            "decimals": 18,
+            "name": "Wrapped Alphabet Inc. Class A ST0x",
+            "symbol": "wtGOOGL",
+            "logoURI": "https://st0x.io/images/GOOGL.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x15De944Cd020A18C8E5626fB0F81b36e73956199",
+                "receiptAddress": "0x85ac79F639C692B2f1290d0994c79eEffF350D00",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:GOOGL",
+                "isin": "US02079K3059",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0xf567652fC2d7Db8D5469fD06AEbe8C9c4372d722": {
+            "chainId": 8453,
+            "address": "0xf567652fC2d7Db8D5469fD06AEbe8C9c4372d722",
+            "decimals": 18,
+            "name": "Wrapped Intel Corporation ST0x",
+            "symbol": "wtINTC",
+            "logoURI": "https://st0x.io/images/INTC.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xBDC237Aa3B67cC3088adAf117913F30Bf08157a3",
+                "receiptAddress": "0xAFEd850e458d331EF2A13569547258A84e2e42D2",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:INTC",
+                "isin": "US4581401001",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x1020EC8Aa3f709a1f3D8705cdBa89b950451bd88": {
+            "chainId": 8453,
+            "address": "0x1020EC8Aa3f709a1f3D8705cdBa89b950451bd88",
+            "decimals": 18,
+            "name": "Wrapped Apple Inc. ST0x",
+            "symbol": "wtAAPL",
+            "logoURI": "https://st0x.io/images/AAPL.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xD36056a4a03707D3743fCE4e9C08852820ADcfdC",
+                "receiptAddress": "0x3156EB08c9dd870979f1475C5CFe681b8f6A3b53",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:AAPL",
+                "isin": "US0378331005",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x515A3Ac2a6aB590bDFa970caFFFd7fAdC680886E": {
+            "chainId": 8453,
+            "address": "0x515A3Ac2a6aB590bDFa970caFFFd7fAdC680886E",
+            "decimals": 18,
+            "name": "Wrapped Microsoft Corporation ST0x",
+            "symbol": "wtMSFT",
+            "logoURI": "https://st0x.io/images/MSFT.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6a071E25fa25653cF15d1ee320eA3df771926Aa0",
+                "receiptAddress": "0x6862e34dE9AFE099ca19934fC768A8eB9a906b90",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:MSFT",
+                "isin": "US5949181045",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x892CcF5E75f4a7Ee6402971a1587F65BEE4d52bd": {
+            "chainId": 8453,
+            "address": "0x892CcF5E75f4a7Ee6402971a1587F65BEE4d52bd",
+            "decimals": 18,
+            "name": "Wrapped Eli Lilly and Company ST0x",
+            "symbol": "wtLLY",
+            "logoURI": "https://st0x.io/images/LLY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xA41Ce7B8255A01062ED1AF23ea5E8137B9300554",
+                "receiptAddress": "0x7b345A02d56f989420EbEd4df647D1C673608F3C",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:LLY",
+                "isin": "US5324571083",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0xb6D779A79E7493ed821a65D52bA419F0F6D5dD0a": {
+            "chainId": 8453,
+            "address": "0xb6D779A79E7493ed821a65D52bA419F0F6D5dD0a",
+            "decimals": 18,
+            "name": "Wrapped PIMCO Corporate & Income Opportunity Fund ST0x",
+            "symbol": "wtPTY",
+            "logoURI": "https://st0x.io/images/PTY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xb6021810971714cD48572af527307Acc324ecF61",
+                "receiptAddress": "0x019Ea210a98f5E74F03376712BDAab3801079b7F",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:PTY",
+                "isin": "US72201B1017",
                 "tradingViewMarket": "america"
             }
         },
