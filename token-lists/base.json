@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-21T00:00:00.000Z",
+    "timestamp": "2026-07-23T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 3,
+        "minor": 4,
         "patch": 0
     },
     "keywords": [
@@ -17,6 +17,14 @@
         "st0x": {
             "name": "ST0x",
             "description": "ST0x wrapped tokenized assets"
+        },
+        "collateral": {
+            "name": "Collateral",
+            "description": "Backing asset held by ST0x vaults, not itself a tokenized equity."
+        },
+        "test": {
+            "name": "Test",
+            "description": "Deployed and live on-chain, but not offered: excluded from hedging, rebalancing and recovery. Present so integrators resolve it, not so users trade it."
         }
     },
     "tokens": [
@@ -551,7 +559,29 @@
             "decimals": 6,
             "name": "USD Coin",
             "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "collateral"
+            ]
+        },
+        {
+            "chainId": 8453,
+            "address": "0xF4f8c66085910d583c01f3b4e44Bf731D4e2c565",
+            "decimals": 18,
+            "name": "Wrapped Rocket Lab USA Inc ST0x",
+            "symbol": "wtRKLB",
+            "logoURI": "https://st0x.io/images/RKLB.png",
+            "tags": [
+                "st0x",
+                "test"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xf6744fd94e27c2f58f6110aa9fdc77a87e41766b",
+                "receiptAddress": "0x34bf3d8dfaa92e554fbcf48135e5d814210da1dd",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:RKLB",
+                "tradingViewMarket": "america"
+            }
         }
     ],
     "tokenMap": {
@@ -1087,6 +1117,25 @@
             "name": "USD Coin",
             "symbol": "USDC",
             "logoURI": "https://static.optimism.io/data/USDC/logo.png"
+        },
+        "8453_0xF4f8c66085910d583c01f3b4e44Bf731D4e2c565": {
+            "chainId": 8453,
+            "address": "0xF4f8c66085910d583c01f3b4e44Bf731D4e2c565",
+            "decimals": 18,
+            "name": "Wrapped Rocket Lab USA Inc ST0x",
+            "symbol": "wtRKLB",
+            "logoURI": "https://st0x.io/images/RKLB.png",
+            "tags": [
+                "st0x",
+                "test"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xf6744fd94e27c2f58f6110aa9fdc77a87e41766b",
+                "receiptAddress": "0x34bf3d8dfaa92e554fbcf48135e5d814210da1dd",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:RKLB",
+                "tradingViewMarket": "america"
+            }
         }
     }
 }
