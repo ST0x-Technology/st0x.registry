@@ -44,7 +44,12 @@ builder:
       description: Sell wtSTOX and receive tSTOX at the on-chain unwrap ratio.
       deposits:
         - token: token2
-      fields: []
+      fields:
+        - binding: io-fn
+          name: IO function
+          description: Unwrap — sell wtSTOX for tSTOX at convert-to-assets.
+          show-custom-field: false
+          default: '''st0x-swap-unwrap'
       select-tokens:
         - key: token1
           name: Token to Buy
@@ -57,7 +62,12 @@ builder:
       description: Sell tSTOX and receive wtSTOX at the on-chain wrap ratio.
       deposits:
         - token: token2
-      fields: []
+      fields:
+        - binding: io-fn
+          name: IO function
+          description: Wrap — sell tSTOX for wtSTOX at convert-to-shares.
+          show-custom-field: false
+          default: '''st0x-swap-wrap'
       select-tokens:
         - key: token1
           name: Token to Buy
