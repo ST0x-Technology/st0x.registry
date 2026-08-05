@@ -37,5 +37,4 @@ local-db-sync:
     finality-depth: 4
     bootstrap-block-threshold: 300
     sync-interval-ms: 5000
-using-tokens-from:
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/b70ce99786ff3d48bd03f3289d60236be1fcdb32/token-lists/base.json
+va9bea69d77dee55aecab46d34ae03f8b21a06c/token-lists/base.json
