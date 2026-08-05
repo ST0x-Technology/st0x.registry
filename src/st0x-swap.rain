@@ -37,13 +37,13 @@ deployments:
 builder:
   name: ST0x wrap / unwrap
   description: Convert between tSTOX and wtSTOX at the live on-chain vault rate.
-  short-description: Put in one token and get the other out at the vault conversion rate.
+  short-description: Post wrap or unwrap liquidity at the vault conversion rate.
   deployments:
     base-unwrap:
       name: Unwrap wtSTOX to tSTOX
       description: >
-        Put in wtSTOX, get tSTOX out.
-        Input token is wtSTOX (what you deposit). Output token is tSTOX (what you receive).
+        Lets others unwrap wtSTOX into tSTOX.
+        Output vault is tSTOX (what you deposit and give). Input vault is wtSTOX (what you receive).
       deposits:
         - token: token2
       fields:
@@ -51,7 +51,7 @@ builder:
           name: Rate multiplier
           description: >
             Extra multiplier on the vault unwrap rate. Use 1 for the exact on-chain
-            conversion rate; above 1 asks for more tSTOX per wtSTOX put in.
+            conversion rate.
           show-custom-field: true
           default: 1
           min: 0.000001
@@ -64,16 +64,16 @@ builder:
               value: 1.005
       select-tokens:
         - key: token1
-          name: Output token (tSTOX)
-          description: Token you get out. Select tSTOX.
+          name: Input vault (wtSTOX)
+          description: Token you receive. Select wtSTOX.
         - key: token2
-          name: Input token (wtSTOX)
-          description: Token you put in. Select wtSTOX.
+          name: Output vault (tSTOX)
+          description: Token you deposit and give. Select tSTOX.
     base-wrap:
       name: Wrap tSTOX to wtSTOX
       description: >
-        Put in tSTOX, get wtSTOX out.
-        Input token is tSTOX (what you deposit). Output token is wtSTOX (what you receive).
+        Lets others wrap tSTOX into wtSTOX.
+        Output vault is wtSTOX (what you deposit and give). Input vault is tSTOX (what you receive).
       deposits:
         - token: token2
       fields:
@@ -81,7 +81,7 @@ builder:
           name: Rate multiplier
           description: >
             Extra multiplier on the vault wrap rate. Use 1 for the exact on-chain
-            conversion rate; above 1 asks for more wtSTOX per tSTOX put in.
+            conversion rate.
           show-custom-field: true
           default: 1
           min: 0.000001
@@ -94,27 +94,29 @@ builder:
               value: 1.005
       select-tokens:
         - key: token1
-          name: Output token (wtSTOX)
-          description: Token you get out. Select wtSTOX.
+          name: Input vault (tSTOX)
+          description: Token you receive. Select tSTOX.
         - key: token2
-          name: Input token (tSTOX)
-          description: Token you put in. Select tSTOX.
+          name: Output vault (wtSTOX)
+          description: Token you deposit and give. Select wtSTOX.
 ---
 #raindex-subparser !The subparser to use.
 #erc4626-words !St0x words (ERC4626 convert).
 #io-fn !IO function binding (unwrap or wrap variant).
 #multiplier !Extra multiplier on the vault conversion rate.
 
+/* Sell tSTOX for wtSTOX (taker unwraps). Vault = input. */
 #st0x-swap-unwrap
-  wrap-ratio: erc4626-convert-to-assets(output-token() 1),
+  wrap-ratio: erc4626-convert-to-shares(input-token() 1),
   :ensure(
     greater-than(wrap-ratio 0)
     "Unwrap ratio zero"
   ),
   _: wrap-ratio;
 
+/* Sell wtSTOX for tSTOX (taker wraps). Vault = output. */
 #st0x-swap-wrap
-  wrap-ratio: erc4626-convert-to-shares(output-token() 1),
+  wrap-ratio: erc4626-convert-to-assets(output-token() 1),
   :ensure(
     greater-than(wrap-ratio 0)
     "Wrap ratio zero"
