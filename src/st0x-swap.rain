@@ -16,7 +16,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
       erc4626-words: 0x0d09364EFa7753e53c9101715E7597E660E2919B
-      swap-fn: '''st0x-swap-unwrap'
+      swap-mode: 0
   st0x-swap-wrap:
     raindex: base
     rainlang: base
@@ -24,7 +24,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
       erc4626-words: 0x0d09364EFa7753e53c9101715E7597E660E2919B
-      swap-fn: '''st0x-swap-wrap'
+      swap-mode: 1
 
 deployments:
   base-unwrap:
@@ -66,28 +66,21 @@ builder:
 ---
 #raindex-subparser !The subparser to use.
 #erc4626-words !St0x words (ERC4626 convert).
-#swap-fn !Swap function binding (unwrap or wrap variant).
-
-#st0x-swap-unwrap
-  wrap-ratio: erc4626-convert-to-assets(output-token() 1),
-  :ensure(
-    greater-than(wrap-ratio 0)
-    "Unwrap ratio zero"
-  ),
-  _: wrap-ratio;
-
-#st0x-swap-wrap
-  wrap-ratio: erc4626-convert-to-shares(input-token() 1),
-  :ensure(
-    greater-than(wrap-ratio 0)
-    "Wrap ratio zero"
-  ),
-  _: wrap-ratio;
+#swap-mode !0 for unwrap (sell wtSTOX), 1 for wrap (sell tSTOX).
 
 #calculate-io
 using-words-from raindex-subparser erc4626-words
 max-output: max-positive-value(),
-io: call<'swap-fn>();
+wrap-ratio: if(
+  is-zero(swap-mode)
+  erc4626-convert-to-assets(output-token() 1)
+  erc4626-convert-to-shares(output-token() 1)
+),
+:ensure(
+  greater-than(wrap-ratio 0)
+  "ERC4626 wrap ratio is zero"
+),
+io: wrap-ratio;
 
 #handle-io
 :;
