@@ -1,0 +1,96 @@
+version: 6
+
+orders:
+  base:
+    raindex: base
+    inputs:
+      - token: token1
+    outputs:
+      - token: token2
+
+scenarios:
+  st0x-swap-unwrap:
+    raindex: base
+    rainlang: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      erc4626-words: 0x0d09364EFa7753e53c9101715E7597E660E2919B
+      swap-fn: '''st0x-swap-unwrap'
+  st0x-swap-wrap:
+    raindex: base
+    rainlang: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      erc4626-words: 0x0d09364EFa7753e53c9101715E7597E660E2919B
+      swap-fn: '''st0x-swap-wrap'
+
+deployments:
+  base-unwrap:
+    order: base
+    scenario: st0x-swap-unwrap
+  base-wrap:
+    order: base
+    scenario: st0x-swap-wrap
+
+builder:
+  name: St0x swap
+  description: Swap between wrapped and unwrapped ST0x SFT tokens at the on-chain ERC4626 conversion rate.
+  short-description: Swap wtSTOX and tSTOX at the live wrap/unwrap ratio.
+  deployments:
+    base-unwrap:
+      name: Base unwrap
+      description: Sell wtSTOX and receive tSTOX at the on-chain unwrap ratio.
+      deposits:
+        - token: token2
+      select-tokens:
+        - key: token1
+          name: Token to Buy
+          description: Select tSTOX
+        - key: token2
+          name: Token to Sell
+          description: Select wtSTOX
+    base-wrap:
+      name: Base wrap
+      description: Sell tSTOX and receive wtSTOX at the on-chain wrap ratio.
+      deposits:
+        - token: token2
+      select-tokens:
+        - key: token1
+          name: Token to Buy
+          description: Select wtSTOX
+        - key: token2
+          name: Token to Sell
+          description: Select tSTOX
+---
+#raindex-subparser !The subparser to use.
+#erc4626-words !St0x words (ERC4626 convert).
+#swap-fn !Swap function binding (unwrap or wrap variant).
+
+#st0x-swap-unwrap
+  wrap-ratio: erc4626-convert-to-assets(output-token() 1),
+  :ensure(
+    greater-than(wrap-ratio 0)
+    "Unwrap ratio zero"
+  ),
+  _: wrap-ratio;
+
+#st0x-swap-wrap
+  wrap-ratio: erc4626-convert-to-shares(input-token() 1),
+  :ensure(
+    greater-than(wrap-ratio 0)
+    "Wrap ratio zero"
+  ),
+  _: wrap-ratio;
+
+#calculate-io
+using-words-from raindex-subparser erc4626-words
+max-output: max-positive-value(),
+io: call<'swap-fn>();
+
+#handle-io
+:;
+
+#handle-add-order
+:;
