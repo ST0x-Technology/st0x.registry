@@ -16,6 +16,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
       erc4626-words: 0x0d09364EFa7753e53c9101715E7597E660E2919B
+      io-fn: '''st0x-swap-unwrap'
   st0x-swap-wrap:
     raindex: base
     rainlang: base
@@ -23,6 +24,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
       erc4626-words: 0x0d09364EFa7753e53c9101715E7597E660E2919B
+      io-fn: '''st0x-swap-wrap'
 
 deployments:
   base-unwrap:
@@ -42,12 +44,7 @@ builder:
       description: Sell wtSTOX and receive tSTOX at the on-chain unwrap ratio.
       deposits:
         - token: token2
-      fields:
-        - binding: swap-mode
-          name: Swap mode
-          description: Fixed to unwrap for this deployment.
-          show-custom-field: false
-          default: 0
+      fields: []
       select-tokens:
         - key: token1
           name: Token to Buy
@@ -60,12 +57,7 @@ builder:
       description: Sell tSTOX and receive wtSTOX at the on-chain wrap ratio.
       deposits:
         - token: token2
-      fields:
-        - binding: swap-mode
-          name: Swap mode
-          description: Fixed to wrap for this deployment.
-          show-custom-field: false
-          default: 1
+      fields: []
       select-tokens:
         - key: token1
           name: Token to Buy
@@ -76,21 +68,28 @@ builder:
 ---
 #raindex-subparser !The subparser to use.
 #erc4626-words !St0x words (ERC4626 convert).
-#swap-mode !0 for unwrap (sell wtSTOX), 1 for wrap (sell tSTOX).
+#io-fn !IO function binding (unwrap or wrap variant).
+
+#st0x-swap-unwrap
+  wrap-ratio: erc4626-convert-to-assets(output-token() 1),
+  :ensure(
+    greater-than(wrap-ratio 0)
+    "Unwrap ratio zero"
+  ),
+  _: wrap-ratio;
+
+#st0x-swap-wrap
+  wrap-ratio: erc4626-convert-to-shares(output-token() 1),
+  :ensure(
+    greater-than(wrap-ratio 0)
+    "Wrap ratio zero"
+  ),
+  _: wrap-ratio;
 
 #calculate-io
 using-words-from raindex-subparser erc4626-words
 max-output: max-positive-value(),
-wrap-ratio: if(
-  is-zero(swap-mode)
-  erc4626-convert-to-assets(output-token() 1)
-  erc4626-convert-to-shares(output-token() 1)
-),
-:ensure(
-  greater-than(wrap-ratio 0)
-  "ERC4626 wrap ratio is zero"
-),
-io: wrap-ratio;
+io: call<'io-fn>();
 
 #handle-io
 :;
