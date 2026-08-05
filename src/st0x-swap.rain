@@ -35,24 +35,28 @@ deployments:
     scenario: st0x-swap-wrap
 
 builder:
-  name: St0x swap
-  description: Swap between wrapped and unwrapped ST0x SFT tokens at the on-chain ERC4626 conversion rate.
-  short-description: Swap wtSTOX and tSTOX at the live wrap/unwrap ratio.
+  name: ST0x wrap / unwrap
+  description: Convert between wrapped shares (wtSTOX) and the underlying vault token (tSTOX) using the live on-chain vault rate.
+  short-description: Wrap tSTOX into wtSTOX, or unwrap wtSTOX back into tSTOX, at the vault conversion rate.
   deployments:
     base-unwrap:
-      name: Base unwrap
-      description: Sell wtSTOX and receive tSTOX at the on-chain unwrap ratio.
+      name: Unwrap wtSTOX to tSTOX
+      description: >
+        Sell wrapped shares and receive the underlying token.
+        Price tracks the vault convert-to-assets rate (how much tSTOX you get per wtSTOX).
       deposits:
         - token: token2
       fields:
         - binding: multiplier
-          name: Multiplier
-          description: Multiplier applied to the ERC4626 unwrap ratio.
+          name: Rate multiplier
+          description: >
+            Extra multiplier on the vault unwrap rate. Use 1 for the exact on-chain
+            conversion rate; above 1 asks for more tSTOX per wtSTOX sold.
           show-custom-field: true
           default: 1
           min: 0.000001
           presets:
-            - name: 1x
+            - name: Exact vault rate (1x)
               value: 1
             - name: 1.001x
               value: 1.001
@@ -60,25 +64,29 @@ builder:
               value: 1.005
       select-tokens:
         - key: token1
-          name: Token to Buy
-          description: Select tSTOX
+          name: Receive (underlying)
+          description: Select the underlying vault token to receive (tSTOX).
         - key: token2
-          name: Token to Sell
-          description: Select wtSTOX
+          name: Sell (wrapped)
+          description: Select the wrapped share token to sell (wtSTOX).
     base-wrap:
-      name: Base wrap
-      description: Sell tSTOX and receive wtSTOX at the on-chain wrap ratio.
+      name: Wrap tSTOX to wtSTOX
+      description: >
+        Sell the underlying token and receive wrapped shares.
+        Price tracks the vault convert-to-shares rate (how much wtSTOX you get per tSTOX).
       deposits:
         - token: token2
       fields:
         - binding: multiplier
-          name: Multiplier
-          description: Multiplier applied to the ERC4626 wrap ratio.
+          name: Rate multiplier
+          description: >
+            Extra multiplier on the vault wrap rate. Use 1 for the exact on-chain
+            conversion rate; above 1 asks for more wtSTOX per tSTOX sold.
           show-custom-field: true
           default: 1
           min: 0.000001
           presets:
-            - name: 1x
+            - name: Exact vault rate (1x)
               value: 1
             - name: 1.001x
               value: 1.001
@@ -86,16 +94,16 @@ builder:
               value: 1.005
       select-tokens:
         - key: token1
-          name: Token to Buy
-          description: Select wtSTOX
+          name: Receive (wrapped)
+          description: Select the wrapped share token to receive (wtSTOX).
         - key: token2
-          name: Token to Sell
-          description: Select tSTOX
+          name: Sell (underlying)
+          description: Select the underlying vault token to sell (tSTOX).
 ---
 #raindex-subparser !The subparser to use.
 #erc4626-words !St0x words (ERC4626 convert).
 #io-fn !IO function binding (unwrap or wrap variant).
-#multiplier !Multiplier applied to the ERC4626 conversion ratio.
+#multiplier !Extra multiplier on the vault conversion rate.
 
 #st0x-swap-unwrap
   wrap-ratio: erc4626-convert-to-assets(output-token() 1),
