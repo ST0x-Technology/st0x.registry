@@ -47,7 +47,7 @@ builder:
       fields:
         - binding: io-fn
           name: IO function
-          description: Unwrap — sell wtSTOX for tSTOX at convert-to-assets.
+          description: Unwrap - sell wtSTOX for tSTOX at convert-to-assets.
           show-custom-field: false
           default: '''st0x-swap-unwrap'
       select-tokens:
@@ -65,7 +65,7 @@ builder:
       fields:
         - binding: io-fn
           name: IO function
-          description: Wrap — sell tSTOX for wtSTOX at convert-to-shares.
+          description: Wrap - sell tSTOX for wtSTOX at convert-to-shares.
           show-custom-field: false
           default: '''st0x-swap-wrap'
       select-tokens:
