@@ -45,11 +45,19 @@ builder:
       deposits:
         - token: token2
       fields:
-        - binding: io-fn
-          name: IO function
-          description: Unwrap - sell wtSTOX for tSTOX at convert-to-assets.
-          show-custom-field: false
-          default: '''st0x-swap-unwrap'
+        - binding: multiplier
+          name: Multiplier
+          description: Multiplier applied to the ERC4626 unwrap ratio.
+          show-custom-field: true
+          default: 1
+          min: 0.000001
+          presets:
+            - name: 1x
+              value: 1
+            - name: 1.001x
+              value: 1.001
+            - name: 1.005x
+              value: 1.005
       select-tokens:
         - key: token1
           name: Token to Buy
@@ -63,11 +71,19 @@ builder:
       deposits:
         - token: token2
       fields:
-        - binding: io-fn
-          name: IO function
-          description: Wrap - sell tSTOX for wtSTOX at convert-to-shares.
-          show-custom-field: false
-          default: '''st0x-swap-wrap'
+        - binding: multiplier
+          name: Multiplier
+          description: Multiplier applied to the ERC4626 wrap ratio.
+          show-custom-field: true
+          default: 1
+          min: 0.000001
+          presets:
+            - name: 1x
+              value: 1
+            - name: 1.001x
+              value: 1.001
+            - name: 1.005x
+              value: 1.005
       select-tokens:
         - key: token1
           name: Token to Buy
@@ -79,6 +95,7 @@ builder:
 #raindex-subparser !The subparser to use.
 #erc4626-words !St0x words (ERC4626 convert).
 #io-fn !IO function binding (unwrap or wrap variant).
+#multiplier !Multiplier applied to the ERC4626 conversion ratio.
 
 #st0x-swap-unwrap
   wrap-ratio: erc4626-convert-to-assets(output-token() 1),
@@ -99,7 +116,10 @@ builder:
 #calculate-io
 using-words-from raindex-subparser erc4626-words
 max-output: max-positive-value(),
-io: call<'io-fn>();
+io: mul(
+  call<'io-fn>()
+  multiplier
+);
 
 #handle-io
 :;
