@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-07-27T00:00:00.000Z",
+    "timestamp": "2026-08-05T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 4,
+        "minor": 5,
         "patch": 0
     },
     "keywords": [
@@ -661,6 +661,101 @@
         },
         {
             "chainId": 8453,
+            "address": "0xd50f561322fe3235DBc9Ec8b3aB7693383d8A425",
+            "decimals": 18,
+            "name": "Wrapped Robinhood Markets, Inc. ST0x",
+            "symbol": "wtHOOD",
+            "logoURI": "https://st0x.io/images/HOOD.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x5cEfd886dD05001c2Fc32c313E05360D07f37d8f",
+                "receiptAddress": "0x942639370E1c095ECCe2BdffebFB295d0B3e384e",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:HOOD",
+                "isin": "US7707001027",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xCB9571aB96aA47374eF30D8E9ACCC1cD51064726",
+            "decimals": 18,
+            "name": "Wrapped Oracle Corporation ST0x",
+            "symbol": "wtORCL",
+            "logoURI": "https://st0x.io/images/ORCL.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x57573351f3fdD20a57dEE4a7f836de1cE9900d4B",
+                "receiptAddress": "0xBaf83f5D1dbC8CF4D5F5BCb93EfE23d0E333223f",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:ORCL",
+                "isin": "US68389X1054",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xA759FAbbD866e6DB8bF76613C35825dC2e380bf0",
+            "decimals": 18,
+            "name": "Wrapped Super Micro Computer, Inc. ST0x",
+            "symbol": "wtSMCI",
+            "logoURI": "https://st0x.io/images/SMCI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x8518931497d2A8f07Bc607D1D3295b398D065A65",
+                "receiptAddress": "0xC23aC719988d2ABeffEE8AC75C790E328c44Fe79",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:SMCI",
+                "isin": "US86800U3023",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x7e5cc7eAe0455A07Ab4abf354E0f5657BA2888BD",
+            "decimals": 18,
+            "name": "Wrapped Alibaba Group Holding Limited ADR ST0x",
+            "symbol": "wtBABA",
+            "logoURI": "https://st0x.io/images/BABA.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6B8fa7288dBEc7C1c62BfE59Cbd7Bec7EBF846C5",
+                "receiptAddress": "0x635983387673B0Da01f70a94985c6F88BfAf78c2",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:BABA",
+                "isin": "US01609W1027",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x295e9eCAb319006900a53b3f8D6Fcb0C131F4ada",
+            "decimals": 18,
+            "name": "Wrapped ProShares UltraPro QQQ ST0x",
+            "symbol": "wtTQQQ",
+            "logoURI": "https://st0x.io/images/TQQQ.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xcA1A378F9a250131A2fE51c10f120FeF7EDCa56E",
+                "receiptAddress": "0x81eFD642eBb942D725C4B035e7C3Cad154a37FAF",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:TQQQ",
+                "isin": "US74347X8314",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
             "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
             "decimals": 6,
             "name": "USD Coin",
@@ -1305,6 +1400,101 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:PTY",
                 "isin": "US72201B1017",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0xd50f561322fe3235DBc9Ec8b3aB7693383d8A425": {
+            "chainId": 8453,
+            "address": "0xd50f561322fe3235DBc9Ec8b3aB7693383d8A425",
+            "decimals": 18,
+            "name": "Wrapped Robinhood Markets, Inc. ST0x",
+            "symbol": "wtHOOD",
+            "logoURI": "https://st0x.io/images/HOOD.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x5cEfd886dD05001c2Fc32c313E05360D07f37d8f",
+                "receiptAddress": "0x942639370E1c095ECCe2BdffebFB295d0B3e384e",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:HOOD",
+                "isin": "US7707001027",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0xCB9571aB96aA47374eF30D8E9ACCC1cD51064726": {
+            "chainId": 8453,
+            "address": "0xCB9571aB96aA47374eF30D8E9ACCC1cD51064726",
+            "decimals": 18,
+            "name": "Wrapped Oracle Corporation ST0x",
+            "symbol": "wtORCL",
+            "logoURI": "https://st0x.io/images/ORCL.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x57573351f3fdD20a57dEE4a7f836de1cE9900d4B",
+                "receiptAddress": "0xBaf83f5D1dbC8CF4D5F5BCb93EfE23d0E333223f",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:ORCL",
+                "isin": "US68389X1054",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0xA759FAbbD866e6DB8bF76613C35825dC2e380bf0": {
+            "chainId": 8453,
+            "address": "0xA759FAbbD866e6DB8bF76613C35825dC2e380bf0",
+            "decimals": 18,
+            "name": "Wrapped Super Micro Computer, Inc. ST0x",
+            "symbol": "wtSMCI",
+            "logoURI": "https://st0x.io/images/SMCI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x8518931497d2A8f07Bc607D1D3295b398D065A65",
+                "receiptAddress": "0xC23aC719988d2ABeffEE8AC75C790E328c44Fe79",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:SMCI",
+                "isin": "US86800U3023",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x7e5cc7eAe0455A07Ab4abf354E0f5657BA2888BD": {
+            "chainId": 8453,
+            "address": "0x7e5cc7eAe0455A07Ab4abf354E0f5657BA2888BD",
+            "decimals": 18,
+            "name": "Wrapped Alibaba Group Holding Limited ADR ST0x",
+            "symbol": "wtBABA",
+            "logoURI": "https://st0x.io/images/BABA.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6B8fa7288dBEc7C1c62BfE59Cbd7Bec7EBF846C5",
+                "receiptAddress": "0x635983387673B0Da01f70a94985c6F88BfAf78c2",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:BABA",
+                "isin": "US01609W1027",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x295e9eCAb319006900a53b3f8D6Fcb0C131F4ada": {
+            "chainId": 8453,
+            "address": "0x295e9eCAb319006900a53b3f8D6Fcb0C131F4ada",
+            "decimals": 18,
+            "name": "Wrapped ProShares UltraPro QQQ ST0x",
+            "symbol": "wtTQQQ",
+            "logoURI": "https://st0x.io/images/TQQQ.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xcA1A378F9a250131A2fE51c10f120FeF7EDCa56E",
+                "receiptAddress": "0x81eFD642eBb942D725C4B035e7C3Cad154a37FAF",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:TQQQ",
+                "isin": "US74347X8314",
                 "tradingViewMarket": "america"
             }
         },
