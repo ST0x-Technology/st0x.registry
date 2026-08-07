@@ -205,7 +205,7 @@ oracle-output-token: signed-context<0 7>(),
 ),
 :ensure(
   less-than-or-equal-to(oracle-publish-time now())
-  "Oracle publish time in the future"
+  "Publish time in future"
 ),
 :ensure(
   less-than-or-equal-to(
