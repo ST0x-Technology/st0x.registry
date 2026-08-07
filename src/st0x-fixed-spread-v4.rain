@@ -197,8 +197,8 @@ oracle-output-token: signed-context<0 7>(),
 /* Freshness guard: reject signed prices older than max-staleness.
  * Session bounds alone are not enough - a quote from earlier in the
  * session could otherwise be replayed until session end. Future
- * publish timestamps must be rejected first so saturating-sub cannot
- * clamp them to zero and falsely pass the age check. */
+ * publish timestamps must be rejected first so sub(now() publish)
+ * cannot underflow. Base rainlang has no saturating-sub word. */
 :ensure(
   greater-than(max-staleness 0)
   "Max staleness must be positive"
@@ -209,7 +209,7 @@ oracle-output-token: signed-context<0 7>(),
 ),
 :ensure(
   less-than-or-equal-to(
-    saturating-sub(now() oracle-publish-time)
+    sub(now() oracle-publish-time)
     max-staleness
   )
   "Oracle price expired"
