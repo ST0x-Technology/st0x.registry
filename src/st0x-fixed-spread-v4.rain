@@ -74,6 +74,24 @@ builder:
             asset's expected range.
           default: 100000
           min: 1
+        - binding: max-staleness
+          name: Max price age (seconds)
+          description: >
+            Maximum age of the signed oracle price relative to block
+            time. If now() minus publish-time exceeds this, the order
+            reverts so stale quotes cannot be reused until session end.
+          show-custom-field: true
+          default: 60
+          min: 1
+          presets:
+            - name: 30 seconds
+              value: 30
+            - name: 1 minute (60)
+              value: 60
+            - name: 5 minutes (300)
+              value: 300
+            - name: 1 hour (3600)
+              value: 3600
       select-tokens:
         - key: output
           name: Token to Sell
@@ -88,6 +106,7 @@ builder:
 #allowed-session !Market-session filter (Rain string literal). Use the "rth", "premarket", or "afterhours" presets for a single session, or "all" for pre+RTH+post.
 #min-price !Minimum acceptable oracle price. Orders revert below this. Catches catastrophic mispricings.
 #max-price !Maximum acceptable oracle price. Orders revert above this. Catches overflow or encoding errors.
+#max-staleness !Maximum age of oracle publish-time vs block.timestamp, in seconds.
 
 #calculate-io
 using-words-from raindex-subparser
@@ -173,6 +192,21 @@ oracle-output-token: signed-context<0 7>(),
 :ensure(
   greater-than-or-equal-to(oracle-publish-time oracle-session-start)
   "Price before session start"
+),
+
+/* Freshness guard: reject signed prices older than max-staleness.
+ * Session bounds alone are not enough - a quote from earlier in the
+ * session could otherwise be replayed until session end. */
+:ensure(
+  greater-than(max-staleness 0)
+  "Max staleness must be positive"
+),
+:ensure(
+  less-than-or-equal-to(
+    saturating-sub(now() oracle-publish-time)
+    max-staleness
+  )
+  "Oracle price expired"
 ),
 
 /*
