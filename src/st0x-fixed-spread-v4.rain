@@ -196,10 +196,16 @@ oracle-output-token: signed-context<0 7>(),
 
 /* Freshness guard: reject signed prices older than max-staleness.
  * Session bounds alone are not enough - a quote from earlier in the
- * session could otherwise be replayed until session end. */
+ * session could otherwise be replayed until session end. Future
+ * publish timestamps must be rejected first so saturating-sub cannot
+ * clamp them to zero and falsely pass the age check. */
 :ensure(
   greater-than(max-staleness 0)
   "Max staleness must be positive"
+),
+:ensure(
+  less-than-or-equal-to(oracle-publish-time now())
+  "Oracle publish time in the future"
 ),
 :ensure(
   less-than-or-equal-to(
