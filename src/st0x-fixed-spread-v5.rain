@@ -29,7 +29,7 @@ builder:
   description: https://raw.githubusercontent.com/rainlanguage/rain.strategies/main/src/fixed-spread.md
   short-description: >
     A strategy where the ratio tracks the st0x v5 oracle baseline price,
-    gated on market session and pair-bound to the deployed IO pair.
+    pair-bound to the deployed IO pair, with oracle frame expiry.
   deployments:
     base:
       name: Base st0x fixed spread v5
@@ -37,25 +37,6 @@ builder:
       deposits:
         - token: output
       fields:
-        - binding: allowed-session
-          name: Market session
-          description: >
-            Which market session this strategy will quote during. The
-            v5 oracle signs the current session into the context;
-            orders revert when the signed session does not match.
-            Choose a single session or all active sessions (pre-market,
-            regular hours, and after-hours). Overnight and weekend
-            closed sessions always revert.
-          default: '"rth"'
-          presets:
-            - name: Regular trading hours (09:30-16:00 ET)
-              value: '"rth"'
-            - name: Pre-market (04:00-09:30 ET)
-              value: '"premarket"'
-            - name: After-hours (16:00-20:00 ET)
-              value: '"afterhours"'
-            - name: All active sessions (pre-market, RTH, after-hours)
-              value: '"all"'
         - binding: min-price
           name: Minimum Price
           description: >
@@ -85,7 +66,6 @@ builder:
 #raindex-subparser !Raindex subparser.
 #oracle-signer !The trusted signer address for the st0x oracle server.
 #oracle-schema-version !Expected oracle context schema version (= 5 for v5).
-#allowed-session !Market-session filter (Rain string literal). Use the "rth", "premarket", or "afterhours" presets for a single session, or "all" for pre+RTH+post.
 #min-price !Minimum acceptable oracle price. Orders revert below this. Catches catastrophic mispricings.
 #max-price !Maximum acceptable oracle price. Orders revert above this. Catches overflow or encoding errors.
 
@@ -144,23 +124,15 @@ oracle-expiry: signed-context<0 8>(),
   "Oracle output token mismatch"
 ),
 
-/* Session guard. Oracle session must be an active market session
- * (pre-market, RTH, or after-hours). Then accept either the
- * deployer "all" sentinel or an exact match to allowed-session.
- * Overnight/weekend closed sessions always revert. */
+/* Active-session guard (no deployer field). Oracle expiry is already
+ * clamped to session end; this rejects overnight/weekend closed tags. */
 :ensure(
-  every(
-    any(
-      equal-to(oracle-session "rth")
-      equal-to(oracle-session "premarket")
-      equal-to(oracle-session "afterhours")
-    )
-    any(
-      equal-to(allowed-session "all")
-      equal-to(oracle-session allowed-session)
-    )
+  any(
+    equal-to(oracle-session "rth")
+    equal-to(oracle-session "premarket")
+    equal-to(oracle-session "afterhours")
   )
-  "Not in allowed market session"
+  "Not in active market session"
 ),
 
 /* Chain-time bounds: block.timestamp must fall inside the session
@@ -178,7 +150,8 @@ oracle-expiry: signed-context<0 8>(),
   "Price before session start"
 ),
 
-/* Frame expiry: v5 stamps an absolute deadline; reject after it. */
+/* Frame expiry: v5 stamps an absolute deadline (clamped to session
+ * end by the oracle); reject after it. */
 :ensure(
   less-than-or-equal-to(now() oracle-expiry)
   "Past oracle expiry"

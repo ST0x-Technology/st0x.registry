@@ -28,11 +28,11 @@ builder:
   name: st0x Oracle Limit v5
   description: >
     A limit order for st0x tokenized equities that uses the st0x oracle
-    server's v5 endpoint. Same behaviour as v4 (signed session tag +
-    session-window guard + min/max price bounds + pair bind) plus an
-    absolute frame expiry stamped by the oracle. Every quote is signed
-    against a (input_token, output_token) pair the caller nominated,
-    and this order asserts those match the running order's IO addresses
+    server's v5 endpoint. Pair-bound signed quotes with session-window
+    and absolute frame expiry (clamped to session end by the oracle),
+    plus min/max price safety bounds. Every quote is signed against a
+    (input_token, output_token) pair the caller nominated, and this
+    order asserts those match the running order's IO addresses
     byte-for-byte - so a signed frame for pair (A,B) cannot be replayed
     against an order whose IO is (C,D), even if both prices happen to
     fit the same min/max band.
@@ -40,28 +40,14 @@ builder:
     The oracle automatically returns the correct price direction:
     - Buy tStock (input USDC, output tStock): ask price
     - Sell tStock (input tStock, output USDC): 1/bid price
-  short-description: A limit order for tStocks priced at real-time Alpaca NBBO via signed context oracle, gated on market session and pair-bound.
+  short-description: A limit order for tStocks priced via signed context oracle, pair-bound with frame expiry.
   deployments:
     base:
       name: Base
-      description: Deploy an oracle-priced tStock limit order on Base, restricted to a specific market session, pair-bound to the deployed IO pair.
+      description: Deploy an oracle-priced tStock limit order on Base, pair-bound to the deployed IO pair.
       deposits:
         - token: token2
       fields:
-        - binding: allowed-session
-          name: Market session
-          description: >
-            Which market session this strategy will quote during. The
-            v5 oracle signs the current session into the context;
-            orders revert when the signed session does not match.
-          default: '"rth"'
-          presets:
-            - name: Regular trading hours (09:30-16:00 ET)
-              value: '"rth"'
-            - name: Pre-market (04:00-09:30 ET)
-              value: '"premarket"'
-            - name: After-hours (16:00-20:00 ET)
-              value: '"afterhours"'
         - binding: min-price
           name: Minimum Price
           description: >
@@ -93,7 +79,6 @@ builder:
 
 #oracle-signer !The trusted signer address for the st0x oracle server.
 #oracle-schema-version !Expected oracle context schema version (= 5 for v5).
-#allowed-session !Required market-session tag (Rain string literal). One of "rth", "premarket", "afterhours". Must match oracle context slot 3.
 
 #min-price !Minimum acceptable oracle price. Orders revert below this. Catches catastrophic mispricings.
 #max-price !Maximum acceptable oracle price. Orders revert above this. Catches overflow or encoding errors.
@@ -154,19 +139,20 @@ oracle-expiry: signed-context<0 8>(),
   "Oracle output token mismatch"
 ),
 
-/* Session guard. Strategy only operates in the deployer-chosen session.
- * The oracle signs the session as Rain IntOrAString V3 bytes32 in
- * slot 3, matching the on-the-wire bytes32 a Rainlang string
- * literal parses to - so the user-bound allowed-session is just
- * "rth" / "premarket" / "afterhours". */
+/* Active-session guard (no deployer field). Oracle expiry is already
+ * clamped to session end; this rejects overnight/weekend closed tags. */
 :ensure(
-  equal-to(oracle-session allowed-session)
-  "Not in allowed market session"
+  any(
+    equal-to(oracle-session "rth")
+    equal-to(oracle-session "premarket")
+    equal-to(oracle-session "afterhours")
+  )
+  "Not in active market session"
 ),
 
 /* Chain-time bounds: block.timestamp must fall inside the session
  * window the oracle stamped. If block.timestamp is past
- * `oracle-session-end` the session is over (or the oracle's cached
+ * oracle-session-end the session is over (or the oracle's cached
  * calendar is stale) and we revert. */
 :ensure(
   greater-than-or-equal-to(now() oracle-session-start)
@@ -181,7 +167,8 @@ oracle-expiry: signed-context<0 8>(),
   "Price before session start"
 ),
 
-/* Frame expiry: v5 stamps an absolute deadline; reject after it. */
+/* Frame expiry: v5 stamps an absolute deadline (clamped to session
+ * end by the oracle); reject after it. */
 :ensure(
   less-than-or-equal-to(now() oracle-expiry)
   "Past oracle expiry"
