@@ -3,7 +3,7 @@ version: 6
 orders:
   base:
     raindex: base
-    oracle-url: https://oracle.t0trade.com/context/v4
+    oracle-url: https://oracle.t0trade.com/context/v5
     inputs:
       - token: input
     outputs:
@@ -17,7 +17,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
       oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
-      oracle-schema-version: 4
+      oracle-schema-version: 5
 
 deployments:
   base:
@@ -25,14 +25,14 @@ deployments:
     scenario: base
 
 builder:
-  name: St0x fixed spread limit v4
+  name: St0x fixed spread limit v5
   description: https://raw.githubusercontent.com/rainlanguage/rain.strategies/main/src/fixed-spread.md
   short-description: >
-    A strategy where the ratio tracks the st0x v4 oracle baseline price,
+    A strategy where the ratio tracks the st0x v5 oracle baseline price,
     gated on market session and pair-bound to the deployed IO pair.
   deployments:
     base:
-      name: Base st0x fixed spread v4
+      name: Base st0x fixed spread v5
       description: Deploy a fixed-spread strategy on Base, pair-bound to the deployed IO pair.
       deposits:
         - token: output
@@ -41,7 +41,7 @@ builder:
           name: Market session
           description: >
             Which market session this strategy will quote during. The
-            v4 oracle signs the current session into the context;
+            v5 oracle signs the current session into the context;
             orders revert when the signed session does not match.
             Choose a single session or all active sessions (pre-market,
             regular hours, and after-hours). Overnight and weekend
@@ -74,24 +74,6 @@ builder:
             asset's expected range.
           default: 100000
           min: 1
-        - binding: max-staleness
-          name: Max price age (seconds)
-          description: >
-            Maximum age of the signed oracle price relative to block
-            time. If now() minus publish-time exceeds this, the order
-            reverts so stale quotes cannot be reused until session end.
-          show-custom-field: true
-          default: 60
-          min: 1
-          presets:
-            - name: 30 seconds
-              value: 30
-            - name: 1 minute (60)
-              value: 60
-            - name: 5 minutes (300)
-              value: 300
-            - name: 1 hour (3600)
-              value: 3600
       select-tokens:
         - key: output
           name: Token to Sell
@@ -102,11 +84,10 @@ builder:
 ---
 #raindex-subparser !Raindex subparser.
 #oracle-signer !The trusted signer address for the st0x oracle server.
-#oracle-schema-version !Expected oracle context schema version (= 4 for v4).
+#oracle-schema-version !Expected oracle context schema version (= 5 for v5).
 #allowed-session !Market-session filter (Rain string literal). Use the "rth", "premarket", or "afterhours" presets for a single session, or "all" for pre+RTH+post.
 #min-price !Minimum acceptable oracle price. Orders revert below this. Catches catastrophic mispricings.
 #max-price !Maximum acceptable oracle price. Orders revert above this. Catches overflow or encoding errors.
-#max-staleness !Maximum age of oracle publish-time vs block.timestamp, in seconds.
 
 #calculate-io
 using-words-from raindex-subparser
@@ -118,7 +99,7 @@ using-words-from raindex-subparser
 ),
 
 /* Schema version guard
- * If the server ever changes the v4 layout, live orders must
+ * If the server ever changes the v5 layout, live orders must
  * revert instead of misreading slots. */
 oracle-version: signed-context<0 0>(),
 :ensure(
@@ -145,12 +126,15 @@ oracle-session-end: signed-context<0 5>(),
 oracle-input-token: signed-context<0 6>(),
 oracle-output-token: signed-context<0 7>(),
 
-/* PAIR BIND: the whole reason v4 exists. Assert the signed frame
- * targets THIS order's IO pair. Without this check, a valid signed
- * frame for pair (A,B) could be replayed against an order whose IO
- * is (C,D) whenever the min/max price bands overlap. `input-token()`
- * and `output-token()` are the raindex subparser context words that
- * expose the current order's IO addresses at execution time. */
+/* v5: absolute expiry for this signed frame. */
+oracle-expiry: signed-context<0 8>(),
+
+/* PAIR BIND: assert the signed frame targets THIS order's IO pair.
+ * Without this check, a valid signed frame for pair (A,B) could be
+ * replayed against an order whose IO is (C,D) whenever the min/max
+ * price bands overlap. `input-token()` and `output-token()` are the
+ * raindex subparser context words that expose the current order's
+ * IO addresses at execution time. */
 :ensure(
   equal-to(oracle-input-token input-token())
   "Oracle input token mismatch"
@@ -194,20 +178,10 @@ oracle-output-token: signed-context<0 7>(),
   "Price before session start"
 ),
 
-/* Freshness guard: reject signed prices older than max-staleness.
- * Session bounds alone are not enough - a quote from earlier in the
- * session could otherwise be replayed until session end. A future
- * publish-time makes sub underflow (or a huge age), so it also fails. */
+/* Frame expiry: v5 stamps an absolute deadline; reject after it. */
 :ensure(
-  greater-than(max-staleness 0)
-  "Max staleness must be positive"
-),
-:ensure(
-  less-than-or-equal-to(
-    sub(now() oracle-publish-time)
-    max-staleness
-  )
-  "Oracle price expired"
+  less-than-or-equal-to(now() oracle-expiry)
+  "Past oracle expiry"
 ),
 
 /*
