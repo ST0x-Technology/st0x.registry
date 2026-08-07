@@ -141,21 +141,21 @@ oracle-output-token: signed-context<0 7>(),
   "Oracle output token mismatch"
 ),
 
-/* Session guard. When `allowed-session` is the deployer-only "all"
- * sentinel, accept pre-market, RTH, or after-hours. Otherwise
- * require an exact match to the chosen session. Overnight/weekend
- * closed sessions always revert. */
+/* Session guard. Oracle session must be an active market session
+ * (pre-market, RTH, or after-hours). Then accept either the
+ * deployer "all" sentinel or an exact match to allowed-session.
+ * Overnight/weekend closed sessions always revert. */
 :ensure(
-  any(
-    every(
-      equal-to(allowed-session "all")
-      any(
-        equal-to(oracle-session "rth")
-        equal-to(oracle-session "premarket")
-        equal-to(oracle-session "afterhours")
-      )
+  every(
+    any(
+      equal-to(oracle-session "rth")
+      equal-to(oracle-session "premarket")
+      equal-to(oracle-session "afterhours")
     )
-    equal-to(oracle-session allowed-session)
+    any(
+      equal-to(allowed-session "all")
+      equal-to(oracle-session allowed-session)
+    )
   )
   "Not in allowed market session"
 ),
