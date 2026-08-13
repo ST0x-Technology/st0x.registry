@@ -3,7 +3,7 @@
     "timestamp": "2026-08-13T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 1,
+        "minor": 2,
         "patch": 0
     },
     "keywords": [
@@ -701,6 +701,82 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:ORCL",
                 "isin": "US68389X1054",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 1,
+            "address": "0x03bBb4148BA82D63993D32FB8E6Eff8cC51A56f2",
+            "decimals": 18,
+            "name": "Wrapped iShares iBonds 2027 Term High Yield and Income ETF ST0x",
+            "symbol": "wtIBHG",
+            "logoURI": "https://st0x.io/images/IBHG.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x36B30F5b5D1ACD3D8135afE7A5516A300021F139",
+                "receiptAddress": "0x8e05Cb17994ee9b207e87993717f6Fb2Ee7d0BD3",
+                "category": "ST0x",
+                "tradingViewSymbol": "BATS:IBHG",
+                "isin": "US46436E3128",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 1,
+            "address": "0x8fC87BE766c0cB6f254f1Fdc9351D4B85B560fb3",
+            "decimals": 18,
+            "name": "Wrapped Rocket Lab USA Inc ST0x",
+            "symbol": "wtRKLB",
+            "logoURI": "https://st0x.io/images/RKLB.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xED0C085D92C262Fb46937cb0b3c9763af7FccF30",
+                "receiptAddress": "0xff5B15A4F478f296893B0b244D9b118Be87BCdA2",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:RKLB",
+                "isin": "US7731211089",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 1,
+            "address": "0x8DDaeC53399e5324bbc60a368ea853c713629b1d",
+            "decimals": 18,
+            "name": "Wrapped Super Micro Computer, Inc. ST0x",
+            "symbol": "wtSMCI",
+            "logoURI": "https://st0x.io/images/SMCI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x3B3936b5eC170cdB5823012dBF4DF1d56cFa1ba5",
+                "receiptAddress": "0x1B5dF34bD6397bA7d9a365263692A006e7A2972A",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:SMCI",
+                "isin": "US86800U1043",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 1,
+            "address": "0x04ee4Ed5fF6643ea955503f966012B684f479966",
+            "decimals": 18,
+            "name": "Wrapped ProShares UltraPro QQQ ST0x",
+            "symbol": "wtTQQQ",
+            "logoURI": "https://st0x.io/images/TQQQ.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xF3875383506677bCDA6b9f12c48fF7fE300970d7",
+                "receiptAddress": "0x58916ac4E186Ad201376288A6655EA46B55B8ac5",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:TQQQ",
+                "isin": "US74347X8314",
                 "tradingViewMarket": "america"
             }
         },
