@@ -47,5 +47,5 @@ local-db-sync:
     bootstrap-block-threshold: 300
     sync-interval-ms: 5000
 using-tokens-from:
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/PLACEHOLDER/token-lists/base.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/PLACEHOLDER/token-lists/ethereum.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a20aa138ebf567da5ed3535e62ecf97fdf0ad4a9/token-lists/base.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a20aa138ebf567da5ed3535e62ecf97fdf0ad4a9/token-lists/ethereum.json
