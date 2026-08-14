@@ -3,7 +3,7 @@
     "timestamp": "2026-08-14T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 1,
+        "minor": 2,
         "patch": 0
     },
     "keywords": [
@@ -796,6 +796,25 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:FTF",
                 "isin": "US35472T1016",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 999,
+            "address": "0x15925E1c19c0F0d392F6FCb40FdE9144Dd823962",
+            "decimals": 18,
+            "name": "Wrapped Cerebras Systems Inc. ST0x",
+            "symbol": "wtCBRS",
+            "logoURI": "https://st0x.io/images/CBRS.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x75E0d127794b9C26eE35c55fbaBcc41c53Ccb37C",
+                "receiptAddress": "0x8Ea1ba9Fc0CF7338B41DdDa5B778a9118274AEA8",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:CBRS",
+                "isin": "US15675D1037",
                 "tradingViewMarket": "america"
             }
         },
