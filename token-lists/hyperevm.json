@@ -1,9 +1,9 @@
 {
     "name": "ST0x HyperEVM Token List",
-    "timestamp": "2026-08-13T00:00:00.000Z",
+    "timestamp": "2026-08-14T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 0,
+        "minor": 1,
         "patch": 0
     },
     "keywords": [
@@ -777,6 +777,25 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TQQQ",
                 "isin": "US74347X8314",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 999,
+            "address": "0x710A14a41a8Ea2e25376124C48bf9cAdc1E69be5",
+            "decimals": 18,
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x334ccaD2e7D774F5e6A13437977dD0878926deF8",
+                "receiptAddress": "0x05215bE061F61d341703a6b63AcFDFf396965425",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
                 "tradingViewMarket": "america"
             }
         },
