@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-08-05T00:00:00.000Z",
+    "timestamp": "2026-08-14T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 5,
+        "minor": 6,
         "patch": 0
     },
     "keywords": [
@@ -756,6 +756,25 @@
         },
         {
             "chainId": 8453,
+            "address": "0x9bDe199Ac6E7E050334306D9267c93e3D6d38333",
+            "decimals": 18,
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x51d5c8c8040358686952a30fac116aac32390d6a",
+                "receiptAddress": "0x4ca18bf0dcccbbd80cef238f4c9399efbde3927b",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 8453,
             "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
             "decimals": 6,
             "name": "USD Coin",
@@ -1495,6 +1514,25 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TQQQ",
                 "isin": "US74347X8314",
+                "tradingViewMarket": "america"
+            }
+        },
+        "8453_0x9bDe199Ac6E7E050334306D9267c93e3D6d38333": {
+            "chainId": 8453,
+            "address": "0x9bDe199Ac6E7E050334306D9267c93e3D6d38333",
+            "decimals": 18,
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x51d5c8c8040358686952a30fac116aac32390d6a",
+                "receiptAddress": "0x4ca18bf0dcccbbd80cef238f4c9399efbde3927b",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
                 "tradingViewMarket": "america"
             }
         },
