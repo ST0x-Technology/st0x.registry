@@ -53,6 +53,6 @@ local-db-sync:
     bootstrap-block-threshold: 300
     sync-interval-ms: 5000
 using-tokens-from:
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6984f7512e1c3165b4910f5776d27aff87c2cb10/token-lists/base.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6984f7512e1c3165b4910f5776d27aff87c2cb10/token-lists/ethereum.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/6984f7512e1c3165b4910f5776d27aff87c2cb10/token-lists/hyperevm.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ff6fcc75bfea9ffcf8d0d17e808b0b0feb03d3ec/token-lists/base.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ff6fcc75bfea9ffcf8d0d17e808b0b0feb03d3ec/token-lists/ethereum.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/ff6fcc75bfea9ffcf8d0d17e808b0b0feb03d3ec/token-lists/hyperevm.json
