@@ -51,22 +51,38 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "${PRIVATE_BASE_RPC_URLS}" ]; then
-            echo "PRIVATE_BASE_RPC_URLS secret is required" >&2
-            exit 1
-          fi
+          rpc_ok() {
+            local url="$1"
+            local body
+            body="$(
+              curl -sS --max-time 10 -X POST "$url" \
+                -H 'content-type: application/json' \
+                --data '{"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}' \
+                || true
+            )"
+            printf '%s' "$body" | grep -q '"result"'
+          }
 
-          # Secret may be newline- and/or comma-separated; take the first URL.
-          BASE_MAINNET_RPC_URL="$(
-            printf '%s\n' "${PRIVATE_BASE_RPC_URLS}" \
-              | tr ',' '\n' \
+          candidates="$(
+            {
+              printf '%s\n' "${PRIVATE_BASE_RPC_URLS:-}"
+              printf '%s\n' "https://mainnet.base.org"
+            } | tr ',' '\n' \
               | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
-              | sed '/^$/d' \
-              | head -n1
+              | sed '/^$/d'
           )"
 
+          BASE_MAINNET_RPC_URL=""
+          while IFS= read -r url; do
+            if rpc_ok "$url"; then
+              BASE_MAINNET_RPC_URL="$url"
+              break
+            fi
+            echo "skipping non-eth RPC candidate" >&2
+          done <<< "$candidates"
+
           if [ -z "${BASE_MAINNET_RPC_URL}" ]; then
-            echo "PRIVATE_BASE_RPC_URLS did not yield a usable RPC URL" >&2
+            echo "no usable Base eth JSON-RPC among PRIVATE_BASE_RPC_URLS / public fallback" >&2
             exit 1
           fi
 
