@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-08-25T00:00:00.000Z",
+    "timestamp": "2026-09-02T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 6,
-        "patch": 0
+        "patch": 1
     },
     "keywords": [
         "st0x",
@@ -829,18 +829,6 @@
                 "marketListed": true,
                 "marketQuote": false
             }
-        },
-        {
-            "chainId": 8453,
-            "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-            "decimals": 6,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
-            "extensions": {
-                "marketListed": true,
-                "marketQuote": true
-            }
         }
     ],
     "tokenMap": {
@@ -1652,18 +1640,6 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
-            }
-        },
-        "8453_0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
-            "chainId": 8453,
-            "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-            "decimals": 6,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
-            "extensions": {
-                "marketListed": true,
-                "marketQuote": true
             }
         }
     }
