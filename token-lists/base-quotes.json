@@ -1,0 +1,54 @@
+{
+    "name": "ST0x Base Quote Token List",
+    "timestamp": "2026-09-02T00:00:00.000Z",
+    "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+    },
+    "keywords": [
+        "st0x",
+        "quote",
+        "base"
+    ],
+    "tags": {
+        "quote": {
+            "name": "Quote",
+            "description": "Quote tokens for ST0x Base deployments"
+        }
+    },
+    "tokens": [
+        {
+            "chainId": 8453,
+            "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "decimals": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "quote"
+            ],
+            "extensions": {
+                "marketListed": true,
+                "marketQuote": true
+            }
+        }
+    ],
+    "tokenMap": {
+        "8453_0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
+            "chainId": 8453,
+            "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+            "decimals": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "quote"
+            ],
+            "extensions": {
+                "marketListed": true,
+                "marketQuote": true
+            }
+        }
+    }
+}
