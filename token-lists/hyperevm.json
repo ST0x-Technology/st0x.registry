@@ -1,10 +1,10 @@
 {
     "name": "ST0x HyperEVM Token List",
-    "timestamp": "2026-08-14T00:00:00.000Z",
+    "timestamp": "2026-09-03T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 2,
-        "patch": 0
+        "patch": 1
     },
     "keywords": [
         "st0x",
@@ -817,14 +817,6 @@
                 "isin": "US15675D1037",
                 "tradingViewMarket": "america"
             }
-        },
-        {
-            "chainId": 999,
-            "address": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
-            "decimals": 6,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
         }
     ]
 }

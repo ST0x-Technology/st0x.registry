@@ -1,10 +1,10 @@
 {
     "name": "ST0x Ethereum Token List",
-    "timestamp": "2026-08-14T00:00:00.000Z",
+    "timestamp": "2026-09-03T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 4,
-        "patch": 0
+        "patch": 1
     },
     "keywords": [
         "st0x",
@@ -817,14 +817,6 @@
                 "isin": "US15675D1037",
                 "tradingViewMarket": "america"
             }
-        },
-        {
-            "chainId": 1,
-            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "decimals": 6,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png"
         }
     ]
 }
