@@ -1,0 +1,313 @@
+version: 7
+
+orders:
+  base:
+    raindex: base
+    oracle-url: https://oracle.t0trade.com/context/v7
+    inputs:
+      - token: input
+    outputs:
+      - token: output
+
+scenarios:
+  base-sell:
+    raindex: base
+    rainlang: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      erc4626-subparser: 0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-schema-version: 7
+      wt-vault: ${order.outputs.0.token.address}
+      derive-fn: '''derive-sell'
+  base-buy:
+    raindex: base
+    rainlang: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      erc4626-subparser: 0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-schema-version: 7
+      wt-vault: ${order.inputs.0.token.address}
+      derive-fn: '''derive-buy'
+
+deployments:
+  base-sell:
+    order: base
+    scenario: base-sell
+  base-buy:
+    order: base
+    scenario: base-buy
+
+builder:
+  name: ST0x fixed spread limit v7
+  description: https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/61701f5e5991815f029bd77922eb3c98dd66d76a/src/st0x-fixed-spread-v7.md
+  short-description: >
+    A strategy whose ratio is DERIVED on-chain from the ST0x v7 oracle's
+    signed underlying price and the wrapped-token vault's live NAV,
+    pair-bound to the deployed IO pair, with oracle frame expiry. No NAV
+    assertion: a NAV step between quote and fill re-prices the fill
+    rather than reverting it.
+  deployments:
+    base-sell:
+      name: Base ST0x fixed spread v7 (sell shares)
+      description: >
+        Deploy a fixed-spread strategy on Base selling wrapped-token
+        vault shares, pair-bound to the deployed IO pair. The order ratio
+        is derived at every fill from the signed underlying price and the
+        vault's live convertToAssets, so a NAV step (e.g. a dividend
+        deposit) re-prices the fill at the new NAV instead of reverting.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the DERIVED vault price is
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the DERIVED vault price is
+            above this, the order reverts. Protects against overflow or
+            encoding errors. Set generously above the asset's expected
+            range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: >
+            Select the wrapped-token vault share you want to sell
+            (e.g. wtCOIN). This token must be an ERC4626 vault - its
+            live NAV is read at every fill to derive the price.
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to receive (e.g. USDC)
+    base-buy:
+      name: Base ST0x fixed spread v7 (buy shares)
+      description: >
+        Deploy a fixed-spread strategy on Base buying wrapped-token
+        vault shares, pair-bound to the deployed IO pair. The order ratio
+        is derived at every fill from the signed underlying price and the
+        vault's live convertToShares, so a NAV step (e.g. a dividend
+        deposit) re-prices the fill at the new NAV instead of reverting.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the DERIVED vault price is
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the DERIVED vault price is
+            above this, the order reverts. Protects against overflow or
+            encoding errors. Set generously above the asset's expected
+            range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell (e.g. USDC)
+        - key: input
+          name: Token to Buy
+          description: >
+            Select the wrapped-token vault share you want to receive
+            (e.g. wtCOIN). This token must be an ERC4626 vault - its
+            live NAV is read at every fill to derive the price.
+---
+#raindex-subparser !Raindex subparser.
+#erc4626-subparser !ERC4626 words subparser (rainlanguage/rain.erc4626.words) on Base.
+#oracle-signer !The trusted signer address for the st0x oracle server.
+#oracle-schema-version !Expected oracle context schema version (= 7 for v7).
+#wt-vault !The ERC4626 wrapped-token vault whose shares this order trades (the wt token IS the vault). Bound per scenario from the order's IO: the output token when selling shares, the input token when buying.
+#derive-fn !Per-scenario derivation binding: 'derive-sell when the vault is the output token, 'derive-buy when it is the input token. Selects the vault conversion that matches the order's IO direction.
+#min-price !Minimum acceptable DERIVED vault price. Orders revert below this. Catches catastrophic mispricings.
+#max-price !Maximum acceptable DERIVED vault price. Orders revert above this. Catches overflow or encoding errors.
+
+/* SELL scenario: the wt vault is the OUTPUT token, so the order ratio is
+ * quote per share. The vault's live assets-per-share
+ * (erc4626-convert-to-assets of one whole share) scales the underlying
+ * price up to the vault-share price. The literal `1` is Float one - one
+ * whole share - which at the wt vault's 18 share decimals is the raw
+ * 1e18 probe. */
+#derive-sell
+  _: erc4626-convert-to-assets(wt-vault 1);
+
+/* BUY scenario: the wt vault is the INPUT token, so the order ratio is
+ * shares per quote. The vault's live shares-per-asset
+ * (erc4626-convert-to-shares of one whole asset) scales the inverted
+ * underlying price into the shares-per-quote ratio. Reading the vault's
+ * own convert-to-shares for this direction - rather than a reciprocal of
+ * convert-to-assets - keeps the derived ratio the genuine live rate. */
+#derive-buy
+  _: erc4626-convert-to-shares(wt-vault 1);
+
+#calculate-io
+using-words-from raindex-subparser erc4626-subparser
+
+/* Verify the signed context comes from the trusted st0x oracle signer */
+:ensure(
+  equal-to(signer<0>() oracle-signer)
+  "Untrusted oracle signer"
+),
+
+/* Schema version guard
+ * If the server ever changes the v7 layout, live orders must
+ * revert instead of misreading slots. */
+oracle-version: signed-context<0 0>(),
+:ensure(
+  equal-to(oracle-version oracle-schema-version)
+  "Oracle schema version mismatch"
+),
+
+/* Read the signed UNDERLYING (stock) price from column 0, row 1. This is
+ * the directional, spread-included, ratio-unit price of the vault's
+ * ERC4626 underlying asset - the same orientation v5/v6 used for the
+ * vault-share price, but for the underlying. The vault-share price is
+ * DERIVED from it below; it is never the order ratio on its own. */
+oracle-underlying-price: signed-context<0 1>(),
+
+/* Read the source timestamp for the signed price. */
+oracle-publish-time: signed-context<0 2>(),
+
+/* Read the market session this quote was signed during. */
+oracle-session: signed-context<0 3>(),
+
+/* Read the UTC start and end of that current session. */
+oracle-session-start: signed-context<0 4>(),
+oracle-session-end: signed-context<0 5>(),
+
+/* Read the input/output token addresses the signer committed this
+ * price to. Both are Address values in bytes32 (left-padded with 12
+ * zero bytes) matching Ethereum's Address->bytes32 convention. */
+oracle-input-token: signed-context<0 6>(),
+oracle-output-token: signed-context<0 7>(),
+
+/* Absolute expiry for this signed frame (clamped to session end by the
+ * oracle). v7 signs no slot 9 - the NAV ratio is never signed. */
+oracle-expiry: signed-context<0 8>(),
+
+/* PAIR BIND: assert the signed frame targets THIS order's IO pair.
+ * Without this check, a valid signed frame for pair (A,B) could be
+ * replayed against an order whose IO is (C,D) whenever the min/max
+ * price bands overlap. `input-token()` and `output-token()` are the
+ * raindex subparser context words that expose the current order's
+ * IO addresses at execution time. */
+:ensure(
+  equal-to(oracle-input-token input-token())
+  "Oracle input token mismatch"
+),
+:ensure(
+  equal-to(oracle-output-token output-token())
+  "Oracle output token mismatch"
+),
+
+/* Active-session guard (no deployer field). Oracle expiry is already
+ * clamped to session end; this rejects overnight/weekend closed tags. */
+:ensure(
+  any(
+    equal-to(oracle-session "rth")
+    equal-to(oracle-session "premarket")
+    equal-to(oracle-session "afterhours")
+  )
+  "Not in active market session"
+),
+
+/* Chain-time bounds: block.timestamp must fall inside the session
+ * window the oracle stamped. */
+:ensure(
+  greater-than-or-equal-to(now() oracle-session-start)
+  "Before session start"
+),
+:ensure(
+  less-than-or-equal-to(now() oracle-session-end)
+  "After session end"
+),
+:ensure(
+  greater-than-or-equal-to(oracle-publish-time oracle-session-start)
+  "Price before session start"
+),
+
+/* Frame expiry: reject after the signed absolute deadline. */
+:ensure(
+  less-than-or-equal-to(now() oracle-expiry)
+  "Past oracle expiry"
+),
+
+/* DERIVE the vault-share price (RAI-2199, the "derive, don't gate"
+ * pivot). v7 removes v6's exact-match NAV assertion - a DoS surface,
+ * since a NAV step between the sign and the settle is outside any
+ * taker's control yet bricked every otherwise-valid frame (audit H03).
+ *
+ * Instead the strategy reads the vault's LIVE conversion on-chain and
+ * multiplies the signed underlying price by it. The scaling is atomic:
+ * the ratio used is always the live one, so a NAV step simply moves the
+ * derived price to its new correct value rather than reverting.
+ *
+ * `derive-fn` is bound per scenario to the conversion that matches the
+ * order's IO direction:
+ *   - sell (vault is output, ratio is quote per share): assets per share
+ *     via erc4626-convert-to-assets;
+ *   - buy  (vault is input, ratio is shares per quote): shares per asset
+ *     via erc4626-convert-to-shares.
+ * The signed underlying price carries the same directional inversion, so
+ * both directions are a MULTIPLY. */
+vault-price: mul(
+  oracle-underlying-price
+  call<'derive-fn>()
+),
+
+/*
+ * SAFETY GUARDS
+ * These protect against bugs, malformed oracle data, or server mishaps.
+ * They are NOT market risk controls - session gating already handles that.
+ * They apply to the DERIVED vault price, since that is the order ratio.
+ */
+
+/* Guard: zero ratio. A real underlying price and a real vault
+ * conversion are both non-zero, so a zero here means broken oracle data
+ * or a non-vault token bound as the vault. */
+:ensure(
+  greater-than(vault-price 0)
+  "Derived price is zero"
+),
+
+/* Guard: minimum price bound. Redundant with the pair bind above for
+ * the swapped-frame case, but still useful for a compromised signer
+ * or model regression that returns an in-band but wrong price for
+ * the correct pair. Inclusive: a price exactly at `min-price` matches
+ * the UI's "below this reverts" wording. */
+:ensure(
+  greater-than-or-equal-to(vault-price min-price)
+  "Price below minimum bound"
+),
+
+/* Guard: maximum price bound. Inclusive: same reasoning as min. */
+:ensure(
+  less-than-or-equal-to(vault-price max-price)
+  "Price above maximum bound"
+),
+
+offer-amount: max-positive-value(),
+io: vault-price;
+
+#handle-io
+:;
+
+#handle-add-order
+:;
