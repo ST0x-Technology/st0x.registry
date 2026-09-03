@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-09-02T00:00:00.000Z",
+    "timestamp": "2026-09-03T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 6,
-        "patch": 1
+        "minor": 7,
+        "patch": 0
     },
     "keywords": [
         "st0x",
@@ -829,6 +829,48 @@
                 "marketListed": true,
                 "marketQuote": false
             }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x9bDe199Ac6E7E050334306D9267c93e3D6d38333",
+            "decimals": 18,
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x51d5c8c8040358686952a30fac116aac32390d6a",
+                "receiptAddress": "0x4ca18bf0dcccbbd80cef238f4c9399efbde3927b",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xB457cfBF31995d3aAAa704dA9999cC0b011820ca",
+            "decimals": 18,
+            "name": "Wrapped Cerebras Systems Inc. ST0x",
+            "symbol": "wtCBRS",
+            "logoURI": "https://st0x.io/images/CBRS.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xbeb0c2011bd5520a0998b69132e9245e39ac5d1d",
+                "receiptAddress": "0xae8ad2340aa19749a0b935c7f2245823fc4f14fb",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:CBRS",
+                "isin": "US15675D1037",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
         }
     ],
     "tokenMap": {
@@ -1637,6 +1679,48 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:TQQQ",
                 "isin": "US74347X8314",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        "8453_0x9bDe199Ac6E7E050334306D9267c93e3D6d38333": {
+            "chainId": 8453,
+            "address": "0x9bDe199Ac6E7E050334306D9267c93e3D6d38333",
+            "decimals": 18,
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x51d5c8c8040358686952a30fac116aac32390d6a",
+                "receiptAddress": "0x4ca18bf0dcccbbd80cef238f4c9399efbde3927b",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        "8453_0xB457cfBF31995d3aAAa704dA9999cC0b011820ca": {
+            "chainId": 8453,
+            "address": "0xB457cfBF31995d3aAAa704dA9999cC0b011820ca",
+            "decimals": 18,
+            "name": "Wrapped Cerebras Systems Inc. ST0x",
+            "symbol": "wtCBRS",
+            "logoURI": "https://st0x.io/images/CBRS.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xbeb0c2011bd5520a0998b69132e9245e39ac5d1d",
+                "receiptAddress": "0xae8ad2340aa19749a0b935c7f2245823fc4f14fb",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:CBRS",
+                "isin": "US15675D1037",
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false

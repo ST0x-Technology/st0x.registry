@@ -1,0 +1,54 @@
+{
+    "name": "ST0x HyperEVM Quote Token List",
+    "timestamp": "2026-09-03T00:00:00.000Z",
+    "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+    },
+    "keywords": [
+        "st0x",
+        "quote",
+        "hyperevm"
+    ],
+    "tags": {
+        "quote": {
+            "name": "Quote",
+            "description": "Quote tokens for ST0x HyperEVM deployments"
+        }
+    },
+    "tokens": [
+        {
+            "chainId": 999,
+            "address": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+            "decimals": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "quote"
+            ],
+            "extensions": {
+                "marketListed": true,
+                "marketQuote": true
+            }
+        }
+    ],
+    "tokenMap": {
+        "999_0xb88339CB7199b77E23DB6E890353E22632Ba630f": {
+            "chainId": 999,
+            "address": "0xb88339CB7199b77E23DB6E890353E22632Ba630f",
+            "decimals": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "quote"
+            ],
+            "extensions": {
+                "marketListed": true,
+                "marketQuote": true
+            }
+        }
+    }
+}
