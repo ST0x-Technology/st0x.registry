@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-09-03T00:00:00.000Z",
+    "timestamp": "2026-09-04T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 7,
+        "minor": 8,
         "patch": 0
     },
     "keywords": [
@@ -867,6 +867,69 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:CBRS",
                 "isin": "US15675D1037",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x0883f32d23Ed5535057a4B5E3eB1970FE08606AF",
+            "decimals": 18,
+            "name": "Wrapped NIKE, Inc. ST0x",
+            "symbol": "wtNKE",
+            "logoURI": "https://st0x.io/images/NKE.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x88C3F4E2E0a977Fed97ed246c70BFD7A01070246",
+                "receiptAddress": "0x8A0037757d67084f5431c02eE2A352593eFe2957",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:NKE",
+                "isin": "US6541061031",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x7ecAE30Ed8ee4F72653ada7b0941bDE7a0a8eE8d",
+            "decimals": 18,
+            "name": "Wrapped McDonald's Corporation ST0x",
+            "symbol": "wtMCD",
+            "logoURI": "https://st0x.io/images/MCD.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6363657E19A82ABE0E210e9b8c88Ea61d96eceaB",
+                "receiptAddress": "0x1Cfa3Af9DcEc40dCa8f8588c7b7FCE5a1BA6eC3f",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:MCD",
+                "isin": "US5801351017",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x1197E6FA778c4D13E47875bD1761c68C22c928e0",
+            "decimals": 18,
+            "name": "Wrapped Grindr Inc. ST0x",
+            "symbol": "wtGRND",
+            "logoURI": "https://st0x.io/images/GRND.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xA4178410216F5f00C718BE88C2fF8AC24de192bc",
+                "receiptAddress": "0xca4495d2fe8e82951DEbda1102A1dCf09DB7Bba6",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:GRND",
+                "isin": "US39854F1012",
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
