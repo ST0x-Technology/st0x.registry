@@ -1,6 +1,6 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-09-03T00:00:00.000Z",
+    "timestamp": "2026-09-04T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 8,
@@ -909,6 +909,27 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NYSE:MCD",
                 "isin": "US5801351017",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x1197E6FA778c4D13E47875bD1761c68C22c928e0",
+            "decimals": 18,
+            "name": "Wrapped Grindr Inc. ST0x",
+            "symbol": "wtGRND",
+            "logoURI": "https://st0x.io/images/GRND.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xA4178410216F5f00C718BE88C2fF8AC24de192bc",
+                "receiptAddress": "0xca4495d2fe8e82951DEbda1102A1dCf09DB7Bba6",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:GRND",
+                "isin": "US39854F1012",
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
