@@ -1,0 +1,54 @@
+{
+    "name": "ST0x Ethereum Quote Token List",
+    "timestamp": "2026-09-03T00:00:00.000Z",
+    "version": {
+        "major": 1,
+        "minor": 0,
+        "patch": 0
+    },
+    "keywords": [
+        "st0x",
+        "quote",
+        "ethereum"
+    ],
+    "tags": {
+        "quote": {
+            "name": "Quote",
+            "description": "Quote tokens for ST0x Ethereum deployments"
+        }
+    },
+    "tokens": [
+        {
+            "chainId": 1,
+            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "decimals": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "quote"
+            ],
+            "extensions": {
+                "marketListed": true,
+                "marketQuote": true
+            }
+        }
+    ],
+    "tokenMap": {
+        "1_0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48": {
+            "chainId": 1,
+            "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+            "decimals": 6,
+            "name": "USD Coin",
+            "symbol": "USDC",
+            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "tags": [
+                "quote"
+            ],
+            "extensions": {
+                "marketListed": true,
+                "marketQuote": true
+            }
+        }
+    }
+}

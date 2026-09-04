@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-08-31T00:00:00.000Z",
+    "timestamp": "2026-09-04T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 7,
+        "minor": 8,
         "patch": 0
     },
     "keywords": [
@@ -832,21 +832,42 @@
         },
         {
             "chainId": 8453,
-            "address": "0xd92cc92557BFC33028195983ED31465F99b4A01c",
+            "address": "0x9bDe199Ac6E7E050334306D9267c93e3D6d38333",
             "decimals": 18,
-            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
-            "symbol": "wtMC.PA",
-            "logoURI": "https://st0x.io/images/MC.PA.png",
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
             "tags": [
                 "st0x"
             ],
             "extensions": {
-                "unwrappedAddress": "0xF5245a17E5eb64D53dEa213d40aBa01821D465Cd",
-                "receiptAddress": "0xBEDD4C7219E35E6C45BE792F31F076737481FF2c",
+                "unwrappedAddress": "0x51d5c8c8040358686952a30fac116aac32390d6a",
+                "receiptAddress": "0x4ca18bf0dcccbbd80cef238f4c9399efbde3927b",
                 "category": "ST0x",
-                "tradingViewSymbol": "EURONEXT:MC",
-                "isin": "FR0000121014",
-                "tradingViewMarket": "france",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xB457cfBF31995d3aAAa704dA9999cC0b011820ca",
+            "decimals": 18,
+            "name": "Wrapped Cerebras Systems Inc. ST0x",
+            "symbol": "wtCBRS",
+            "logoURI": "https://st0x.io/images/CBRS.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xbeb0c2011bd5520a0998b69132e9245e39ac5d1d",
+                "receiptAddress": "0xae8ad2340aa19749a0b935c7f2245823fc4f14fb",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:CBRS",
+                "isin": "US15675D1037",
+                "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
             }
@@ -867,6 +888,48 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "EURONEXT:AIR",
                 "isin": "NL0000235190",
+                "tradingViewMarket": "france",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xD0269618455cF7dA71665856f16C2D03A1b26290",
+            "decimals": 18,
+            "name": "Wrapped Bayerische Motoren Werke Aktiengesellschaft ST0x",
+            "symbol": "wtBMW.DE",
+            "logoURI": "https://st0x.io/images/BMW.DE.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x9610C265EB8F38B22Fec78498C74924D9fe55891",
+                "receiptAddress": "0x30864F2921886Dc491326D86015eB66c9601BF2b",
+                "category": "ST0x",
+                "tradingViewSymbol": "XETR:BMW",
+                "isin": "DE0005190003",
+                "tradingViewMarket": "germany",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xd92cc92557BFC33028195983ED31465F99b4A01c",
+            "decimals": 18,
+            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
+            "symbol": "wtMC.PA",
+            "logoURI": "https://st0x.io/images/MC.PA.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xF5245a17E5eb64D53dEa213d40aBa01821D465Cd",
+                "receiptAddress": "0xBEDD4C7219E35E6C45BE792F31F076737481FF2c",
+                "category": "ST0x",
+                "tradingViewSymbol": "EURONEXT:MC",
+                "isin": "FR0000121014",
                 "tradingViewMarket": "france",
                 "marketListed": true,
                 "marketQuote": false
@@ -895,20 +958,20 @@
         },
         {
             "chainId": 8453,
-            "address": "0xD0269618455cF7dA71665856f16C2D03A1b26290",
+            "address": "0xfae641bfE7009B5326396048b951E3aa31902a2B",
             "decimals": 18,
-            "name": "Wrapped Bayerische Motoren Werke Aktiengesellschaft ST0x",
-            "symbol": "wtBMW.DE",
-            "logoURI": "https://st0x.io/images/BMW.DE.png",
+            "name": "Wrapped Mercedes-Benz Group AG ST0x",
+            "symbol": "wtMBG.DE",
+            "logoURI": "https://st0x.io/images/MBG.DE.png",
             "tags": [
                 "st0x"
             ],
             "extensions": {
-                "unwrappedAddress": "0x9610C265EB8F38B22Fec78498C74924D9fe55891",
-                "receiptAddress": "0x30864F2921886Dc491326D86015eB66c9601BF2b",
+                "unwrappedAddress": "0x07d7ca9384812b86e7E429473dF354fb59DA73A0",
+                "receiptAddress": "0x984d884fc03D17e7b9cCfE6A32f27e9b6d9B92bd",
                 "category": "ST0x",
-                "tradingViewSymbol": "XETR:BMW",
-                "isin": "DE0005190003",
+                "tradingViewSymbol": "XETR:MBG",
+                "isin": "DE0007100000",
                 "tradingViewMarket": "germany",
                 "marketListed": true,
                 "marketQuote": false
@@ -916,14 +979,23 @@
         },
         {
             "chainId": 8453,
-            "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-            "decimals": 6,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+            "address": "0xD3c42aB4D5A60A50401b3A67D10B03Ce7D96DA19",
+            "decimals": 18,
+            "name": "Wrapped Rheinmetall AG ST0x",
+            "symbol": "wtRHM.DE",
+            "logoURI": "https://st0x.io/images/RHM.DE.png",
+            "tags": [
+                "st0x"
+            ],
             "extensions": {
+                "unwrappedAddress": "0x725E0Df28D1EB09338f63776B76bCfc00f3b6f44",
+                "receiptAddress": "0xfbd76467e4FBbd64dD43057bF137a75ec676C3c2",
+                "category": "ST0x",
+                "tradingViewSymbol": "XETR:RHM",
+                "isin": "DE0007030009",
+                "tradingViewMarket": "germany",
                 "marketListed": true,
-                "marketQuote": true
+                "marketQuote": false
             }
         }
     ],
@@ -1738,98 +1810,44 @@
                 "marketQuote": false
             }
         },
-        "8453_0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913": {
+        "8453_0x9bDe199Ac6E7E050334306D9267c93e3D6d38333": {
             "chainId": 8453,
-            "address": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-            "decimals": 6,
-            "name": "USD Coin",
-            "symbol": "USDC",
-            "logoURI": "https://static.optimism.io/data/USDC/logo.png",
-            "extensions": {
-                "marketListed": true,
-                "marketQuote": true
-            }
-        },
-        "8453_0xd92cc92557BFC33028195983ED31465F99b4A01c": {
-            "chainId": 8453,
-            "address": "0xd92cc92557BFC33028195983ED31465F99b4A01c",
+            "address": "0x9bDe199Ac6E7E050334306D9267c93e3D6d38333",
             "decimals": 18,
-            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
-            "symbol": "wtMC.PA",
-            "logoURI": "https://st0x.io/images/MC.PA.png",
+            "name": "Wrapped Franklin Limited Duration Income Trust ST0x",
+            "symbol": "wtFTF",
+            "logoURI": "https://st0x.io/images/FTF.png",
             "tags": [
                 "st0x"
             ],
             "extensions": {
-                "unwrappedAddress": "0xF5245a17E5eb64D53dEa213d40aBa01821D465Cd",
-                "receiptAddress": "0xBEDD4C7219E35E6C45BE792F31F076737481FF2c",
+                "unwrappedAddress": "0x51d5c8c8040358686952a30fac116aac32390d6a",
+                "receiptAddress": "0x4ca18bf0dcccbbd80cef238f4c9399efbde3927b",
                 "category": "ST0x",
-                "tradingViewSymbol": "EURONEXT:MC",
-                "isin": "FR0000121014",
-                "tradingViewMarket": "france",
+                "tradingViewSymbol": "AMEX:FTF",
+                "isin": "US35472T1016",
+                "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
             }
         },
-        "8453_0x1C600EF167c675C878BF3222f3935C4fA2A43C31": {
+        "8453_0xB457cfBF31995d3aAAa704dA9999cC0b011820ca": {
             "chainId": 8453,
-            "address": "0x1C600EF167c675C878BF3222f3935C4fA2A43C31",
+            "address": "0xB457cfBF31995d3aAAa704dA9999cC0b011820ca",
             "decimals": 18,
-            "name": "Wrapped Airbus SE ST0x",
-            "symbol": "wtAIR.PA",
-            "logoURI": "https://st0x.io/images/AIR.PA.png",
+            "name": "Wrapped Cerebras Systems Inc. ST0x",
+            "symbol": "wtCBRS",
+            "logoURI": "https://st0x.io/images/CBRS.png",
             "tags": [
                 "st0x"
             ],
             "extensions": {
-                "unwrappedAddress": "0xDdB07ADd0e23BB7eC97f53C0959d9c6Cc09624f4",
-                "receiptAddress": "0xa618f8eB7c33a23C84d1500c5191746f86F98b2A",
+                "unwrappedAddress": "0xbeb0c2011bd5520a0998b69132e9245e39ac5d1d",
+                "receiptAddress": "0xae8ad2340aa19749a0b935c7f2245823fc4f14fb",
                 "category": "ST0x",
-                "tradingViewSymbol": "EURONEXT:AIR",
-                "isin": "NL0000235190",
-                "tradingViewMarket": "france",
-                "marketListed": true,
-                "marketQuote": false
-            }
-        },
-        "8453_0xed0B0fdD92F7eece606A0FB0457352616d6e6B34": {
-            "chainId": 8453,
-            "address": "0xed0B0fdD92F7eece606A0FB0457352616d6e6B34",
-            "decimals": 18,
-            "name": "Wrapped Siemens Aktiengesellschaft ST0x",
-            "symbol": "wtSIE.DE",
-            "logoURI": "https://st0x.io/images/SIE.DE.png",
-            "tags": [
-                "st0x"
-            ],
-            "extensions": {
-                "unwrappedAddress": "0xa662066a60964a528aD05209139a79BDa3a7577f",
-                "receiptAddress": "0xe89995E4Bf9691486445917e3C69ed3d935183f1",
-                "category": "ST0x",
-                "tradingViewSymbol": "XETR:SIE",
-                "isin": "DE0007236101",
-                "tradingViewMarket": "germany",
-                "marketListed": true,
-                "marketQuote": false
-            }
-        },
-        "8453_0xD0269618455cF7dA71665856f16C2D03A1b26290": {
-            "chainId": 8453,
-            "address": "0xD0269618455cF7dA71665856f16C2D03A1b26290",
-            "decimals": 18,
-            "name": "Wrapped Bayerische Motoren Werke Aktiengesellschaft ST0x",
-            "symbol": "wtBMW.DE",
-            "logoURI": "https://st0x.io/images/BMW.DE.png",
-            "tags": [
-                "st0x"
-            ],
-            "extensions": {
-                "unwrappedAddress": "0x9610C265EB8F38B22Fec78498C74924D9fe55891",
-                "receiptAddress": "0x30864F2921886Dc491326D86015eB66c9601BF2b",
-                "category": "ST0x",
-                "tradingViewSymbol": "XETR:BMW",
-                "isin": "DE0005190003",
-                "tradingViewMarket": "germany",
+                "tradingViewSymbol": "NASDAQ:CBRS",
+                "isin": "US15675D1037",
+                "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
             }
