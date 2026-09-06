@@ -1084,20 +1084,20 @@
         },
         {
             "chainId": 8453,
-            "address": "0x761d56D1FE1E390A96A5ECf58dE69838A231A37c",
+            "address": "0x6aed8b1aCfb04F4e0e6db580F12fF41438a394e5",
             "decimals": 18,
-            "name": "Wrapped General Motors Company ST0x",
-            "symbol": "wtGM",
-            "logoURI": "https://st0x.io/images/GM.png",
+            "name": "Wrapped FGI Industries Ltd. ST0x",
+            "symbol": "wtFGI",
+            "logoURI": "https://st0x.io/images/FGI.png",
             "tags": [
                 "st0x"
             ],
             "extensions": {
-                "unwrappedAddress": "0x47C04A6f705f755C10641E975607ecE8f18BC60c",
-                "receiptAddress": "0x912193f95512480167B0894E20DDe5062105F3b7",
+                "unwrappedAddress": "0x785BD77B8e92866f87E01416D1022d729975D529",
+                "receiptAddress": "0x46b25F089fFf268E28286C0d7A837c2f13Ad0952",
                 "category": "ST0x",
-                "tradingViewSymbol": "NYSE:GM",
-                "isin": "US37045V1008",
+                "tradingViewSymbol": "NASDAQ:FGI",
+                "isin": "KYG3302D2024",
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
