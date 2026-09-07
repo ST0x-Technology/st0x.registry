@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-09-04T00:00:00.000Z",
+    "timestamp": "2026-09-06T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 9,
+        "minor": 10,
         "patch": 0
     },
     "keywords": [
@@ -1057,6 +1057,111 @@
                 "tradingViewSymbol": "XETR:RHM",
                 "isin": "DE0007030009",
                 "tradingViewMarket": "germany",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x1db49Ff8BEe88ec73F82F395B0BEAd372BdcAdb7",
+            "decimals": 18,
+            "name": "Wrapped Krispy Kreme, Inc. ST0x",
+            "symbol": "wtDNUT",
+            "logoURI": "https://st0x.io/images/DNUT.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6C2b6Ed57d4d9e93F3E4975FAc70eE4B180F4Eb9",
+                "receiptAddress": "0xE06eD5d80Db468a10fCfadF27ee9771DD73C7e35",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:DNUT",
+                "isin": "US50101L1061",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x6aed8b1aCfb04F4e0e6db580F12fF41438a394e5",
+            "decimals": 18,
+            "name": "Wrapped FGI Industries Ltd. ST0x",
+            "symbol": "wtFGI",
+            "logoURI": "https://st0x.io/images/FGI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x785BD77B8e92866f87E01416D1022d729975D529",
+                "receiptAddress": "0x46b25F089fFf268E28286C0d7A837c2f13Ad0952",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:FGI",
+                "isin": "KYG3302D2024",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x35fDe767dBFAa610D12cf99914bCd6CFEda73B7B",
+            "decimals": 18,
+            "name": "Wrapped Playboy, Inc. ST0x",
+            "symbol": "wtPLBY",
+            "logoURI": "https://st0x.io/images/PLBY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xe9bc7eF69f123cA2bcA1021D1BE30224271a9217",
+                "receiptAddress": "0x5978B2FA7B3DDA36847eb7D2003EC7AE112258AA",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:PLBY",
+                "isin": "US72814P1093",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x433fd2Fc0964B07E9820e4cd01774eDE59D1F002",
+            "decimals": 18,
+            "name": "Wrapped Tootsie Roll Industries, Inc. ST0x",
+            "symbol": "wtTR",
+            "logoURI": "https://st0x.io/images/TR.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xeF935b17d5BE5b7ecA803158a845A08A7A9383f2",
+                "receiptAddress": "0xf5e5d2d3b6be819Ff65cB364F4178252C9dbf5B7",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:TR",
+                "isin": "US8905161076",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x31Fa821F8B1BDea7Db357ec9622d1A2f6aFE903d",
+            "decimals": 18,
+            "name": "Wrapped The Wendy's Company ST0x",
+            "symbol": "wtWEN",
+            "logoURI": "https://st0x.io/images/WEN.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xedA4df511dEA07b6529db2196998B30E03791d87",
+                "receiptAddress": "0x6c26044FAa1Ea4459a03c3760F4aAA1826a1e392",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:WEN",
+                "isin": "US95058W1009",
+                "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false
             }
