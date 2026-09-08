@@ -53,9 +53,9 @@ local-db-sync:
     bootstrap-block-threshold: 300
     sync-interval-ms: 5000
 using-tokens-from:
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8abb2b0cd747b63c2845f6424a0c232e29a6412f/token-lists/base.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8abb2b0cd747b63c2845f6424a0c232e29a6412f/token-lists/base-quotes.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8abb2b0cd747b63c2845f6424a0c232e29a6412f/token-lists/ethereum.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8abb2b0cd747b63c2845f6424a0c232e29a6412f/token-lists/ethereum-quotes.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8abb2b0cd747b63c2845f6424a0c232e29a6412f/token-lists/hyperevm.json
-  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/8abb2b0cd747b63c2845f6424a0c232e29a6412f/token-lists/hyperevm-quotes.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/base.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/base-quotes.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/ethereum.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/ethereum-quotes.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/hyperevm.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/hyperevm-quotes.json
