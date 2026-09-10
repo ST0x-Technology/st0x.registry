@@ -1,0 +1,54 @@
+{
+  "name": "ST0x Robinhood Chain Quote Token List",
+  "timestamp": "2026-09-10T00:00:00.000Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "st0x",
+    "quote",
+    "robinhood"
+  ],
+  "tags": {
+    "quote": {
+      "name": "Quote",
+      "description": "Quote tokens for ST0x Robinhood Chain deployments"
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 4663,
+      "address": "0x3884564BA51B349e7661c7e28Ad947DEE327FeDF",
+      "decimals": 6,
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "tags": [
+        "quote"
+      ],
+      "extensions": {
+        "marketListed": true,
+        "marketQuote": true
+      }
+    }
+  ],
+  "tokenMap": {
+    "4663_0x3884564BA51B349e7661c7e28Ad947DEE327FeDF": {
+      "chainId": 4663,
+      "address": "0x3884564BA51B349e7661c7e28Ad947DEE327FeDF",
+      "decimals": 6,
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "tags": [
+        "quote"
+      ],
+      "extensions": {
+        "marketListed": true,
+        "marketQuote": true
+      }
+    }
+  }
+}
