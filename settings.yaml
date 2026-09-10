@@ -66,3 +66,5 @@ using-tokens-from:
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/ethereum-quotes.json
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/hyperevm.json
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/hyperevm-quotes.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/092c6cacb9c8af0697ff4ea080e77a01147383e7/token-lists/robinhood.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/092c6cacb9c8af0697ff4ea080e77a01147383e7/token-lists/robinhood-quotes.json
