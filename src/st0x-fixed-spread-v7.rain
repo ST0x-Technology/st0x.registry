@@ -54,12 +54,18 @@ scenarios:
   #
   # 0xd69dC3d5... is deployed on Base and nowhere else - eth_getCode returns
   # 0x on Robinhood, Ethereum and HyperEVM alike (checked 2026-09-11). v7
-  # derives its ratio from that subparser's convert words, so a Robinhood
-  # order built on these scenarios COMPILES AND DEPLOYS FINE and then reverts
-  # on every quote. Deploy rain.erc4626.words to 4663 - it is
-  # Zoltu-deterministic, so it lands on this same address - before any of
-  # these orders is applied. The address is left as Base's rather than
-  # blanked so the diff is a one-line no-op once it exists.
+  # derives its ratio from that subparser's convert words.
+  #
+  # This fails CLOSED, which is the one piece of good news: the parser
+  # eth_calls the subparser while compiling, an address with no code answers
+  # empty, and the compile dies with AbiDecodeFailedErrors(NoData). Verified
+  # by swapping the binding for an address that does have code on 4663, at
+  # which point the error moves past it. So `validate` refuses these orders
+  # rather than deploying something that would revert on every quote.
+  #
+  # Deploy rain.erc4626.words to 4663 - it is Zoltu-deterministic, so it lands
+  # on this same address - and nothing here changes. The address is left as
+  # Base's rather than blanked precisely so that day is a no-op.
   robinhood-sell:
     raindex: robinhood
     rainlang: robinhood
