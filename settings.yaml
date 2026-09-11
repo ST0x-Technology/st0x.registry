@@ -40,8 +40,8 @@ subgraphs:
   #
   # `.invalid` is the RFC 2606 reserved TLD and is guaranteed never to resolve,
   # which is the entire point: anything that actually queries this FAILS, loudly
-  # and immediately. The alternative — pointing it at Base's subgraph to satisfy
-  # the schema — would answer a Robinhood query with Base orders and look like it
+  # and immediately. The alternative - pointing it at Base's subgraph to satisfy
+  # the schema - would answer a Robinhood query with Base orders and look like it
   # worked. Replace with the real Ormi endpoint the moment it exists.
   robinhood: https://raindex-robinhood-subgraph-pending-ormi.invalid/gn
 metaboards:
@@ -60,7 +60,7 @@ raindexes:
     address: 0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20
     network: robinhood
     deployment-block: 59557818
-    # Required by the schema — a raindex entry without one fails the whole
+    # Required by the schema - a raindex entry without one fails the whole
     # settings parse. See the `subgraphs.robinhood` note: it is a deliberately
     # unresolvable placeholder, NOT Base's endpoint.
     subgraph: robinhood

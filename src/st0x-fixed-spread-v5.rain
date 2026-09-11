@@ -31,7 +31,7 @@ scenarios:
     runs: 1
     bindings:
       # Robinhood's own Raindex subparser, verified on 4663 with eth_getCode.
-      # NOT Base's 0x22839F16 — the subparser is a per-chain deployment, and
+      # NOT Base's 0x22839F16 - the subparser is a per-chain deployment, and
       # using Base's would resolve `using-words-from` to an address with no
       # code on 4663.
       raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
