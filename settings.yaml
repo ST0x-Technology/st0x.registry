@@ -34,16 +34,10 @@ subgraphs:
   sft-base: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-base/1.0.14/gn
   sft-ethereum: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-mainnet/1.0.14/gn
   sft-hyperevm: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-hyperevm/bac8721f59eac2e49c3379fecfac925a07a80da8/gn
-  # PLACEHOLDER. Ormi have not stood a Raindex subgraph up on 4663 yet, but the
-  # schema requires every raindex entry to name one, so `raindexes.robinhood`
-  # cannot omit it and the whole settings file fails to parse without this key.
-  #
-  # `.invalid` is the RFC 2606 reserved TLD and is guaranteed never to resolve,
-  # which is the entire point: anything that actually queries this FAILS, loudly
-  # and immediately. The alternative - pointing it at Base's subgraph to satisfy
-  # the schema - would answer a Robinhood query with Base orders and look like it
-  # worked. Replace with the real Ormi endpoint the moment it exists.
-  robinhood: https://raindex-robinhood-subgraph-pending-ormi.invalid/gn
+  # Raindex on Robinhood Chain, indexed by Goldsky. Pinned to the orderbook it
+  # indexes (0x37FC0EFe...) in the slug, as the Base one is not - that is the
+  # provider's naming, kept verbatim.
+  robinhood: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/raindex-robinhood-mainnet/0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20-a938b5a/gn
 metaboards:
   base: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/metadata-base/2025-07-06-594f/gn
 raindexes:
@@ -60,12 +54,12 @@ raindexes:
     address: 0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20
     network: robinhood
     deployment-block: 59557818
-    # Required by the schema - a raindex entry without one fails the whole
-    # settings parse. See the `subgraphs.robinhood` note: it is a deliberately
-    # unresolvable placeholder, NOT Base's endpoint.
     subgraph: robinhood
-    # No `local-db-remote:`. That bootstrap snapshot is Base-specific and there
-    # is no Robinhood equivalent; it is optional, so it stays absent.
+    # No `local-db-remote:`. Unlike `subgraph:` the schema does not require it -
+    # a compile against this file succeeds without it - and Base's value names a
+    # Base-specific bootstrap snapshot. Pointing Robinhood at that would seed a
+    # local DB from another chain's orders. Add one if and when a Robinhood
+    # snapshot exists.
 rainlangs:
   base:
     address: 0x22508460712C350e914b49155982d3A92D923b10

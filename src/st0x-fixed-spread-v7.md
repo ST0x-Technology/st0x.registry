@@ -71,4 +71,35 @@ vault:
 
 Uses the ERC4626 words subparser
 ([rainlanguage/rain.erc4626.words](https://github.com/rainlanguage/rain.erc4626.words))
-on Base: `0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254`.
+on Base: `0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254`. It is deployed on Base and
+nowhere else; on a chain without it the compile fails closed at the subparser
+lookup rather than deploying an order that could never quote.
+
+## Signed context layout
+
+Column 0 of the signed context, as `/context/v7` produces it.
+
+| slot | meaning |
+|---|---|
+| 0 | schema version (7) |
+| 1 | underlying (stock) price - directional, spread-included, ratio units |
+| 2 | publish time (the source quote's own timestamp) |
+| 3 | market session: `rth`, `premarket`, `afterhours`, or a closed tag |
+| 4 | session start (UTC) |
+| 5 | session end (UTC) |
+| 6 | input token address, left-padded to bytes32 |
+| 7 | output token address, left-padded to bytes32 |
+| 8 | absolute expiry, clamped to session end |
+| 9 | **chain id of the signing deployment** |
+
+There is no slot 10. The NAV ratio is never signed - that is the whole point of
+v7 - and slot 9 is the strict extension over the 0-8 layout v7 shipped with.
+
+**A frame is no longer portable across chains.** EIP-191 signing is
+chain-agnostic and nothing else in the frame names a chain, so before slot 9 a
+frame signed for one chain verified unchanged inside an order on another
+wherever the two shared a token address - which ST0x tokens, deployed
+deterministically, may well do. Every deployment now binds `expected-chain-id`
+and the strategy asserts slot 9 against it immediately after the schema-version
+guard, reverting with `"Wrong chain"`. A Base frame therefore does not verify on
+Robinhood Chain, and a Robinhood frame does not verify on Base.
