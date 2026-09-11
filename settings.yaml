@@ -29,6 +29,13 @@ networks:
     chain-id: 4663
     network-id: 4663
     currency: ETH
+  bsc:
+    rpcs:
+      - https://bsc-dataseed.bnbchain.org
+      - https://bsc-rpc.publicnode.com
+    chain-id: 56
+    network-id: 56
+    currency: BNB
 subgraphs:
   base: https://subgraph.api.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/raindex-base/prod/gn
   sft-base: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-base/1.0.14/gn
@@ -71,3 +78,5 @@ using-tokens-from:
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/d2acd5fababdf8e63bc3d9f1d6b19b5431279b4b/token-lists/hyperevm-quotes.json
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/b38a90a0007df94ce9a716564b7cafb413c5e6af/token-lists/robinhood.json
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/b38a90a0007df94ce9a716564b7cafb413c5e6af/token-lists/robinhood-quotes.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/bcbca5205a20a38c13e583e9e4cd16acf1f071c0/token-lists/bsc.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/bcbca5205a20a38c13e583e9e4cd16acf1f071c0/token-lists/bsc-quotes.json
