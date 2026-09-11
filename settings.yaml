@@ -34,6 +34,17 @@ subgraphs:
   sft-base: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-base/1.0.14/gn
   sft-ethereum: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-mainnet/1.0.14/gn
   sft-hyperevm: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-hyperevm/bac8721f59eac2e49c3379fecfac925a07a80da8/gn
+  sft-robinhood: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-robinhood-mainnet/4330ab500290fd0d9531b0371690715bf2ba52fd/gn
+  # Raindex on Robinhood Chain, indexed by Goldsky. Pinned to the orderbook it
+  # indexes (0x37FC0EFe...) in the slug, as the Base one is not - that is the
+  # provider's naming, kept verbatim.
+  #
+  # The trailing `-b398652` is a deployment VERSION, not decoration. The
+  # previous one, `-a938b5a`, is wedged on an indexing error (it answers
+  # `hasIndexingErrors: true` and stopped advancing) and was redeployed with
+  # the DecimalFloat fix, rainlanguage/raindex#2867. Do not reference the old
+  # version anywhere.
+  robinhood: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/raindex-robinhood-mainnet/0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20-b398652/gn
 metaboards:
   base: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/metadata-base/2025-07-06-594f/gn
 raindexes:
@@ -43,6 +54,19 @@ raindexes:
     subgraph: base
     deployment-block: 41747644
     local-db-remote: raindex
+  robinhood:
+    # The canonical RaindexV6 used on every chain except Base, which is still
+    # on the older 0xe522cB4a. Verified on 4663 with eth_getCode; the deploy
+    # block is bisected from the same, 2026-09-10.
+    address: 0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20
+    network: robinhood
+    deployment-block: 59557818
+    subgraph: robinhood
+    # No `local-db-remote:`. Unlike `subgraph:` the schema does not require it -
+    # a compile against this file succeeds without it - and Base's value names a
+    # Base-specific bootstrap snapshot. Pointing Robinhood at that would seed a
+    # local DB from another chain's orders. Add one if and when a Robinhood
+    # snapshot exists.
 rainlangs:
   base:
     address: 0x22508460712C350e914b49155982d3A92D923b10
