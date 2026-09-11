@@ -8,6 +8,13 @@ orders:
       - token: input
     outputs:
       - token: output
+  robinhood:
+    raindex: robinhood
+    oracle-url: https://oracle.t0trade.com/context/v5
+    inputs:
+      - token: input
+    outputs:
+      - token: output
 
 scenarios:
   base:
@@ -18,11 +25,30 @@ scenarios:
       raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
       oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
       oracle-schema-version: 5
+  robinhood:
+    raindex: robinhood
+    rainlang: robinhood
+    runs: 1
+    bindings:
+      # Robinhood's own Raindex subparser, verified on 4663 with eth_getCode.
+      # NOT Base's 0x22839F16 — the subparser is a per-chain deployment, and
+      # using Base's would resolve `using-words-from` to an address with no
+      # code on 4663.
+      raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
+      # Same signer and schema as Base. The oracle server must actually serve
+      # a frame for chain 4663 signed by this key before a Robinhood order can
+      # quote; until it does, the order compiles but the fork-quote gate
+      # cannot verify it.
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-schema-version: 5
 
 deployments:
   base:
     order: base
     scenario: base
+  robinhood:
+    order: robinhood
+    scenario: robinhood
 
 builder:
   name: St0x fixed spread limit v5
@@ -31,6 +57,39 @@ builder:
     A strategy where the ratio tracks the st0x v5 oracle baseline price,
     pair-bound to the deployed IO pair, with oracle frame expiry.
   deployments:
+    robinhood:
+      name: Robinhood Chain st0x fixed spread v5
+      description: >
+        Deploy a fixed-spread strategy on Robinhood Chain, pair-bound to the
+        deployed IO pair. The stable leg is USDG, not USDC.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the oracle returns a price
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the oracle returns a
+            price above this, the order reverts. Protects against
+            overflow or encoding errors. Set generously above the
+            asset's expected range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell (e.g. wtCOIN, USDG)
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to receive (e.g. wtCOIN, USDG)
     base:
       name: Base st0x fixed spread v5
       description: Deploy a fixed-spread strategy on Base, pair-bound to the deployed IO pair.

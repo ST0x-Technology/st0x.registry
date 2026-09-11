@@ -43,6 +43,17 @@ raindexes:
     subgraph: base
     deployment-block: 41747644
     local-db-remote: raindex
+  robinhood:
+    # The canonical RaindexV6 used on every chain except Base, which is still
+    # on the older 0xe522cB4a. Verified on 4663 with eth_getCode; the deploy
+    # block is bisected from the same, 2026-09-10.
+    address: 0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20
+    network: robinhood
+    deployment-block: 59557818
+    # No `subgraph:` and no `local-db-remote:`. Ormi have not stood a Raindex
+    # subgraph up on 4663 yet, and pointing this at Base's would serve Base
+    # orders to a Robinhood query. Absent is the honest value; anything that
+    # needs indexed history here has to wait.
 rainlangs:
   base:
     address: 0x22508460712C350e914b49155982d3A92D923b10
