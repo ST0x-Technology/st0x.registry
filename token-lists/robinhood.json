@@ -1,9 +1,9 @@
 {
   "name": "ST0x Robinhood Chain Token List",
-  "timestamp": "2026-09-10T00:00:00.000Z",
+  "timestamp": "2026-09-11T00:00:00.000Z",
   "version": {
     "major": 1,
-    "minor": 0,
+    "minor": 1,
     "patch": 0
   },
   "keywords": [
@@ -796,6 +796,291 @@
         "category": "ST0x",
         "tradingViewSymbol": "AMEX:FTF",
         "isin": "US35472T1016",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x15925E1c19c0F0d392F6FCb40FdE9144Dd823962",
+      "decimals": 18,
+      "name": "Wrapped Cerebras Systems Inc. ST0x",
+      "symbol": "wtCBRS",
+      "logoURI": "https://st0x.io/images/CBRS.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x75E0d127794b9C26eE35c55fbaBcc41c53Ccb37C",
+        "receiptAddress": "0x8Ea1ba9Fc0CF7338B41DdDa5B778a9118274AEA8",
+        "category": "ST0x",
+        "tradingViewSymbol": "NASDAQ:CBRS",
+        "isin": "US15675D1037",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xc3bc6EEf91FfAeBACB13f4c48aC0515C820d2b0c",
+      "decimals": 18,
+      "name": "Wrapped Airbus SE ST0x",
+      "symbol": "wtAIR.PA",
+      "logoURI": "https://st0x.io/images/AIR.PA.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x4Da175A70020EeEFa71C36d710307ed0803Aed60",
+        "receiptAddress": "0x9452c603A552f35003206f9001C51007C36F530F",
+        "category": "ST0x",
+        "tradingViewSymbol": "EURONEXT:AIR",
+        "isin": "NL0000235190",
+        "tradingViewMarket": "france"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x36FE4dc30b3b4906c9A64D5C957D49388E8d38E8",
+      "decimals": 18,
+      "name": "Wrapped Bayerische Motoren Werke Aktiengesellschaft ST0x",
+      "symbol": "wtBMW.DE",
+      "logoURI": "https://st0x.io/images/BMW.DE.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x6872cEe8E1a07Dd8C1154755f7e215F2973caE52",
+        "receiptAddress": "0x7bc0B10f99c95F9F3e1e12a436a3869B53c9cb9C",
+        "category": "ST0x",
+        "tradingViewSymbol": "XETR:BMW",
+        "isin": "DE0005190003",
+        "tradingViewMarket": "germany"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xeaA6da57f120D5a0acB9Ff4807F7990EfBbE303a",
+      "decimals": 18,
+      "name": "Wrapped LVMH Mo\u00ebt Hennessy Louis Vuitton SE ST0x",
+      "symbol": "wtMC.PA",
+      "logoURI": "https://st0x.io/images/MC.PA.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xaE7115d434c84F2f4a1196BaD67415d479804af1",
+        "receiptAddress": "0xc562dB7c3B8A41cBF8B84D3C057787723BD13d2F",
+        "category": "ST0x",
+        "tradingViewSymbol": "EURONEXT:MC",
+        "isin": "FR0000121014",
+        "tradingViewMarket": "france"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x08A85a5AcE300e881e7c8828412A3Bdfd6F99054",
+      "decimals": 18,
+      "name": "Wrapped Siemens Aktiengesellschaft ST0x",
+      "symbol": "wtSIE.DE",
+      "logoURI": "https://st0x.io/images/SIE.DE.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x269CA594b6463F0D94086fb2D77dFaad32d1c6C4",
+        "receiptAddress": "0xee6F971a9Bf473355286749b52Bfe614Df5fC129",
+        "category": "ST0x",
+        "tradingViewSymbol": "XETR:SIE",
+        "isin": "DE0007236101",
+        "tradingViewMarket": "germany"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x6a73364EaE305199B62585C4486C24f3b72b2C72",
+      "decimals": 18,
+      "name": "Wrapped Mercedes-Benz Group AG ST0x",
+      "symbol": "wtMBG.DE",
+      "logoURI": "https://st0x.io/images/MBG.DE.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xA1768baE756058fE00dD281C405DDe1C48B00F3B",
+        "receiptAddress": "0x5536F0308E969C2DB0e52dBe99CB6871cC9E35f4",
+        "category": "ST0x",
+        "tradingViewSymbol": "XETR:MBG",
+        "isin": "DE0007100000",
+        "tradingViewMarket": "germany"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x24ae429A29882b06898afCBAef20BfDb93f67e20",
+      "decimals": 18,
+      "name": "Wrapped Rheinmetall AG ST0x",
+      "symbol": "wtRHM.DE",
+      "logoURI": "https://st0x.io/images/RHM.DE.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x8790337c4Ce51b66CBa179129d830A3683780ff6",
+        "receiptAddress": "0xbf56725da5a71B3111C660c2279ADA6D1270772E",
+        "category": "ST0x",
+        "tradingViewSymbol": "XETR:RHM",
+        "isin": "DE0007030009",
+        "tradingViewMarket": "germany"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xe26b53fb8B0819682432d27C88D6505883cabafF",
+      "decimals": 18,
+      "name": "Wrapped McDonald's Corporation ST0x",
+      "symbol": "wtMCD",
+      "logoURI": "https://st0x.io/images/MCD.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xC04160F3e18e120C2259f3FE33864823bF3b9015",
+        "receiptAddress": "0x37BbE0cd96266CFc10960521EfB32A822ef780E0",
+        "category": "ST0x",
+        "tradingViewSymbol": "NYSE:MCD",
+        "isin": "US5801351017",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x8fe134109A9Eb38D3f071a9Df4911081B4aa0814",
+      "decimals": 18,
+      "name": "Wrapped NIKE, Inc. ST0x",
+      "symbol": "wtNKE",
+      "logoURI": "https://st0x.io/images/NKE.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x5e6e803242E52451FfdA82Fd7b5Ce4967B95C76E",
+        "receiptAddress": "0x6884986776e2e221B7Cd5c566bBD9338051F24fB",
+        "category": "ST0x",
+        "tradingViewSymbol": "NYSE:NKE",
+        "isin": "US6541061031",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xB80Bd4D599EeBBF2851d4E7F5594918B82FF1823",
+      "decimals": 18,
+      "name": "Wrapped Grindr Inc. ST0x",
+      "symbol": "wtGRND",
+      "logoURI": "https://st0x.io/images/GRND.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xdca06fddf5320870C8E9D0534aa102677C36bCc4",
+        "receiptAddress": "0x9765A993735a639191ea2AAd2ac92eb122Bd394c",
+        "category": "ST0x",
+        "tradingViewSymbol": "NYSE:GRND",
+        "isin": "US39854F1012",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xb7fC2b7881cceeB73D8DEccf69B6AcB8aC2E0826",
+      "decimals": 18,
+      "name": "Wrapped Krispy Kreme, Inc. ST0x",
+      "symbol": "wtDNUT",
+      "logoURI": "https://st0x.io/images/DNUT.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x4a88c84AA04a5151997e8E503BEe7fD92E0918A9",
+        "receiptAddress": "0x0eE9d8bB4D7d035b5Dc33937573Cc03BDb419c6e",
+        "category": "ST0x",
+        "tradingViewSymbol": "NASDAQ:DNUT",
+        "isin": "US50101L1061",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xBe127eeD812DC1F622227FAdc8639d4138B47b2e",
+      "decimals": 18,
+      "name": "Wrapped Playboy, Inc. ST0x",
+      "symbol": "wtPLBY",
+      "logoURI": "https://st0x.io/images/PLBY.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x4a18036Dce22168D8891919a1c75aC2CAf9a08AB",
+        "receiptAddress": "0xea8AF911CE3582d8fB5d6F1cd4695Ba115d1BdCA",
+        "category": "ST0x",
+        "tradingViewSymbol": "NASDAQ:PLBY",
+        "isin": "US72814P1093",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x1abADE2601DA2617f441e2c2B3Fff870445FEfd1",
+      "decimals": 18,
+      "name": "Wrapped Tootsie Roll Industries, Inc. ST0x",
+      "symbol": "wtTR",
+      "logoURI": "https://st0x.io/images/TR.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xF88e511a3c762eE7E9ddd348a417F8e8db45BDEE",
+        "receiptAddress": "0xEb36fc7B191b8358c0Cc839A873fCe1108fc36d1",
+        "category": "ST0x",
+        "tradingViewSymbol": "NYSE:TR",
+        "isin": "US8905161076",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x441Eaae749B7BA0C4462F2b19a47fBe8De0DFac2",
+      "decimals": 18,
+      "name": "Wrapped The Wendy's Company ST0x",
+      "symbol": "wtWEN",
+      "logoURI": "https://st0x.io/images/WEN.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x6c6f1CBe2fA860b1a15A02922d97A2d614db4923",
+        "receiptAddress": "0x8231910EA52Ce2753C70D07545cEBfe476a609bA",
+        "category": "ST0x",
+        "tradingViewSymbol": "NASDAQ:WEN",
+        "isin": "US95058W1009",
+        "tradingViewMarket": "america"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x685DFd386968B58D895F934485820C479C79a8bB",
+      "decimals": 18,
+      "name": "Wrapped FGI Industries Ltd. ST0x",
+      "symbol": "wtFGI",
+      "logoURI": "https://st0x.io/images/FGI.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xfEa217600e2b00bBB2172a99345016a0cEb7d29f",
+        "receiptAddress": "0x7B3aA82Ca4Ef0eE146C32183366f3dED77400E0c",
+        "category": "ST0x",
+        "tradingViewSymbol": "NASDAQ:FGI",
+        "isin": "KYG3302D2024",
         "tradingViewMarket": "america"
       }
     }
