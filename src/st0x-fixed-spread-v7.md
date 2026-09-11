@@ -71,9 +71,20 @@ vault:
 
 Uses the ERC4626 words subparser
 ([rainlanguage/rain.erc4626.words](https://github.com/rainlanguage/rain.erc4626.words))
-on Base: `0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254`. It is deployed on Base and
-nowhere else; on a chain without it the compile fails closed at the subparser
-lookup rather than deploying an order that could never quote.
+Two addresses, per chain:
+
+- **Base** — `0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254`. Deployed by an EOA
+  `CREATE` at nonce 531, so its address is a function of that deployer's nonce
+  on that chain and cannot be reproduced anywhere else. Live and in use; left
+  alone, because re-pointing it would change every Base order's identity.
+- **Every other chain** — `0x03e3f0C80332fB1b57EC884E9d481bAa58969883`, the same
+  words redeployed deterministically through Zoltu. Live on Base and Arbitrum
+  with byte-identical runtime (codehash `0x7c48ecdf…`), so it lands on this one
+  address wherever it is deployed.
+
+On a chain where the bound address has no code the compile **fails closed** at
+the subparser lookup — `AbiDecodeFailedErrors(NoData)` — rather than deploying
+an order that could never quote.
 
 ## Signed context layout
 
