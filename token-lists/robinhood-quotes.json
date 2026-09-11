@@ -20,11 +20,11 @@
   "tokens": [
     {
       "chainId": 4663,
-      "address": "0x3884564BA51B349e7661c7e28Ad947DEE327FeDF",
+      "address": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
       "decimals": 6,
-      "name": "USD Coin",
-      "symbol": "USDC",
-      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "name": "Global Dollar",
+      "symbol": "USDG",
+      "logoURI": "https://assets.coingecko.com/coins/images/51281/large/USDG.png",
       "tags": [
         "quote"
       ],
@@ -35,13 +35,13 @@
     }
   ],
   "tokenMap": {
-    "4663_0x3884564BA51B349e7661c7e28Ad947DEE327FeDF": {
+    "4663_0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168": {
       "chainId": 4663,
-      "address": "0x3884564BA51B349e7661c7e28Ad947DEE327FeDF",
+      "address": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
       "decimals": 6,
-      "name": "USD Coin",
-      "symbol": "USDC",
-      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "name": "Global Dollar",
+      "symbol": "USDG",
+      "logoURI": "https://assets.coingecko.com/coins/images/51281/large/USDG.png",
       "tags": [
         "quote"
       ],
