@@ -34,6 +34,7 @@ subgraphs:
   sft-base: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-base/1.0.14/gn
   sft-ethereum: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-mainnet/1.0.14/gn
   sft-hyperevm: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-hyperevm/bac8721f59eac2e49c3379fecfac925a07a80da8/gn
+  sft-robinhood: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/sft-robinhood-mainnet/4330ab500290fd0d9531b0371690715bf2ba52fd/gn
   # Raindex on Robinhood Chain, indexed by Goldsky. Pinned to the orderbook it
   # indexes (0x37FC0EFe...) in the slug, as the Base one is not - that is the
   # provider's naming, kept verbatim.
