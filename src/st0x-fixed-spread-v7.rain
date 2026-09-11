@@ -9,6 +9,23 @@ orders:
     outputs:
       - token: output
 
+  robinhood:
+    raindex: robinhood
+    # TODO(oracle): Base's URL, because Robinhood has no service of its own
+    # yet. st0x-oracle-server ships deploy/config/robinhood.toml but its
+    # README records it as "not yet wired to a service", and that config
+    # states two properties the current binary lacks: the signed context
+    # names no chain (so a context signed for Base verifies unchanged inside
+    # a Robinhood order wherever a token address is shared), and the pricing
+    # quote cache is keyed by symbol alone (so frames for one symbol on two
+    # chains overwrite each other). Point this at the 4663 service the moment
+    # it exists; until then a Robinhood order cannot be quoted at all.
+    oracle-url: https://oracle.t0trade.com/context/v7
+    inputs:
+      - token: input
+    outputs:
+      - token: output
+
 scenarios:
   base-sell:
     raindex: base
@@ -33,6 +50,41 @@ scenarios:
       wt-vault: ${order.inputs.0.token.address}
       derive-fn: '''derive-buy'
 
+  # BLOCKED: `erc4626-subparser` below has NO CODE on chain 4663.
+  #
+  # 0xd69dC3d5... is deployed on Base and nowhere else - eth_getCode returns
+  # 0x on Robinhood, Ethereum and HyperEVM alike (checked 2026-09-11). v7
+  # derives its ratio from that subparser's convert words, so a Robinhood
+  # order built on these scenarios COMPILES AND DEPLOYS FINE and then reverts
+  # on every quote. Deploy rain.erc4626.words to 4663 - it is
+  # Zoltu-deterministic, so it lands on this same address - before any of
+  # these orders is applied. The address is left as Base's rather than
+  # blanked so the diff is a one-line no-op once it exists.
+  robinhood-sell:
+    raindex: robinhood
+    rainlang: robinhood
+    runs: 1
+    bindings:
+      # Robinhood's own Raindex subparser. NOT Base's 0x22839F16, which has
+      # no code on 4663.
+      raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
+      erc4626-subparser: 0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-schema-version: 7
+      wt-vault: ${order.outputs.0.token.address}
+      derive-fn: '''derive-sell'
+  robinhood-buy:
+    raindex: robinhood
+    rainlang: robinhood
+    runs: 1
+    bindings:
+      raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
+      erc4626-subparser: 0xd69dC3d58a7C875117f9c7cecF4F1A7f3CA47254
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-schema-version: 7
+      wt-vault: ${order.inputs.0.token.address}
+      derive-fn: '''derive-buy'
+
 deployments:
   base-sell:
     order: base
@@ -40,6 +92,12 @@ deployments:
   base-buy:
     order: base
     scenario: base-buy
+  robinhood-sell:
+    order: robinhood
+    scenario: robinhood-sell
+  robinhood-buy:
+    order: robinhood
+    scenario: robinhood-buy
 
 builder:
   name: ST0x fixed spread limit v7
@@ -129,6 +187,85 @@ builder:
             Select the wrapped-token vault share you want to receive
             (e.g. wtCOIN). This token must be an ERC4626 vault - its
             live NAV is read at every fill to derive the price.
+    robinhood-sell:
+      name: Robinhood Chain ST0x fixed spread v7 (sell shares)
+      description: >
+        Deploy a fixed-spread strategy on Robinhood Chain selling wrapped-token
+        vault shares, pair-bound to the deployed IO pair. The order ratio
+        is derived at every fill from the signed underlying price and the
+        vault's live convertToAssets, so a NAV step (e.g. a dividend
+        deposit) re-prices the fill at the new NAV instead of reverting.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the DERIVED vault price is
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the DERIVED vault price is
+            above this, the order reverts. Protects against overflow or
+            encoding errors. Set generously above the asset's expected
+            range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: >
+            Select the wrapped-token vault share you want to sell
+            (e.g. wtCOIN). This token must be an ERC4626 vault - its
+            live NAV is read at every fill to derive the price.
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to receive (e.g. USDC)
+    robinhood-buy:
+      name: Robinhood Chain ST0x fixed spread v7 (buy shares)
+      description: >
+        Deploy a fixed-spread strategy on Robinhood Chain buying wrapped-token
+        vault shares, pair-bound to the deployed IO pair. The order ratio
+        is derived at every fill from the signed underlying price and the
+        vault's live convertToShares, so a NAV step (e.g. a dividend
+        deposit) re-prices the fill at the new NAV instead of reverting.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the DERIVED vault price is
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the DERIVED vault price is
+            above this, the order reverts. Protects against overflow or
+            encoding errors. Set generously above the asset's expected
+            range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell (e.g. USDC)
+        - key: input
+          name: Token to Buy
+          description: >
+            Select the wrapped-token vault share you want to receive
+            (e.g. wtCOIN). This token must be an ERC4626 vault - its
+            live NAV is read at every fill to derive the price.
+
 ---
 #raindex-subparser !Raindex subparser.
 #erc4626-subparser !ERC4626 words subparser (rainlanguage/rain.erc4626.words) on Base.
