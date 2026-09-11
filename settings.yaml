@@ -38,7 +38,13 @@ subgraphs:
   # Raindex on Robinhood Chain, indexed by Goldsky. Pinned to the orderbook it
   # indexes (0x37FC0EFe...) in the slug, as the Base one is not - that is the
   # provider's naming, kept verbatim.
-  robinhood: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/raindex-robinhood-mainnet/0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20-a938b5a/gn
+  #
+  # The trailing `-b398652` is a deployment VERSION, not decoration. The
+  # previous one, `-a938b5a`, is wedged on an indexing error (it answers
+  # `hasIndexingErrors: true` and stopped advancing) and was redeployed with
+  # the DecimalFloat fix, rainlanguage/raindex#2867. Do not reference the old
+  # version anywhere.
+  robinhood: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/raindex-robinhood-mainnet/0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20-b398652/gn
 metaboards:
   base: https://api.goldsky.com/api/public/project_clv14x04y9kzi01saerx7bxpg/subgraphs/metadata-base/2025-07-06-594f/gn
 raindexes:
