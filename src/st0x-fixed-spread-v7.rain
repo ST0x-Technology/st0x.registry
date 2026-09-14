@@ -11,16 +11,12 @@ orders:
 
   robinhood:
     raindex: robinhood
-    # TODO(oracle): Base's URL, because Robinhood has no service of its own
-    # yet. st0x-oracle-server ships deploy/config/robinhood.toml but its
-    # README records it as "not yet wired to a service", and that config
-    # states two properties the current binary lacks: the signed context
-    # names no chain (so a context signed for Base verifies unchanged inside
-    # a Robinhood order wherever a token address is shared), and the pricing
-    # quote cache is keyed by symbol alone (so frames for one symbol on two
-    # chains overwrite each other). Point this at the 4663 service the moment
-    # it exists; until then a Robinhood order cannot be quoted at all.
-    oracle-url: https://oracle.t0trade.com/context/v7
+    # Robinhood's own st0x-oracle-server deployment (Cloud Run service
+    # t0-oracle-robinhood, config deploy/config/robinhood.toml). An order
+    # binds this URL at deploy time, so it must be the 4663 service and not
+    # Base's: /context/v7 there signs chain id 8453 at slot 9 and the
+    # expected-chain-id assert below would reject every quote.
+    oracle-url: https://oracle-robinhood.t0trade.com/context/v7
     inputs:
       - token: input
     outputs:
