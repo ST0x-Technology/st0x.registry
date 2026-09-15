@@ -12,7 +12,7 @@ orders:
       - token: token1
         vault-id: 1
       - token: token2
-        vault-id: 2
+        vault-id: 3
 
 scenarios:
   base:
@@ -28,8 +28,8 @@ deployments:
     scenario: base
 builder:
   name: Two-way limit
-  description: A two-sided limit that buys and sells between two tokens at independent fixed ratios. Each token shares one vault for input and output.
-  short-description: Two-sided limit with independent buy and sell prices and shared vaults per token.
+  description: A two-sided limit that buys and sells between two tokens at independent fixed ratios. Token1 shares one vault; token2 uses separate input and output vaults.
+  short-description: Two-sided limit with independent buy and sell prices. Inventory token shares a vault; quote token uses split vaults.
   deployments:
     base:
       name: Base
@@ -54,7 +54,7 @@ builder:
           description: Inventory token. Input and output share one vault (e.g. FGI).
         - key: token2
           name: Quote Token
-          description: Quote token. Input and output share one vault (e.g. USDC).
+          description: Quote token. Input and output use different vaults (e.g. USDC proceeds vs buy budget).
 ---
 #raindex-subparser !The subparser to use.
 
