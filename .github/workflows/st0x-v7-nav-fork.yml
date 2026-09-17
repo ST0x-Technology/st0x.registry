@@ -1,16 +1,17 @@
-name: st0x-v7 NAV fork test
+name: st0x-v7 fixed-spread fork test
 
-# Validates st0x-fixed-spread-v7 derived vault price against a live Base order:
-# quote+take derives underlying x live-NAV; a NAV step re-prices the fill (no revert).
+# Validates st0x-fixed-spread-v7 against live Base + Robinhood SPYM sell orders
+# in rainlanguage/raindex: quote+take derives underlying x live-NAV; NAV step
+# re-prices; every signed-context ensure has a dedicated revert test.
 # Strategy lives here; the Foundry fork harness lives in rainlanguage/raindex.
 
 on:
   workflow_dispatch:
     inputs:
       raindex_ref:
-        description: raindex git ref that contains RaindexV7St0xNavForkTest
+        description: raindex git ref that contains RaindexV7St0xFixedSpread*ForkTest
         required: true
-        default: feat/st0x-v7-nav-fork-test
+        default: feat/st0x-v7-live-order-fork-tests
   pull_request:
     paths:
       - "src/st0x-fixed-spread-v7.rain"
@@ -21,16 +22,30 @@ permissions:
   contents: read
 
 jobs:
-  nav-fork:
-    name: RaindexV7St0xNavForkTest
+  fixed-spread-fork:
+    name: RaindexV7St0xFixedSpread fork (${{ matrix.network }})
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - network: base
+            contract: RaindexV7St0xFixedSpreadBaseForkTest
+            rpc_secret: PRIVATE_BASE_RPC_URLS
+            rpc_fallback: https://mainnet.base.org
+            rpc_env: BASE_MAINNET_RPC_URL
+          - network: robinhood
+            contract: RaindexV7St0xFixedSpreadRobinhoodForkTest
+            rpc_secret: PRIVATE_ROBINHOOD_RPC_URLS
+            rpc_fallback: https://rpc.mainnet.chain.robinhood.com
+            rpc_env: ROBINHOOD_MAINNET_RPC_URL
     steps:
       - name: Check out raindex fork harness
         uses: actions/checkout@v6
         with:
           repository: rainlanguage/raindex
-          ref: ${{ inputs.raindex_ref || 'feat/st0x-v7-nav-fork-test' }}
+          ref: ${{ inputs.raindex_ref || 'feat/st0x-v7-live-order-fork-tests' }}
           path: raindex
 
       - name: Install Foundry
@@ -44,10 +59,13 @@ jobs:
           set -euo pipefail
           forge soldeer install
 
-      - name: Run NAV fork tests
+      - name: Run ${{ matrix.network }} fixed-spread fork tests
         working-directory: raindex
         env:
-          PRIVATE_BASE_RPC_URLS: ${{ secrets.PRIVATE_BASE_RPC_URLS }}
+          PRIVATE_RPC_URLS: ${{ secrets[matrix.rpc_secret] }}
+          RPC_FALLBACK: ${{ matrix.rpc_fallback }}
+          RPC_ENV_NAME: ${{ matrix.rpc_env }}
+          MATCH_CONTRACT: ${{ matrix.contract }}
         run: |
           set -euo pipefail
 
@@ -65,26 +83,30 @@ jobs:
 
           candidates="$(
             {
-              printf '%s\n' "${PRIVATE_BASE_RPC_URLS:-}"
-              printf '%s\n' "https://mainnet.base.org"
+              printf '%s\n' "${PRIVATE_RPC_URLS:-}"
+              printf '%s\n' "${RPC_FALLBACK}"
+              if [ "${RPC_ENV_NAME}" = "ROBINHOOD_MAINNET_RPC_URL" ]; then
+                printf '%s\n' "https://robinhood-rpc.publicnode.com"
+                printf '%s\n' "https://robinhood.drpc.org"
+              fi
             } | tr ',' '\n' \
               | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
               | sed '/^$/d'
           )"
 
-          BASE_MAINNET_RPC_URL=""
+          RPC_URL=""
           while IFS= read -r url; do
             if rpc_ok "$url"; then
-              BASE_MAINNET_RPC_URL="$url"
+              RPC_URL="$url"
               break
             fi
             echo "skipping non-eth RPC candidate" >&2
           done <<< "$candidates"
 
-          if [ -z "${BASE_MAINNET_RPC_URL}" ]; then
-            echo "no usable Base eth JSON-RPC among PRIVATE_BASE_RPC_URLS / public fallback" >&2
+          if [ -z "${RPC_URL}" ]; then
+            echo "no usable eth JSON-RPC among private secrets / public fallback for ${RPC_ENV_NAME}" >&2
             exit 1
           fi
 
-          export BASE_MAINNET_RPC_URL
-          forge test --match-contract RaindexV7St0xNavForkTest -vvv
+          export "${RPC_ENV_NAME}=${RPC_URL}"
+          forge test --match-contract "${MATCH_CONTRACT}" -vvv
