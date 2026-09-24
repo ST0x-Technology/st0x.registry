@@ -56,6 +56,10 @@ function quote_yaml(value) {
 }
 
 BEGIN {
+  if (target_network == "") {
+    print "target_network is required" > "/dev/stderr"
+    exit 1
+  }
   while ((getline url < private_urls_file) > 0) {
     add_url(url)
   }
@@ -80,25 +84,25 @@ END {
 
   networks_end = block_end(networks_idx, 0)
   for (idx = networks_idx + 1; idx < networks_end; idx++) {
-    if (key_at(lines[idx], "base", 2)) {
-      base_idx = idx
+    if (key_at(lines[idx], target_network, 2)) {
+      network_idx = idx
       break
     }
   }
-  if (!base_idx) {
-    print "could not find networks.base key" > "/dev/stderr"
+  if (!network_idx) {
+    print "could not find networks." target_network " key" > "/dev/stderr"
     exit 1
   }
 
-  base_end = block_end(base_idx, 2)
-  for (idx = base_idx + 1; idx < base_end; idx++) {
+  network_end = block_end(network_idx, 2)
+  for (idx = network_idx + 1; idx < network_end; idx++) {
     if (key_at(lines[idx], "rpcs", 4)) {
       rpcs_idx = idx
       break
     }
   }
   if (!rpcs_idx) {
-    print "could not find networks.base.rpcs key" > "/dev/stderr"
+    print "could not find networks." target_network ".rpcs key" > "/dev/stderr"
     exit 1
   }
 

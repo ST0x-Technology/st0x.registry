@@ -37,6 +37,7 @@ jobs:
       - name: Build private registry artifact
         env:
           PRIVATE_BASE_RPC_URLS: ${{ secrets.PRIVATE_BASE_RPC_URLS }}
+          PRIVATE_ROBINHOOD_RPC_URLS: ${{ secrets.PRIVATE_ROBINHOOD_RPC_URLS }}
         run: |
           set -euo pipefail
 
@@ -44,9 +45,14 @@ jobs:
             echo "PRIVATE_BASE_RPC_URLS secret is required" >&2
             exit 1
           fi
+          if [ -z "${PRIVATE_ROBINHOOD_RPC_URLS}" ]; then
+            echo "PRIVATE_ROBINHOOD_RPC_URLS secret is required" >&2
+            exit 1
+          fi
 
           scripts/build-private-registry-artifact.sh \
             --private-base-rpc-urls "${PRIVATE_BASE_RPC_URLS}" \
+            --private-robinhood-rpc-urls "${PRIVATE_ROBINHOOD_RPC_URLS}" \
             --output "${RUNNER_TEMP}/private-registry-artifact.b64"
 
           registry_artifact_b64="$(cat "${RUNNER_TEMP}/private-registry-artifact.b64")"
