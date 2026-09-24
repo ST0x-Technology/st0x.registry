@@ -1,0 +1,59 @@
+name: publish-t0-tokens
+
+# Checks t0/staging.toml and t0/production.toml on every PR. On a push to
+# main, uploads staging to gs://t0-artifacts-tokens/staging/tokens.toml.
+# Production is not uploaded: the bucket only lets this identity write
+# under staging/, and production needs its own gated promotion.
+
+on:
+  pull_request:
+    paths: ["t0/**", ".github/workflows/publish-t0-tokens.yml"]
+  push:
+    branches: [main]
+    paths: ["t0/**", ".github/workflows/publish-t0-tokens.yml"]
+
+concurrency:
+  group: publish-t0-tokens-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      # Parsed with Python's tomllib, which rejects duplicate keys the way the
+      # services' Rust parser does (yq would silently keep the last one).
+      - name: Check
+        run: |
+          set -euo pipefail
+          for f in t0/staging.toml t0/production.toml; do
+            problems=$(python3 -c 'import json, sys, tomllib; json.dump(tomllib.load(open(sys.argv[1], "rb")), sys.stdout)' "$f" \
+              | jq -r -f t0/check.jq)
+            if [ -n "$problems" ]; then echo "$f:"; echo "$problems"; exit 1; fi
+          done
+
+      - id: auth
+        if: github.event_name == 'push'
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/684788085322/locations/global/workloadIdentityPools/github-actions/providers/github-oidc
+          service_account: tokens-publisher@t0-artifacts.iam.gserviceaccount.com
+          token_format: access_token
+
+      # Raw upload rather than `gcloud storage cp`: the publisher may only
+      # touch objects under staging/, and `cp` lists the bucket first.
+      - name: Upload
+        if: github.event_name == 'push'
+        env:
+          TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: |
+          curl --fail-with-body -sS -X POST \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Content-Type: application/toml" \
+            --data-binary @t0/staging.toml \
+            "https://storage.googleapis.com/upload/storage/v1/b/t0-artifacts-tokens/o?uploadType=media&name=staging%2Ftokens.toml"
