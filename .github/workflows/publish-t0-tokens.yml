@@ -1,9 +1,10 @@
 name: publish-t0-tokens
 
 # Checks t0/staging.toml and t0/production.toml on every PR. On a push to
-# main, uploads staging to gs://t0-artifacts-tokens/staging/tokens.toml.
-# Production is not uploaded: the bucket only lets this identity write
-# under staging/, and production needs its own gated promotion.
+# main, uploads each to gs://t0-artifacts-tokens/<env>/tokens.toml. What a
+# service does with a change is that service's business: pricing reads the
+# file at boot, so a production change takes effect on its next gated
+# release.
 
 on:
   pull_request:
@@ -52,8 +53,12 @@ jobs:
         env:
           TOKEN: ${{ steps.auth.outputs.access_token }}
         run: |
-          curl --fail-with-body -sS -X POST \
-            -H "Authorization: Bearer ${TOKEN}" \
-            -H "Content-Type: application/toml" \
-            --data-binary @t0/staging.toml \
-            "https://storage.googleapis.com/upload/storage/v1/b/t0-artifacts-tokens/o?uploadType=media&name=staging%2Ftokens.toml"
+          set -euo pipefail
+          for env in staging production; do
+            curl --fail-with-body -sS -X POST \
+              -H "Authorization: Bearer ${TOKEN}" \
+              -H "Content-Type: application/toml" \
+              --data-binary "@t0/${env}.toml" \
+              "https://storage.googleapis.com/upload/storage/v1/b/t0-artifacts-tokens/o?uploadType=media&name=${env}%2Ftokens.toml" \
+              | jq -r '"uploaded \(.name) generation \(.generation)"'
+          done
