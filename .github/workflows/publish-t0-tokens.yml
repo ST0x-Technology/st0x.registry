@@ -1,11 +1,5 @@
 name: publish-t0-tokens
 
-# Checks t0/staging.toml and t0/production.toml on every PR. On a push to
-# main, uploads each to gs://t0-artifacts-tokens/<env>/tokens.toml. What a
-# service does with a change is that service's business: pricing reads the
-# file at boot, so a production change takes effect on its next gated
-# release.
-
 on:
   pull_request:
     paths: ["t0/**", ".github/workflows/publish-t0-tokens.yml"]
@@ -15,27 +9,23 @@ on:
 
 concurrency:
   group: publish-t0-tokens-${{ github.ref }}
-  cancel-in-progress: false
 
 permissions:
   contents: read
   id-token: write
 
 jobs:
-  staging:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
 
-      # Parsed with Python's tomllib, which rejects duplicate keys the way the
-      # services' Rust parser does (yq would silently keep the last one).
       - name: Check
         run: |
           set -euo pipefail
           for f in t0/staging.toml t0/production.toml; do
-            problems=$(python3 -c 'import json, sys, tomllib; json.dump(tomllib.load(open(sys.argv[1], "rb")), sys.stdout)' "$f" \
-              | jq -r -f t0/check.jq)
-            if [ -n "$problems" ]; then echo "$f:"; echo "$problems"; exit 1; fi
+            problems=$(python3 -c 'import json,sys,tomllib; json.dump(tomllib.load(open(sys.argv[1],"rb")), sys.stdout)' "$f" | jq -r -f t0/check.jq)
+            [ -z "$problems" ] || { echo "$f:"; echo "$problems"; exit 1; }
           done
 
       - id: auth
@@ -46,8 +36,6 @@ jobs:
           service_account: tokens-publisher@t0-artifacts.iam.gserviceaccount.com
           token_format: access_token
 
-      # Raw upload rather than `gcloud storage cp`: the publisher may only
-      # touch objects under staging/, and `cp` lists the bucket first.
       - name: Upload
         if: github.event_name == 'push'
         env:
@@ -55,10 +43,9 @@ jobs:
         run: |
           set -euo pipefail
           for env in staging production; do
-            curl --fail-with-body -sS -X POST \
+            curl --fail-with-body -sS -o /dev/null -X POST \
               -H "Authorization: Bearer ${TOKEN}" \
               -H "Content-Type: application/toml" \
               --data-binary "@t0/${env}.toml" \
-              "https://storage.googleapis.com/upload/storage/v1/b/t0-artifacts-tokens/o?uploadType=media&name=${env}%2Ftokens.toml" \
-              | jq -r '"uploaded \(.name) generation \(.generation)"'
+              "https://storage.googleapis.com/upload/storage/v1/b/t0-artifacts-tokens/o?uploadType=media&name=${env}%2Ftokens.toml"
           done
