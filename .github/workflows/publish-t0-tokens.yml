@@ -6,6 +6,7 @@ on:
   push:
     branches: [main]
     paths: ["t0/**", ".github/workflows/publish-t0-tokens.yml"]
+  workflow_dispatch:
 
 concurrency:
   group: publish-t0-tokens-${{ github.ref }}
@@ -14,38 +15,93 @@ permissions:
   contents: read
   id-token: write
 
+env:
+  WIF_PROVIDER: projects/684788085322/locations/global/workloadIdentityPools/github-actions/providers/github-oidc
+  BUCKET: t0-artifacts-tokens
+
 jobs:
-  publish:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-
-      - name: Check
-        run: |
+      - run: |
           set -euo pipefail
           for f in t0/staging.toml t0/production.toml; do
             problems=$(python3 -c 'import json,sys,tomllib; json.dump(tomllib.load(open(sys.argv[1],"rb")), sys.stdout)' "$f" | jq -r -f t0/check.jq)
             [ -z "$problems" ] || { echo "$f:"; echo "$problems"; exit 1; }
           done
 
+  staging:
+    if: github.event_name == 'push'
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
       - id: auth
-        if: github.event_name == 'push'
         uses: google-github-actions/auth@v2
         with:
-          workload_identity_provider: projects/684788085322/locations/global/workloadIdentityPools/github-actions/providers/github-oidc
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
           service_account: tokens-publisher@t0-artifacts.iam.gserviceaccount.com
           token_format: access_token
+      - env:
+          TOKEN: ${{ steps.auth.outputs.access_token }}
+        run: |
+          curl --fail-with-body -sS -o /dev/null -X POST \
+            -H "Authorization: Bearer ${TOKEN}" -H "Content-Type: application/toml" \
+            --data-binary @t0/staging.toml \
+            "https://storage.googleapis.com/upload/storage/v1/b/${BUCKET}/o?uploadType=media&name=staging%2Ftokens.toml"
 
-      - name: Upload
-        if: github.event_name == 'push'
+  production:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ env.WIF_PROVIDER }}
+          service_account: tokens-prod-publisher@t0-artifacts.iam.gserviceaccount.com
+          token_format: access_token
+      - uses: google-github-actions/setup-gcloud@v2
+      - name: Request PAM grant
         env:
           TOKEN: ${{ steps.auth.outputs.access_token }}
         run: |
           set -euo pipefail
-          for env in staging production; do
-            curl --fail-with-body -sS -o /dev/null -X POST \
-              -H "Authorization: Bearer ${TOKEN}" \
-              -H "Content-Type: application/toml" \
-              --data-binary "@t0/${env}.toml" \
-              "https://storage.googleapis.com/upload/storage/v1/b/t0-artifacts-tokens/o?uploadType=media&name=${env}%2Ftokens.toml"
+          curl -sS -o live.toml -H "Authorization: Bearer ${TOKEN}" \
+            "https://storage.googleapis.com/storage/v1/b/${BUCKET}/o/production%2Ftokens.toml?alt=media" || : > live.toml
+          DIFF=$(diff live.toml t0/production.toml | grep -E '^[<>]' | head -20 | cut -c1-100 || true)
+          JUSTIFICATION=$(printf '%s\n' \
+            "PRODUCTION TOKEN CONFIG upload to gs://${BUCKET}/production/tokens.toml from ${GITHUB_REPOSITORY}@${GITHUB_SHA:0:7}." \
+            "Approving lets CI overwrite the file once. Pricing reads it at its next release." \
+            "BY: @${GITHUB_ACTOR}. Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" \
+            "DIFF vs live (< live, > new):" "${DIFF:-(none: identical)}" | LC_ALL=C tr -cd '\11\12\15\40-\176' | head -c 950)
+          echo "$JUSTIFICATION"
+          GRANT=$(gcloud pam grants list --entitlement=tokens-production-publish --location=global --project=t0-artifacts --format='value(name,state)' \
+            | awk '$2=="ACTIVE"||$2=="APPROVAL_AWAITED"||$2=="ACTIVATING"{print $1; exit}')
+          [ -n "$GRANT" ] || GRANT=$(gcloud pam grants create --entitlement=tokens-production-publish --location=global --project=t0-artifacts \
+            --requested-duration=1800s --justification="$JUSTIFICATION" --format='value(name)')
+          echo "GRANT=$GRANT" >> "$GITHUB_ENV"
+          for _ in $(seq 1 60); do
+            case "$(gcloud pam grants describe "$GRANT" --format='value(state)')" in
+              ACTIVE) exit 0 ;;
+              DENIED|REVOKED|ENDED|EXPIRED) echo "::error::grant refused"; exit 1 ;;
+              *) sleep 30 ;;
+            esac
           done
+          echo "::error::no approval within 30 minutes"; exit 1
+      - name: Upload
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 10); do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' -X POST \
+              -H "Authorization: Bearer $(gcloud auth print-access-token)" -H "Content-Type: application/toml" \
+              --data-binary @t0/production.toml \
+              "https://storage.googleapis.com/upload/storage/v1/b/${BUCKET}/o?uploadType=media&name=production%2Ftokens.toml")
+            [ "$code" = 200 ] && exit 0
+            echo "upload returned $code (IAM propagation?), retry $i"; sleep 20
+          done
+          exit 1
+      - if: success()
+        run: gcloud pam grants revoke "$GRANT" --reason="uploaded" || true
