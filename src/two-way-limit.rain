@@ -1,0 +1,81 @@
+version: 6
+
+orders:
+  base:
+    raindex: base
+    inputs:
+      - token: token1
+        vault-id: 1
+      - token: token2
+        vault-id: 2
+    outputs:
+      - token: token1
+        vault-id: 1
+      - token: token2
+        vault-id: 3
+
+scenarios:
+  base:
+    raindex: base
+    runs: 1
+    bindings:
+      raindex-subparser: 0x22839F16281E67E5Fd395fAFd1571e820CbD46cB
+      quote-token: ${order.outputs.1.token.address}
+
+deployments:
+  base:
+    order: base
+    scenario: base
+builder:
+  name: Two-way limit
+  description: A two-sided limit that buys and sells between two tokens at independent fixed ratios. Token1 shares one vault; token2 uses separate input and output vaults.
+  short-description: Two-sided limit with independent buy and sell prices. Inventory token shares a vault; quote token uses split vaults.
+  deployments:
+    base:
+      name: Base
+      description: Deploy a two-way limit order on Base.
+      deposits:
+        - token: token1
+        - token: token2
+      fields:
+        - binding: token1-per-token2
+          name: ${order.inputs.0.token.symbol} per ${order.inputs.1.token.symbol}
+          description: >
+            Buy ${order.inputs.0.token.symbol} by selling ${order.inputs.1.token.symbol}
+            (${order.inputs.0.token.symbol} received per 1 ${order.inputs.1.token.symbol} sold).
+        - binding: token2-per-token1
+          name: ${order.inputs.1.token.symbol} per ${order.inputs.0.token.symbol}
+          description: >
+            Sell ${order.inputs.0.token.symbol} for ${order.inputs.1.token.symbol}
+            (${order.inputs.1.token.symbol} received per 1 ${order.inputs.0.token.symbol} sold).
+      select-tokens:
+        - key: token1
+          name: Token to Buy and Sell
+          description: Inventory token. Input and output share one vault (e.g. FGI).
+        - key: token2
+          name: Quote Token
+          description: Quote token. Input and output use different vaults (e.g. USDC proceeds vs buy budget).
+---
+#raindex-subparser !The subparser to use.
+
+#token1-per-token2 !IO ratio when selling token2 (token1 received per 1 token2).
+#token2-per-token1 !IO ratio when selling token1 (token2 received per 1 token1).
+#quote-token !Token2 address. If the runtime output matches this, use token1-per-token2, otherwise token2-per-token1.
+
+#calculate-io
+using-words-from raindex-subparser
+max-output: max-positive-value(),
+io: if(
+  equal-to(
+    output-token()
+    quote-token
+  )
+  token1-per-token2
+  token2-per-token1
+);
+
+#handle-io
+:;
+
+#handle-add-order
+:;
