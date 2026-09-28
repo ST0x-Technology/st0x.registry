@@ -2,8 +2,10 @@
 #
 # Who owns what:
 #   [chains.<c>]                chain_id, quote_token: pricing. contract, inventory: bebop.
-#   [chains.<c>.assets...<SYM>] pricing, venues: pricing (venues = bebop / raindex / hook,
-#                               only on a priced slot). vault_ids: liquidity and bebop.
+#   [chains.<c>.assets...<SYM>] pricing: pricing. venues (priced slots only): each consumer
+#                               reads its own entry, bebop "bebop", the oracle "raindex",
+#                               the price publisher "hook"; pricing ignores it.
+#                               vault_ids: liquidity and bebop.
 #                               tokenized_equity, trading, rebalancing,
 #                               wrapped_equity_recovery: liquidity.
 #                               tokenized_equity_derivative: everyone (the wt token).
