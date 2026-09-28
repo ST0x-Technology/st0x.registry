@@ -1,0 +1,54 @@
+{
+  "name": "ST0x BNB Smart Chain Quote Token List",
+  "timestamp": "2026-09-11T00:00:00.000Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "st0x",
+    "quote",
+    "bnb"
+  ],
+  "tags": {
+    "quote": {
+      "name": "Quote",
+      "description": "Quote tokens for ST0x BNB Smart Chain deployments"
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 56,
+      "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+      "decimals": 18,
+      "name": "Binance-Peg USD Coin",
+      "symbol": "USDC",
+      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "tags": [
+        "quote"
+      ],
+      "extensions": {
+        "marketListed": true,
+        "marketQuote": true
+      }
+    }
+  ],
+  "tokenMap": {
+    "56_0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d": {
+      "chainId": 56,
+      "address": "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+      "decimals": 18,
+      "name": "Binance-Peg USD Coin",
+      "symbol": "USDC",
+      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "tags": [
+        "quote"
+      ],
+      "extensions": {
+        "marketListed": true,
+        "marketQuote": true
+      }
+    }
+  }
+}
