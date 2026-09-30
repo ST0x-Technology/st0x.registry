@@ -1,9 +1,9 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-09-06T00:00:00.000Z",
+    "timestamp": "2026-09-29T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 10,
+        "minor": 11,
         "patch": 0
     },
     "keywords": [
@@ -1165,6 +1165,27 @@
                 "marketListed": true,
                 "marketQuote": false
             }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x9Aa9c5a24e976096A6A7aB44986DAE8230fa5b27",
+            "decimals": 18,
+            "name": "Wrapped State Street SPDR S&P 500 ETF Trust ST0x",
+            "symbol": "wtSPY",
+            "logoURI": "https://st0x.io/images/state_street.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xda2e8d6e2a7d0a38a6b39a274d6911476062298b",
+                "receiptAddress": "0x1113a5dcae56f5c7320024780079c9c79767ddb8",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:SPY",
+                "isin": "US78462F1030",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
         }
     ],
     "tokenMap": {
@@ -2015,6 +2036,27 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:CBRS",
                 "isin": "US15675D1037",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        "8453_0x9Aa9c5a24e976096A6A7aB44986DAE8230fa5b27": {
+            "chainId": 8453,
+            "address": "0x9Aa9c5a24e976096A6A7aB44986DAE8230fa5b27",
+            "decimals": 18,
+            "name": "Wrapped State Street SPDR S&P 500 ETF Trust ST0x",
+            "symbol": "wtSPY",
+            "logoURI": "https://st0x.io/images/state_street.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xda2e8d6e2a7d0a38a6b39a274d6911476062298b",
+                "receiptAddress": "0x1113a5dcae56f5c7320024780079c9c79767ddb8",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:SPY",
+                "isin": "US78462F1030",
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false

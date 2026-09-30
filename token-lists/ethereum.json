@@ -1,9 +1,9 @@
 {
     "name": "ST0x Ethereum Token List",
-    "timestamp": "2026-09-07T00:00:00.000Z",
+    "timestamp": "2026-09-29T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 5,
+        "minor": 6,
         "patch": 0
     },
     "keywords": [
@@ -1081,6 +1081,25 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "NASDAQ:FGI",
                 "isin": "KYG3302D2024",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 1,
+            "address": "0xfBA650082205E5807a5eAF28BdcC8E851bB2f753",
+            "decimals": 18,
+            "name": "Wrapped State Street SPDR S&P 500 ETF Trust ST0x",
+            "symbol": "wtSPY",
+            "logoURI": "https://st0x.io/images/state_street.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x76d34283ec6d29b1b07e0e6077f5c436ad163b9c",
+                "receiptAddress": "0xc3f3eafcc5927c645cdb22ceeb68844d53aa7c7c",
+                "category": "ST0x",
+                "tradingViewSymbol": "AMEX:SPY",
+                "isin": "US78462F1030",
                 "tradingViewMarket": "america"
             }
         }
