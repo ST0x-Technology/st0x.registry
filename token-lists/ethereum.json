@@ -1,9 +1,9 @@
 {
     "name": "ST0x Ethereum Token List",
-    "timestamp": "2026-09-29T00:00:00.000Z",
+    "timestamp": "2026-09-30T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 6,
+        "minor": 7,
         "patch": 0
     },
     "keywords": [
@@ -1100,6 +1100,25 @@
                 "category": "ST0x",
                 "tradingViewSymbol": "AMEX:SPY",
                 "isin": "US78462F1030",
+                "tradingViewMarket": "america"
+            }
+        },
+        {
+            "chainId": 1,
+            "address": "0x06096908dBC38fc54509024674E4fd1891B5F7CA",
+            "decimals": 18,
+            "name": "Wrapped SenesTech, Inc. ST0x",
+            "symbol": "wtSNES",
+            "logoURI": "https://st0x.io/images/SNES.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xf8bf43d61e4cd2a5b5dfad01bac84693d7b95e51",
+                "receiptAddress": "0x4ed13d2c1f545fa73f53be8c0bb82d279738c10f",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:SNES",
+                "isin": "US81720R6045",
                 "tradingViewMarket": "america"
             }
         }

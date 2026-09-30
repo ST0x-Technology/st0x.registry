@@ -31,7 +31,7 @@ quote_token = "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168"
 id = "alpaca-regular"
 profile_revision = "staging-existing-v1"
 sessions = "regular"
-assets = ["COIN", "TSLA", "SPYM", "SPY", "AMZN", "ARKK", "ASML", "BMNR", "CEG", "CRCL", "DRAM", "IAU", "MSTR", "NVDA", "PPLT", "QQQM", "SIVR", "SKHY", "SPCX", "TSM", "VWO", "MU", "AMD", "AVGO", "AMAT", "LRCX", "TTWO", "AAPL", "BABA", "GOOGL", "HOOD", "INTC", "LLY", "MSFT", "ORCL", "PTY", "SMCI", "TQQQ", "MCD", "NKE", "GRND", "DNUT", "FGI", "PLBY", "TR", "WEN"]
+assets = ["COIN", "TSLA", "SPYM", "SPY", "AMZN", "ARKK", "ASML", "BMNR", "CEG", "CRCL", "DRAM", "IAU", "MSTR", "NVDA", "PPLT", "QQQM", "SIVR", "SKHY", "SPCX", "TSM", "VWO", "MU", "AMD", "AVGO", "AMAT", "LRCX", "TTWO", "AAPL", "BABA", "GOOGL", "HOOD", "INTC", "LLY", "MSFT", "ORCL", "PTY", "SMCI", "TQQQ", "MCD", "NKE", "GRND", "DNUT", "FGI", "SNES", "PLBY", "TR", "WEN"]
 
 [[trading_state.scopes]]
 id = "alpaca-extended"
@@ -1121,6 +1121,45 @@ vault_ids = ["0xfab"]
 pricing = "enabled"
 venues = ["raindex"]
 trading = "disabled"
+rebalancing = "disabled"
+wrapped_equity_recovery = "disabled"
+
+[assets.equities.SNES]
+extended_hours_counter_trading = "disabled"
+[[assets.equities.SNES.spread_model.profiles]]
+session = "rth"
+half_spread_bps = 400.0
+quote_staleness_seconds = 20
+[[assets.equities.SNES.spread_model.profiles]]
+session = "pre"
+half_spread_bps = 4000.0
+quote_staleness_seconds = 20
+[[assets.equities.SNES.spread_model.profiles]]
+session = "post"
+half_spread_bps = 2000.0
+quote_staleness_seconds = 20
+[[assets.equities.SNES.spread_model.profiles]]
+session = "rth"
+venue = "bebop"
+half_spread_bps = 400.0
+quote_staleness_seconds = 70
+[[assets.equities.SNES.spread_model.profiles]]
+session = "pre"
+venue = "bebop"
+half_spread_bps = 4000.0
+quote_staleness_seconds = 70
+[[assets.equities.SNES.spread_model.profiles]]
+session = "post"
+venue = "bebop"
+half_spread_bps = 2000.0
+quote_staleness_seconds = 70
+[chains.robinhood.assets.equities.SNES]
+tokenized_equity = "0xf8bf43d61e4cd2a5b5dfad01bac84693d7b95e51"
+tokenized_equity_derivative = "0x06096908dbc38fc54509024674e4fd1891b5f7ca"
+vault_ids = ["0xfab"]
+pricing = "enabled"
+venues = []
+trading = "enabled"
 rebalancing = "disabled"
 wrapped_equity_recovery = "disabled"
 
