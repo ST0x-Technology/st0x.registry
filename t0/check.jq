@@ -3,6 +3,7 @@
 
 def addr: type == "string" and test("^0x[0-9a-fA-F]{40}$");
 def flag: . == "enabled" or . == "disabled";
+def rebalancing_flag: flag or . == "paused";
 # An integer as written: jq keeps the literal, so 1.0 stays "1.0" here even
 # though 1.0 == 1. The services read these as integers and would reject a float.
 def int: type == "number" and (tojson | test("^-?[0-9]+$"));
@@ -55,8 +56,10 @@ def bad(cond; msg): if cond then msg else empty end;
         # Liquidity's row: all of it or none of it.
         (if [$a.tokenized_equity, $a.trading, $a.rebalancing, $a.wrapped_equity_recovery] | any(. != null)
          then bad($a.tokenized_equity | addr | not; "\($w): tokenized_equity is not an address"),
-              ([$a.trading, $a.rebalancing, $a.wrapped_equity_recovery][]
-               | select(flag | not) | "\($w): trading/rebalancing/wrapped_equity_recovery must each be enabled or disabled")
+              ([$a.trading, $a.wrapped_equity_recovery][]
+               | select(flag | not) | "\($w): trading/wrapped_equity_recovery must each be enabled or disabled"),
+              bad($a.rebalancing | rebalancing_flag | not;
+                  "\($w): rebalancing must be enabled, paused or disabled")
          else empty end))),
 
   # One token, every chain: spread and hedging policy.
