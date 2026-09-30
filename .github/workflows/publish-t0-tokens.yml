@@ -26,6 +26,7 @@ jobs:
       - uses: actions/checkout@v6
       - run: |
           set -euo pipefail
+          python3 t0/test-flags.py
           for f in t0/staging.toml t0/production.toml; do
             problems=$(python3 -c 'import json,sys,tomllib; json.dump(tomllib.load(open(sys.argv[1],"rb")), sys.stdout)' "$f" | jq -r -f t0/check.jq)
             [ -z "$problems" ] || { echo "$f:"; echo "$problems"; exit 1; }
