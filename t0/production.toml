@@ -173,7 +173,7 @@ wrapped_equity_recovery = "enabled"
 extended_hours_counter_trading = "enabled"
 [[assets.equities.AMZN.spread_model.profiles]]
 session = "rth"
-half_spread_bps = 29.43
+half_spread_bps = 29.44
 quote_staleness_seconds = 20
 [[assets.equities.AMZN.spread_model.profiles]]
 session = "pre"
@@ -186,7 +186,7 @@ quote_staleness_seconds = 20
 [[assets.equities.AMZN.spread_model.profiles]]
 session = "rth"
 venue = "bebop"
-half_spread_bps = 29.43
+half_spread_bps = 29.44
 quote_staleness_seconds = 70
 [[assets.equities.AMZN.spread_model.profiles]]
 session = "pre"
