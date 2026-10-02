@@ -1469,7 +1469,7 @@ pricing = "enabled"
 venues = ["raindex", "hook"]
 trading = "disabled"
 rebalancing = "enabled"
-wrapped_equity_recovery = "disabled"
+wrapped_equity_recovery = "enabled"
 
 [assets.equities.SGOV]
 extended_hours_counter_trading = "enabled"
