@@ -52,6 +52,13 @@ def bad(cond; msg): if cond then msg else empty end;
             "\($w): vault_ids must be a non-empty list of hex ids"),
         bad($ch.contract != null and IN(($a.venues // [])[]; "bebop") and $a.vault_ids == null;
             "\($w): quoted on bebop from a vault but has no vault_ids"),
+        # Liquidity reads these as a positive share count and a fraction in [0, 1].
+        bad($a.operational_limit != null and (($a.operational_limit | type) != "number"
+            or $a.operational_limit <= 0);
+            "\($w): operational_limit must be a positive number of shares"),
+        bad($a.target_share != null and (($a.target_share | type) != "number"
+            or $a.target_share < 0 or $a.target_share > 1);
+            "\($w): target_share must be a number from 0 to 1"),
         # Liquidity's row: all of it or none of it.
         (if [$a.tokenized_equity, $a.trading, $a.rebalancing, $a.wrapped_equity_recovery] | any(. != null)
          then bad($a.tokenized_equity | addr | not; "\($w): tokenized_equity is not an address"),
