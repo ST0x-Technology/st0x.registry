@@ -1468,7 +1468,7 @@ vault_ids = ["0xfab"]
 pricing = "enabled"
 venues = ["raindex", "hook"]
 trading = "disabled"
-rebalancing = "enabled"
+rebalancing = "disabled"
 wrapped_equity_recovery = "disabled"
 
 [assets.equities.SGOV]

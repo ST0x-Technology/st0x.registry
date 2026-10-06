@@ -55,8 +55,14 @@ def bad(cond; msg): if cond then msg else empty end;
         # Liquidity's row: all of it or none of it.
         (if [$a.tokenized_equity, $a.trading, $a.rebalancing, $a.wrapped_equity_recovery] | any(. != null)
          then bad($a.tokenized_equity | addr | not; "\($w): tokenized_equity is not an address"),
-              ([$a.trading, $a.rebalancing, $a.wrapped_equity_recovery][]
-               | select(flag | not) | "\($w): trading/rebalancing/wrapped_equity_recovery must each be enabled or disabled")
+              ([$a.trading, $a.wrapped_equity_recovery][]
+               | select(flag | not) | "\($w): trading/wrapped_equity_recovery must each be enabled or disabled"),
+              bad(IN($a.rebalancing; "enabled", "paused", "disabled") | not;
+                  "\($w): rebalancing must be enabled, paused or disabled"),
+              # Liquidity refuses at boot a listing that rebalances with no
+              # wallet recovery to finish a half-done transfer.
+              bad(IN($a.rebalancing; "enabled", "paused") and $a.wrapped_equity_recovery != "enabled";
+                  "\($w): rebalancing needs wrapped_equity_recovery enabled")
          else empty end))),
 
   # One token, every chain: spread and hedging policy.
