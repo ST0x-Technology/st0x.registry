@@ -1008,6 +1008,23 @@ trading = "enabled"
 rebalancing = "enabled"
 wrapped_equity_recovery = "enabled"
 
+[assets.equities.MC-PA]
+source = "eodhd"
+upstream = "MC.PA"
+currency = "EUR"
+calendar = "xpar"
+quote_mode = "venue_book"
+venue_margin_bps = 75.0
+isin = "FR0000121014"
+[chains.base.assets.equities.MC-PA]
+tokenized_equity = "0x6eC2421d74F2AF61b7EE7bCCAE25A3b6a7961Aa0"
+tokenized_equity_derivative = "0x378a04202D25659763A02dA5FE77c0a35e64Ce1D"
+pricing = "enabled"
+venues = ["raindex"]
+trading = "disabled"
+rebalancing = "disabled"
+wrapped_equity_recovery = "disabled"
+
 [assets.equities.MCD]
 extended_hours_counter_trading = "enabled"
 [[assets.equities.MCD.spread_model.profiles]]
