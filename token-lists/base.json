@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-10-08T00:00:00.000Z",
+    "timestamp": "2026-10-08T11:01:20.000Z",
     "version": {
         "major": 1,
         "minor": 13,
-        "patch": 0
+        "patch": 3
     },
     "keywords": [
         "st0x",
@@ -39,7 +39,8 @@
                 "isin": "US67066G1040",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -61,7 +62,8 @@
                 "isin": "US0231351067",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -83,7 +85,8 @@
                 "isin": "US88160R1014",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-07"
             }
         },
         {
@@ -105,7 +108,8 @@
                 "isin": "US5949724083",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -127,7 +131,8 @@
                 "isin": "US4642852044",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -149,7 +154,8 @@
                 "isin": "US19260Q1076",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -172,7 +178,8 @@
                 "isin": "US78464A8541",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -194,7 +201,8 @@
                 "isin": "US0032641088",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -216,7 +224,8 @@
                 "isin": "US1725731079",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -238,7 +247,8 @@
                 "isin": "US09175A2069",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -260,7 +270,8 @@
                 "isin": "US0032601066",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         {
@@ -281,7 +292,8 @@
                 "isin": "US46138G6492",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-05-08"
             }
         },
         {
@@ -302,7 +314,8 @@
                 "isin": "US9220428588",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-05-08"
             }
         },
         {
@@ -323,7 +336,8 @@
                 "isin": "US00214Q1040",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-05-08"
             }
         },
         {
@@ -344,7 +358,8 @@
                 "isin": "US46436E7186",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-04-20"
             }
         },
         {
@@ -365,7 +380,8 @@
                 "isin": "US21037T1097",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         {
@@ -386,7 +402,8 @@
                 "isin": "US77926X3200",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         {
@@ -407,7 +424,8 @@
                 "isin": "US8740391003",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         {
@@ -428,7 +446,8 @@
                 "isin": "USN070592100",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         {
@@ -449,7 +468,8 @@
                 "isin": "US78392B2060",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         {
@@ -470,7 +490,8 @@
                 "isin": "US84615Q1031",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-06-12"
             }
         },
         {
@@ -491,7 +512,8 @@
                 "isin": "US5951121038",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         {
@@ -512,7 +534,8 @@
                 "isin": "US0079031078",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         {
@@ -533,7 +556,8 @@
                 "isin": "US11135F1012",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         {
@@ -554,7 +578,8 @@
                 "isin": "US0382221051",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         {
@@ -575,7 +600,8 @@
                 "isin": "US5128073062",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         {
@@ -596,7 +622,8 @@
                 "isin": "US8740541094",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         {
@@ -617,7 +644,8 @@
                 "isin": "US02079K3059",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         {
@@ -638,7 +666,8 @@
                 "isin": "US4581401001",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         {
@@ -659,7 +688,8 @@
                 "isin": "US0378331005",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         {
@@ -680,7 +710,8 @@
                 "isin": "US5949181045",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         {
@@ -701,7 +732,8 @@
                 "isin": "US5324571083",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         {
@@ -722,7 +754,8 @@
                 "isin": "US72201B1017",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         {
@@ -743,7 +776,8 @@
                 "isin": "US7707001027",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         {
@@ -764,7 +798,8 @@
                 "isin": "US68389X1054",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         {
@@ -785,7 +820,8 @@
                 "isin": "US86800U3023",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         {
@@ -806,7 +842,8 @@
                 "isin": "US01609W1027",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         {
@@ -827,7 +864,8 @@
                 "isin": "US74347X8314",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         {
@@ -848,7 +886,8 @@
                 "isin": "US35472T1016",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-25"
             }
         },
         {
@@ -869,7 +908,8 @@
                 "isin": "US15675D1037",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-17"
             }
         },
         {
@@ -890,7 +930,8 @@
                 "isin": "US6541061031",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-04"
             }
         },
         {
@@ -911,7 +952,8 @@
                 "isin": "US5801351017",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-04"
             }
         },
         {
@@ -932,7 +974,8 @@
                 "isin": "US39854F1012",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-04"
             }
         },
         {
@@ -953,7 +996,8 @@
                 "isin": "US50101L1061",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
             }
         },
         {
@@ -974,7 +1018,8 @@
                 "isin": "KYG3302D2024",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
             }
         },
         {
@@ -995,7 +1040,8 @@
                 "isin": "US72814P1093",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
             }
         },
         {
@@ -1016,7 +1062,8 @@
                 "isin": "US8905161076",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
             }
         },
         {
@@ -1037,7 +1084,8 @@
                 "isin": "US95058W1009",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
             }
         },
         {
@@ -1058,7 +1106,8 @@
                 "isin": "US78462F1030",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-30"
             }
         },
         {
@@ -1079,14 +1128,15 @@
                 "isin": "US9311421039",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-10-08"
             }
         },
         {
             "chainId": 8453,
             "address": "0x378a04202D25659763A02dA5FE77c0a35e64Ce1D",
             "decimals": 18,
-            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
+            "name": "Wrapped LVMH Mo\u00ebt Hennessy Louis Vuitton SE ST0x",
             "symbol": "wtMC",
             "logoURI": "https://st0x.io/images/MC.png",
             "tags": [
@@ -1100,7 +1150,8 @@
                 "isin": "FR0000121014",
                 "tradingViewMarket": "france",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-10-08"
             }
         }
     ],
@@ -1124,7 +1175,8 @@
                 "isin": "US67066G1040",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x997baE3EC193a249596d3708C3fAB7C501Bb8a53": {
@@ -1146,7 +1198,8 @@
                 "isin": "US0231351067",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x219A8d384a10BF19b9f24cB5cC53F79Dd0e5A03D": {
@@ -1168,7 +1221,8 @@
                 "isin": "US88160R1014",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-07"
             }
         },
         "8453_0xFF05E1bD696900dc6A52CA35Ca61Bb1024eDa8e2": {
@@ -1190,7 +1244,8 @@
                 "isin": "US5949724083",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x1E46d7eFef64A833AFB1CD49299a7AD5B439f4d8": {
@@ -1212,7 +1267,8 @@
                 "isin": "US4642852044",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x5cDa0E1CA4ce2af96315f7F8963C85399c172204": {
@@ -1234,7 +1290,8 @@
                 "isin": "US19260Q1076",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x31C2C14134e6E3B7ef9478297F199331133Fc2d8": {
@@ -1257,7 +1314,8 @@
                 "isin": "US78464A8541",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0xEB7F3E4093C9d68253b6104FbbfF561F3eC0442F": {
@@ -1279,7 +1337,8 @@
                 "isin": "US0032641088",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x8AFba81DEc38DE0A18E2Df5E1967a7493651eebf": {
@@ -1301,7 +1360,8 @@
                 "isin": "US1725731079",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x2512EC661f0bA089c275EA105E31bAD6FcFcf319": {
@@ -1323,7 +1383,8 @@
                 "isin": "US09175A2069",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x82f5BAEE1076334357a34A19E04f7c282D51cE47": {
@@ -1345,7 +1406,8 @@
                 "isin": "US0032601066",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-02-06"
             }
         },
         "8453_0x823FF7Bbde2869aAe73A6CD53e7f614442836757": {
@@ -1366,7 +1428,8 @@
                 "isin": "US46138G6492",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-05-08"
             }
         },
         "8453_0x23ec6886b49D7ab123E9ee8e474D2fa7AB6Cbc2d": {
@@ -1387,7 +1450,8 @@
                 "isin": "US9220428588",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-05-08"
             }
         },
         "8453_0x9FfF48B4535AF3765Ac9E1b164720EDc01DF8EE7": {
@@ -1408,7 +1472,8 @@
                 "isin": "US00214Q1040",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-05-08"
             }
         },
         "8453_0x78c31580c97101694C70022c83D570150c11e935": {
@@ -1429,7 +1494,8 @@
                 "isin": "US46436E7186",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-04-20"
             }
         },
         "8453_0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3": {
@@ -1450,7 +1516,8 @@
                 "isin": "US21037T1097",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         "8453_0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8": {
@@ -1471,7 +1538,8 @@
                 "isin": "US77926X3200",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         "8453_0x71C66449d2528E23514A9c197BFD55Ae9DB3B714": {
@@ -1492,7 +1560,8 @@
                 "isin": "US8740391003",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         "8453_0x8200c6d9AB9E02A25D7F2099244C476d99a085ef": {
@@ -1513,7 +1582,8 @@
                 "isin": "USN070592100",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         "8453_0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9": {
@@ -1534,7 +1604,8 @@
                 "isin": "US78392B2060",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-13"
             }
         },
         "8453_0x19F89aaEf8a93f38A974beca9776f09aB844887F": {
@@ -1555,7 +1626,8 @@
                 "isin": "US84615Q1031",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-06-12"
             }
         },
         "8453_0x89EcfE9E0728D6b3c5eb0EE7236f8C6F806C7B56": {
@@ -1576,7 +1648,8 @@
                 "isin": "US5951121038",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         "8453_0x648042Acd8638E12fEfd51C2b25A9f993f21a612": {
@@ -1597,7 +1670,8 @@
                 "isin": "US0079031078",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         "8453_0x70A182f481AEF05836666B6CfDbe84dCBCE8AC19": {
@@ -1618,7 +1692,8 @@
                 "isin": "US11135F1012",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         "8453_0x522DC65c89C9Af4f410BAe01bbf53aF75854a9f9": {
@@ -1639,7 +1714,8 @@
                 "isin": "US0382221051",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         "8453_0x328B9aFFa511fE26673edBb4fEa37eDaF908A3bc": {
@@ -1660,7 +1736,8 @@
                 "isin": "US5128073062",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         "8453_0x045Fb493D970f94a54FeaF931033622fC82192e6": {
@@ -1681,7 +1758,8 @@
                 "isin": "US8740541094",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-21"
             }
         },
         "8453_0x6a2357Df4975C667B171bE53dA6FFe6deBf7030c": {
@@ -1702,7 +1780,8 @@
                 "isin": "US02079K3059",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         "8453_0xf567652fC2d7Db8D5469fD06AEbe8C9c4372d722": {
@@ -1723,7 +1802,8 @@
                 "isin": "US4581401001",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         "8453_0x1020EC8Aa3f709a1f3D8705cdBa89b950451bd88": {
@@ -1744,7 +1824,8 @@
                 "isin": "US0378331005",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         "8453_0x515A3Ac2a6aB590bDFa970caFFFd7fAdC680886E": {
@@ -1765,7 +1846,8 @@
                 "isin": "US5949181045",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         "8453_0x892CcF5E75f4a7Ee6402971a1587F65BEE4d52bd": {
@@ -1786,7 +1868,8 @@
                 "isin": "US5324571083",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         "8453_0xb6D779A79E7493ed821a65D52bA419F0F6D5dD0a": {
@@ -1807,7 +1890,8 @@
                 "isin": "US72201B1017",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-07-28"
             }
         },
         "8453_0xd50f561322fe3235DBc9Ec8b3aB7693383d8A425": {
@@ -1828,7 +1912,8 @@
                 "isin": "US7707001027",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         "8453_0xCB9571aB96aA47374eF30D8E9ACCC1cD51064726": {
@@ -1849,7 +1934,8 @@
                 "isin": "US68389X1054",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         "8453_0xA759FAbbD866e6DB8bF76613C35825dC2e380bf0": {
@@ -1870,7 +1956,8 @@
                 "isin": "US86800U3023",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         "8453_0x7e5cc7eAe0455A07Ab4abf354E0f5657BA2888BD": {
@@ -1891,7 +1978,8 @@
                 "isin": "US01609W1027",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         "8453_0x295e9eCAb319006900a53b3f8D6Fcb0C131F4ada": {
@@ -1912,7 +2000,8 @@
                 "isin": "US74347X8314",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-06"
             }
         },
         "8453_0x9bDe199Ac6E7E050334306D9267c93e3D6d38333": {
@@ -1933,7 +2022,8 @@
                 "isin": "US35472T1016",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-25"
             }
         },
         "8453_0xB457cfBF31995d3aAAa704dA9999cC0b011820ca": {
@@ -1954,7 +2044,184 @@
                 "isin": "US15675D1037",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-08-17"
+            }
+        },
+        "8453_0x0883f32d23Ed5535057a4B5E3eB1970FE08606AF": {
+            "chainId": 8453,
+            "address": "0x0883f32d23Ed5535057a4B5E3eB1970FE08606AF",
+            "decimals": 18,
+            "name": "Wrapped NIKE, Inc. ST0x",
+            "symbol": "wtNKE",
+            "logoURI": "https://st0x.io/images/NKE.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x88C3F4E2E0a977Fed97ed246c70BFD7A01070246",
+                "receiptAddress": "0x8A0037757d67084f5431c02eE2A352593eFe2957",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:NKE",
+                "isin": "US6541061031",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-04"
+            }
+        },
+        "8453_0x7ecAE30Ed8ee4F72653ada7b0941bDE7a0a8eE8d": {
+            "chainId": 8453,
+            "address": "0x7ecAE30Ed8ee4F72653ada7b0941bDE7a0a8eE8d",
+            "decimals": 18,
+            "name": "Wrapped McDonald's Corporation ST0x",
+            "symbol": "wtMCD",
+            "logoURI": "https://st0x.io/images/MCD.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6363657E19A82ABE0E210e9b8c88Ea61d96eceaB",
+                "receiptAddress": "0x1Cfa3Af9DcEc40dCa8f8588c7b7FCE5a1BA6eC3f",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:MCD",
+                "isin": "US5801351017",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-04"
+            }
+        },
+        "8453_0x1197E6FA778c4D13E47875bD1761c68C22c928e0": {
+            "chainId": 8453,
+            "address": "0x1197E6FA778c4D13E47875bD1761c68C22c928e0",
+            "decimals": 18,
+            "name": "Wrapped Grindr Inc. ST0x",
+            "symbol": "wtGRND",
+            "logoURI": "https://st0x.io/images/GRND.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xA4178410216F5f00C718BE88C2fF8AC24de192bc",
+                "receiptAddress": "0xca4495d2fe8e82951DEbda1102A1dCf09DB7Bba6",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:GRND",
+                "isin": "US39854F1012",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-04"
+            }
+        },
+        "8453_0x1db49Ff8BEe88ec73F82F395B0BEAd372BdcAdb7": {
+            "chainId": 8453,
+            "address": "0x1db49Ff8BEe88ec73F82F395B0BEAd372BdcAdb7",
+            "decimals": 18,
+            "name": "Wrapped Krispy Kreme, Inc. ST0x",
+            "symbol": "wtDNUT",
+            "logoURI": "https://st0x.io/images/DNUT.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6C2b6Ed57d4d9e93F3E4975FAc70eE4B180F4Eb9",
+                "receiptAddress": "0xE06eD5d80Db468a10fCfadF27ee9771DD73C7e35",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:DNUT",
+                "isin": "US50101L1061",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
+            }
+        },
+        "8453_0x6aed8b1aCfb04F4e0e6db580F12fF41438a394e5": {
+            "chainId": 8453,
+            "address": "0x6aed8b1aCfb04F4e0e6db580F12fF41438a394e5",
+            "decimals": 18,
+            "name": "Wrapped FGI Industries Ltd. ST0x",
+            "symbol": "wtFGI",
+            "logoURI": "https://st0x.io/images/FGI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x785BD77B8e92866f87E01416D1022d729975D529",
+                "receiptAddress": "0x46b25F089fFf268E28286C0d7A837c2f13Ad0952",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:FGI",
+                "isin": "KYG3302D2024",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
+            }
+        },
+        "8453_0x35fDe767dBFAa610D12cf99914bCd6CFEda73B7B": {
+            "chainId": 8453,
+            "address": "0x35fDe767dBFAa610D12cf99914bCd6CFEda73B7B",
+            "decimals": 18,
+            "name": "Wrapped Playboy, Inc. ST0x",
+            "symbol": "wtPLBY",
+            "logoURI": "https://st0x.io/images/PLBY.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xe9bc7eF69f123cA2bcA1021D1BE30224271a9217",
+                "receiptAddress": "0x5978B2FA7B3DDA36847eb7D2003EC7AE112258AA",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:PLBY",
+                "isin": "US72814P1093",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
+            }
+        },
+        "8453_0x433fd2Fc0964B07E9820e4cd01774eDE59D1F002": {
+            "chainId": 8453,
+            "address": "0x433fd2Fc0964B07E9820e4cd01774eDE59D1F002",
+            "decimals": 18,
+            "name": "Wrapped Tootsie Roll Industries, Inc. ST0x",
+            "symbol": "wtTR",
+            "logoURI": "https://st0x.io/images/TR.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xeF935b17d5BE5b7ecA803158a845A08A7A9383f2",
+                "receiptAddress": "0xf5e5d2d3b6be819Ff65cB364F4178252C9dbf5B7",
+                "category": "ST0x",
+                "tradingViewSymbol": "NYSE:TR",
+                "isin": "US8905161076",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
+            }
+        },
+        "8453_0x31Fa821F8B1BDea7Db357ec9622d1A2f6aFE903d": {
+            "chainId": 8453,
+            "address": "0x31Fa821F8B1BDea7Db357ec9622d1A2f6aFE903d",
+            "decimals": 18,
+            "name": "Wrapped The Wendy's Company ST0x",
+            "symbol": "wtWEN",
+            "logoURI": "https://st0x.io/images/WEN.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0xedA4df511dEA07b6529db2196998B30E03791d87",
+                "receiptAddress": "0x6c26044FAa1Ea4459a03c3760F4aAA1826a1e392",
+                "category": "ST0x",
+                "tradingViewSymbol": "NASDAQ:WEN",
+                "isin": "US95058W1009",
+                "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-09-08"
             }
         },
         "8453_0x9Aa9c5a24e976096A6A7aB44986DAE8230fa5b27": {
@@ -1975,7 +2242,8 @@
                 "isin": "US78462F1030",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-09-30"
             }
         },
         "8453_0xc7370cb84159df9760F87ef7092B97cB850AD9d4": {
@@ -1996,14 +2264,15 @@
                 "isin": "US9311421039",
                 "tradingViewMarket": "america",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-10-08"
             }
         },
         "8453_0x378a04202D25659763A02dA5FE77c0a35e64Ce1D": {
             "chainId": 8453,
             "address": "0x378a04202D25659763A02dA5FE77c0a35e64Ce1D",
             "decimals": 18,
-            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
+            "name": "Wrapped LVMH Mo\u00ebt Hennessy Louis Vuitton SE ST0x",
             "symbol": "wtMC",
             "logoURI": "https://st0x.io/images/MC.png",
             "tags": [
@@ -2017,7 +2286,8 @@
                 "isin": "FR0000121014",
                 "tradingViewMarket": "france",
                 "marketListed": true,
-                "marketQuote": false
+                "marketQuote": false,
+                "inceptionDate": "2026-10-08"
             }
         }
     }
