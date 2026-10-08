@@ -5,7 +5,9 @@
 #   [chains.<c>.assets...<SYM>] pricing, venues: pricing (venues = bebop / raindex / hook,
 #                               only on a priced slot). vault_ids: liquidity and bebop.
 #                               tokenized_equity, trading, rebalancing,
-#                               wrapped_equity_recovery: liquidity.
+#                               wrapped_equity_recovery, operational_limit,
+#                               target_share: liquidity. operational_limit also caps
+#                               the symbol's hedges on every chain: the lowest one wins.
 #                               tokenized_equity_derivative: everyone (the wt token).
 #   [assets.equities.<SYM>]     fixed_half_spread_bps, spread_model: pricing.
 #                               extended_hours_counter_trading: liquidity.
@@ -600,6 +602,7 @@ venues = ["raindex", "bebop"]
 trading = "enabled"
 rebalancing = "enabled"
 wrapped_equity_recovery = "enabled"
+target_share = 0.4
 [chains.robinhood.assets.equities.DNUT]
 tokenized_equity = "0x4a88c84AA04a5151997e8E503BEe7fD92E0918A9"
 tokenized_equity_derivative = "0xb7fC2b7881cceeB73D8DEccf69B6AcB8aC2E0826"
@@ -607,8 +610,10 @@ vault_ids = ["0xfab"]
 pricing = "enabled"
 venues = ["raindex", "bebop"]
 trading = "enabled"
-rebalancing = "disabled"
-wrapped_equity_recovery = "disabled"
+rebalancing = "enabled"
+wrapped_equity_recovery = "enabled"
+operational_limit = 25
+target_share = 0.4
 
 [assets.equities.DRAM]
 extended_hours_counter_trading = "enabled"

@@ -1472,3 +1472,16 @@ venues = ["raindex"]
 trading = "disabled"
 rebalancing = "disabled"
 wrapped_equity_recovery = "disabled"
+
+[assets.equities.MC-PA]
+source = "eodhd"
+upstream = "MC.PA"
+currency = "EUR"
+calendar = "xpar"
+quote_mode = "venue_book"
+venue_margin_bps = 50.0
+isin = "FR0000121014"
+[chains.base.assets.equities.MC-PA]
+tokenized_equity_derivative = "0x73AfbEA14612e19A6Ab2C23B4D8E69a0B7D31f29"
+pricing = "enabled"
+venues = ["raindex"]

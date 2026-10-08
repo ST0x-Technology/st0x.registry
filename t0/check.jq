@@ -16,6 +16,7 @@ def bad(cond; msg): if cond then msg else empty end;
 | ($root.assets.equities // {}) as $assets
 | ([$chains[] | (.assets.equities // {}) | to_entries[]
     | select(.value.pricing == "enabled") | .key] | unique) as $priced
+| ([$assets | to_entries[] | select(.value.source == "eodhd") | .key]) as $eodhd
 | [$root.trading_state.scopes[]?.assets[]] as $scoped
 |
   bad(($root.schema_version | int | not) or $root.schema_version != 1;
@@ -52,6 +53,13 @@ def bad(cond; msg): if cond then msg else empty end;
             "\($w): vault_ids must be a non-empty list of hex ids"),
         bad($ch.contract != null and IN(($a.venues // [])[]; "bebop") and $a.vault_ids == null;
             "\($w): quoted on bebop from a vault but has no vault_ids"),
+        # Liquidity reads these as a positive share count and a fraction in [0, 1].
+        bad($a.operational_limit != null and (($a.operational_limit | type) != "number"
+            or $a.operational_limit <= 0);
+            "\($w): operational_limit must be a positive number of shares"),
+        bad($a.target_share != null and (($a.target_share | type) != "number"
+            or $a.target_share < 0 or $a.target_share > 1);
+            "\($w): target_share must be a number from 0 to 1"),
         # Liquidity's row: all of it or none of it.
         (if [$a.tokenized_equity, $a.trading, $a.rebalancing, $a.wrapped_equity_recovery] | any(. != null)
          then bad($a.tokenized_equity | addr | not; "\($w): tokenized_equity is not an address"),
@@ -67,7 +75,37 @@ def bad(cond; msg): if cond then msg else empty end;
 
   # One token, every chain: spread and hedging policy.
   ($assets | to_entries[] | .key as $s | .value as $a
-   | ($a | unknown(["fixed_half_spread_bps", "extended_hours_counter_trading", "spread_model"]; $s)),
+   | ($a | unknown(["fixed_half_spread_bps", "extended_hours_counter_trading", "spread_model",
+                    "source", "upstream", "currency", "calendar", "quote_mode", "venue_margin_bps", "isin"]; $s)),
+     bad($a.source != null and (IN($a.source; "alpaca", "eodhd") | not); "\($s): source must be alpaca or eodhd"),
+     # EU listings priced from the EODHD venue book, as pricing's AssetEntry reads them.
+     (if $a.source == "eodhd" then
+        ({xetr: ["EUR"], xpar: ["EUR"], xams: ["EUR"], xcse: ["DKK"], xlon: ["GBX", "GBP", "USD", "EUR"]}) as $venue_currencies
+        | ({AS: "xams", PA: "xpar", XETRA: "xetr", LSE: "xlon", CO: "xcse"}) as $suffix_calendar
+        | bad(($a.upstream | text | not) or ($a.upstream | test("^[A-Z0-9-]+\\.(AS|PA|XETRA|LSE|CO)$") | not);
+              "\($s): upstream must be TICKER.AS, .PA, .XETRA, .LSE or .CO"),
+          bad(($a.calendar | type) != "string" or ($venue_currencies | has($a.calendar) | not);
+              "\($s): calendar must be one of xpar, xams, xetr, xlon, xcse"),
+          bad(($a.upstream | type) == "string" and ($a.calendar | type) == "string"
+              and ($suffix_calendar[$a.upstream | split(".") | last] // null) != $a.calendar;
+              "\($s): upstream suffix does not match calendar \($a.calendar)"),
+          bad(($a.currency | type) != "string"; "\($s): source eodhd needs an explicit currency"),
+          bad(($a.currency | type) == "string" and ($a.calendar | type) == "string"
+              and ($venue_currencies | has($a.calendar))
+              and (IN($venue_currencies[$a.calendar][]; $a.currency) | not);
+              "\($s): currency \($a.currency) is not listed on \($a.calendar)"),
+          bad($a.quote_mode != "venue_book"; "\($s): source eodhd uses quote_mode venue_book"),
+          bad(($a.venue_margin_bps | type) != "number" or $a.venue_margin_bps < 0 or $a.venue_margin_bps >= 1000;
+              "\($s): venue_margin_bps must be between 0 and 1000"),
+          bad($a.fixed_half_spread_bps != null or $a.spread_model != null;
+              "\($s): an EODHD row takes venue_margin_bps, not fixed_half_spread_bps or spread_model"),
+          bad($a.isin != null and (($a.isin | type) != "string" or ($a.isin | test("^[A-Z]{2}[A-Z0-9]{9}[0-9]$") | not));
+              "\($s): isin must be a 12-character ISIN")
+      else
+        bad($a.upstream != null or $a.currency != null or $a.calendar != null or $a.venue_margin_bps != null
+            or $a.isin != null or ($a.quote_mode != null and $a.quote_mode != "mark_spread");
+            "\($s): upstream, currency, calendar, quote_mode, venue_margin_bps and isin are for source eodhd rows")
+      end),
      bad($a.fixed_half_spread_bps != null and (($a.fixed_half_spread_bps | type) != "number"
          or $a.fixed_half_spread_bps <= 0 or $a.fixed_half_spread_bps >= 10000);
          "\($s): fixed_half_spread_bps must be between 0 and 10000"),
@@ -75,7 +113,7 @@ def bad(cond; msg): if cond then msg else empty end;
          "\($s): extended_hours_counter_trading must be enabled or disabled"),
      bad($a.fixed_half_spread_bps != null and (($a.spread_model.profiles // []) | length) > 0;
          "\($s): has both a fixed spread and profiles; pricing takes one or the other"),
-     bad(IN($priced[]; $s) and $a.fixed_half_spread_bps == null and (($a.spread_model.profiles // []) | length) == 0;
+     bad(IN($priced[]; $s) and $a.source != "eodhd" and $a.fixed_half_spread_bps == null and (($a.spread_model.profiles // []) | length) == 0;
          "\($s): priced but has no spread, so it would never quote"),
      (($a.spread_model // {}) | unknown(["profiles"]; "\($s) spread_model")),
      (($a.spread_model.profiles // [])[] | . as $p
@@ -98,6 +136,10 @@ def bad(cond; msg): if cond then msg else empty end;
    | "trading_state: scope id \(.) is used twice"),
 
   # Pricing refuses to start unless every priced token is in exactly one scope.
-  ($priced - $scoped | .[] | "\(.): priced but in no trading_state scope"),
+  # EODHD rows get a generated <calendar>-regular scope from pricing and must not be listed.
+  ($priced - $eodhd - $scoped | .[] | "\(.): priced but in no trading_state scope"),
+  ($eodhd - ($eodhd - $scoped) | .[] | "\(.): source eodhd gets a generated trading_state scope; do not list it"),
+  ([$root.trading_state.scopes[]?.id] - ([$root.trading_state.scopes[]?.id] - ["xpar-regular", "xams-regular", "xetr-regular", "xlon-regular", "xcse-regular"]) | .[]
+   | "trading_state: scope id \(.) is reserved for a generated EU venue scope"),
   ($scoped - $priced | .[] | "\(.): in a trading_state scope but not priced anywhere"),
   ($scoped | group_by(.) | map(select(length > 1) | .[0]) | .[] | "\(.): in more than one trading_state scope")
