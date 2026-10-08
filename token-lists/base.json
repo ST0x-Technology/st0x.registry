@@ -3,7 +3,7 @@
     "timestamp": "2026-10-08T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 12,
+        "minor": 13,
         "patch": 0
     },
     "keywords": [
@@ -1081,6 +1081,27 @@
                 "marketListed": true,
                 "marketQuote": false
             }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x378a04202D25659763A02dA5FE77c0a35e64Ce1D",
+            "decimals": 18,
+            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
+            "symbol": "wtMC",
+            "logoURI": "https://st0x.io/images/MC.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6ec2421d74f2af61b7ee7bccae25a3b6a7961aa0",
+                "receiptAddress": "0xc3fd55a007cb7e4549a4b5064691c75609b1411b",
+                "category": "ST0x",
+                "tradingViewSymbol": "EURONEXT:MC",
+                "isin": "FR0000121014",
+                "tradingViewMarket": "france",
+                "marketListed": true,
+                "marketQuote": false
+            }
         }
     ],
     "tokenMap": {
@@ -1974,6 +1995,27 @@
                 "tradingViewSymbol": "NASDAQ:WMT",
                 "isin": "US9311421039",
                 "tradingViewMarket": "america",
+                "marketListed": true,
+                "marketQuote": false
+            }
+        },
+        "8453_0x378a04202D25659763A02dA5FE77c0a35e64Ce1D": {
+            "chainId": 8453,
+            "address": "0x378a04202D25659763A02dA5FE77c0a35e64Ce1D",
+            "decimals": 18,
+            "name": "Wrapped LVMH Moët Hennessy Louis Vuitton SE ST0x",
+            "symbol": "wtMC",
+            "logoURI": "https://st0x.io/images/MC.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6ec2421d74f2af61b7ee7bccae25a3b6a7961aa0",
+                "receiptAddress": "0xc3fd55a007cb7e4549a4b5064691c75609b1411b",
+                "category": "ST0x",
+                "tradingViewSymbol": "EURONEXT:MC",
+                "isin": "FR0000121014",
+                "tradingViewMarket": "france",
                 "marketListed": true,
                 "marketQuote": false
             }
