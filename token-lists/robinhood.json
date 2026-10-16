@@ -1,9 +1,9 @@
 {
   "name": "ST0x Robinhood Chain Token List",
-  "timestamp": "2026-10-08T10:24:05.000Z",
+  "timestamp": "2026-10-15T00:00:00.000Z",
   "version": {
     "major": 1,
-    "minor": 5,
+    "minor": 6,
     "patch": 0
   },
   "keywords": [
@@ -1078,6 +1078,26 @@
         "isin": "US9311421039",
         "tradingViewMarket": "america",
         "inceptionDate": "2026-10-08"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x81f40cbCFAE7A1aD1f4474eD95A210DfA3B90B0f",
+      "decimals": 18,
+      "name": "Wrapped The Walt Disney Company ST0x",
+      "symbol": "wtDIS",
+      "logoURI": "https://st0x.io/images/DIS.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xd78025aa344e549a1d76ece1591c481cc7bc3548",
+        "receiptAddress": "0x29e7fe750dfffd4d7c8e907c126324b8a5a9adb7",
+        "category": "ST0x",
+        "tradingViewSymbol": "NYSE:DIS",
+        "isin": "US2546871060",
+        "tradingViewMarket": "america",
+        "inceptionDate": "2026-10-15"
       }
     }
   ]
