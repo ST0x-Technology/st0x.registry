@@ -38,7 +38,7 @@ subgraphs:
   # Raindex on Robinhood Chain, indexed by Ormi as raindex-robinhood/prod.
   robinhood: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/raindex-robinhood/prod/gn
 metaboards:
-  base: https://subgraph.api.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/metadata-base/2025-07-06-594f/gn
+  base: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/metadata-base/prod/gn
   robinhood: https://subgraph.api.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/metadata-robinhood/prod/gn
 raindexes:
   base:
