@@ -19,6 +19,10 @@ jobs:
   upload:
     name: Upload private registry artifact
     runs-on: ubuntu-latest
+    # Environment secrets override the repo-level ones of the same name, so
+    # each API gets its own RPC URLs (one Alchemy app per deployment) while a
+    # target without its own PRIVATE_*_RPC_URLS falls back to the repo secret.
+    environment: ${{ inputs.target }}
     steps:
       - name: Validate target branch
         env:
