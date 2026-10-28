@@ -1,9 +1,9 @@
 {
   "name": "ST0x Robinhood Chain Token List",
-  "timestamp": "2026-10-15T00:00:00.000Z",
+  "timestamp": "2026-10-28T00:00:00.000Z",
   "version": {
     "major": 1,
-    "minor": 6,
+    "minor": 7,
     "patch": 0
   },
   "keywords": [
@@ -1098,6 +1098,66 @@
         "isin": "US2546871060",
         "tradingViewMarket": "america",
         "inceptionDate": "2026-10-15"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x88c10BEcFf283c21e9253d688ec06804359cF795",
+      "decimals": 18,
+      "name": "Wrapped Infineon Technologies AG ST0x",
+      "symbol": "wtIFX",
+      "logoURI": "https://st0x.io/images/IFX.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0x89857176e95973fdc8f365532cf4c162b3ee11f0",
+        "receiptAddress": "0xe509c440b68c4fbf95e24d7476d3e5bc8b25a8bb",
+        "category": "ST0x",
+        "tradingViewSymbol": "XETR:IFX",
+        "isin": "DE0006231004",
+        "tradingViewMarket": "germany",
+        "inceptionDate": "2026-10-26"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0xE828671B6EDd47122e4AcDE7aba6D12c58F244A3",
+      "decimals": 18,
+      "name": "Wrapped Soitec SA ST0x",
+      "symbol": "wtSOI",
+      "logoURI": "https://st0x.io/images/SOI.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xdab834808f67f8ac69642996a28571d4b2ad484e",
+        "receiptAddress": "0x7e26de68d52b54f9cbc8d64833c1feda82c36a92",
+        "category": "ST0x",
+        "tradingViewSymbol": "EURONEXT:SOI",
+        "isin": "FR0013227113",
+        "tradingViewMarket": "france",
+        "inceptionDate": "2026-10-26"
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x5d6775Cb5b22faF47471986e99265C1a4846d845",
+      "decimals": 18,
+      "name": "Wrapped Technoprobe S.p.A. ST0x",
+      "symbol": "wtTPRO",
+      "logoURI": "https://st0x.io/images/TPRO.png",
+      "tags": [
+        "st0x"
+      ],
+      "extensions": {
+        "unwrappedAddress": "0xb4e960909a3fe9179ed7e0fbc6abf3301ce85536",
+        "receiptAddress": "0xe26c011a6dcfd8286a3cf47718f14299d33f9478",
+        "category": "ST0x",
+        "tradingViewSymbol": "MIL:TPRO",
+        "isin": "IT0005482333",
+        "tradingViewMarket": "italy",
+        "inceptionDate": "2026-10-26"
       }
     }
   ]

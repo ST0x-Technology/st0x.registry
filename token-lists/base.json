@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-10-08T11:01:20.000Z",
+    "timestamp": "2026-10-28T00:00:00.000Z",
     "version": {
         "major": 1,
-        "minor": 13,
-        "patch": 3
+        "minor": 14,
+        "patch": 0
     },
     "keywords": [
         "st0x",
@@ -1153,6 +1153,72 @@
                 "marketQuote": false,
                 "inceptionDate": "2026-10-08"
             }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x339ad5e0d1Cc8B014eB6aCacbE8991214C5A9325",
+            "decimals": 18,
+            "name": "Wrapped Infineon Technologies AG ST0x",
+            "symbol": "wtIFX",
+            "logoURI": "https://st0x.io/images/IFX.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x90687ba21da53189047cd168a66ecc76282bf800",
+                "receiptAddress": "0x2ce6d030a8d32bce36b4502870eef59c7dbf8588",
+                "category": "ST0x",
+                "tradingViewSymbol": "XETR:IFX",
+                "isin": "DE0006231004",
+                "tradingViewMarket": "germany",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-10-26"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0xD50020eCA7CAAC05Ba7E7571C7B498781ca98d47",
+            "decimals": 18,
+            "name": "Wrapped Soitec SA ST0x",
+            "symbol": "wtSOI",
+            "logoURI": "https://st0x.io/images/SOI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6540478507ab063b03a704ac2c8e9118f1760848",
+                "receiptAddress": "0x12e14806559f80d6def4040e4d0bda5953f4f6f0",
+                "category": "ST0x",
+                "tradingViewSymbol": "EURONEXT:SOI",
+                "isin": "FR0013227113",
+                "tradingViewMarket": "france",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-10-26"
+            }
+        },
+        {
+            "chainId": 8453,
+            "address": "0x5ED9f297f10e2b72950F5abc2c2B770ee831805b",
+            "decimals": 18,
+            "name": "Wrapped Technoprobe S.p.A. ST0x",
+            "symbol": "wtTPRO",
+            "logoURI": "https://st0x.io/images/TPRO.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x37a2b2d6fe9cfc474692a3a0016519332bd49509",
+                "receiptAddress": "0xee91994c5fede5bd9a2d6ed17cdeda12680b3ca2",
+                "category": "ST0x",
+                "tradingViewSymbol": "MIL:TPRO",
+                "isin": "IT0005482333",
+                "tradingViewMarket": "italy",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-10-26"
+            }
         }
     ],
     "tokenMap": {
@@ -2288,6 +2354,72 @@
                 "marketListed": true,
                 "marketQuote": false,
                 "inceptionDate": "2026-10-08"
+            }
+        },
+        "8453_0x339ad5e0d1Cc8B014eB6aCacbE8991214C5A9325": {
+            "chainId": 8453,
+            "address": "0x339ad5e0d1Cc8B014eB6aCacbE8991214C5A9325",
+            "decimals": 18,
+            "name": "Wrapped Infineon Technologies AG ST0x",
+            "symbol": "wtIFX",
+            "logoURI": "https://st0x.io/images/IFX.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x90687ba21da53189047cd168a66ecc76282bf800",
+                "receiptAddress": "0x2ce6d030a8d32bce36b4502870eef59c7dbf8588",
+                "category": "ST0x",
+                "tradingViewSymbol": "XETR:IFX",
+                "isin": "DE0006231004",
+                "tradingViewMarket": "germany",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-10-26"
+            }
+        },
+        "8453_0xD50020eCA7CAAC05Ba7E7571C7B498781ca98d47": {
+            "chainId": 8453,
+            "address": "0xD50020eCA7CAAC05Ba7E7571C7B498781ca98d47",
+            "decimals": 18,
+            "name": "Wrapped Soitec SA ST0x",
+            "symbol": "wtSOI",
+            "logoURI": "https://st0x.io/images/SOI.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x6540478507ab063b03a704ac2c8e9118f1760848",
+                "receiptAddress": "0x12e14806559f80d6def4040e4d0bda5953f4f6f0",
+                "category": "ST0x",
+                "tradingViewSymbol": "EURONEXT:SOI",
+                "isin": "FR0013227113",
+                "tradingViewMarket": "france",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-10-26"
+            }
+        },
+        "8453_0x5ED9f297f10e2b72950F5abc2c2B770ee831805b": {
+            "chainId": 8453,
+            "address": "0x5ED9f297f10e2b72950F5abc2c2B770ee831805b",
+            "decimals": 18,
+            "name": "Wrapped Technoprobe S.p.A. ST0x",
+            "symbol": "wtTPRO",
+            "logoURI": "https://st0x.io/images/TPRO.png",
+            "tags": [
+                "st0x"
+            ],
+            "extensions": {
+                "unwrappedAddress": "0x37a2b2d6fe9cfc474692a3a0016519332bd49509",
+                "receiptAddress": "0xee91994c5fede5bd9a2d6ed17cdeda12680b3ca2",
+                "category": "ST0x",
+                "tradingViewSymbol": "MIL:TPRO",
+                "isin": "IT0005482333",
+                "tradingViewMarket": "italy",
+                "marketListed": true,
+                "marketQuote": false,
+                "inceptionDate": "2026-10-26"
             }
         }
     }
