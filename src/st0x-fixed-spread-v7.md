@@ -11,7 +11,10 @@ The v5 protections carry over unchanged:
 - **Pair binding** — the signed frame commits to this order's exact input/output
   tokens, so a frame for one pair can never be replayed against another.
 - **Session gating** — fills only during an active market session (`rth`,
-  `premarket`, `afterhours`), inside the session window the oracle stamped.
+  `premarket`, `afterhours`, `overnight`), inside the session window the oracle
+  stamped. The oracle signs `overnight` (US 20:00-04:00 ET) only for an asset
+  that pricing quotes overnight; for any other asset those hours are closed.
+  The per-asset switch is pricing's trading-state scope, not the order.
 - **Frame expiry** — each signed frame carries an absolute deadline; fills after
   it revert.
 - **Min/max price bounds** — deployer-set floor and ceiling as safety guards
@@ -95,7 +98,7 @@ Column 0 of the signed context, as `/context/v7` produces it.
 | 0 | schema version (7) |
 | 1 | underlying (stock) price - directional, spread-included, ratio units |
 | 2 | publish time (the source quote's own timestamp) |
-| 3 | market session: `rth`, `premarket`, `afterhours`, or a closed tag |
+| 3 | market session: `rth`, `premarket`, `afterhours`, `overnight`, or a closed tag |
 | 4 | session start (UTC) |
 | 5 | session end (UTC) |
 | 6 | input token address, left-padded to bytes32 |
