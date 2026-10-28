@@ -4,7 +4,8 @@ Offers a vault-share price DERIVED on-chain from the ST0x oracle's signed
 **underlying** price and the wrapped-token vault's **live** NAV — no NAV
 assertion, no revert on a NAV step.
 
-The v5 protections carry over unchanged:
+The v5 protections carry over, except that session gating now also accepts
+`overnight`:
 
 - **Trusted signer** — the signed context must come from the ST0x oracle signer.
 - **Schema guard** — the frame must declare schema version 7; anything else reverts.
