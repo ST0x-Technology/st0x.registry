@@ -376,12 +376,16 @@ oracle-expiry: signed-context<0 8>(),
 ),
 
 /* Active-session guard (no deployer field). Oracle expiry is already
- * clamped to session end; this rejects overnight/weekend closed tags. */
+ * clamped to session end; this rejects the closed tag (weekends, holidays,
+ * and the overnight hours of an asset that pricing does not quote
+ * overnight). The oracle signs "overnight" only for an asset that pricing
+ * quotes in the US 20:00-04:00 ET session. */
 :ensure(
   any(
     equal-to(oracle-session "rth")
     equal-to(oracle-session "premarket")
     equal-to(oracle-session "afterhours")
+    equal-to(oracle-session "overnight")
   )
   "Not in active market session"
 ),
