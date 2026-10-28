@@ -54,11 +54,15 @@ jobs:
           # The API runs eRPC on 127.0.0.1:4000 (st0x.rest.api nix/rpc-proxy.nix):
           # per request it tries our own node, then the public RPCs, then the
           # deployment's own Alchemy app, whose key lives on the droplet, not
-          # here. The public RPCs of settings.yaml stay after it in the list as
-          # the API's backstop if the proxy is down.
+          # here. The proxy is then the ONLY RPC for those chains: the API's
+          # RPC client sends every request to every listed URL in parallel,
+          # so a public RPC listed after the proxy would be called directly
+          # too (twice the public load, more throttling, more Alchemy).
+          replace_rpcs=()
           if [ "${RPC_PROXY}" = "true" ]; then
             PRIVATE_BASE_RPC_URLS="http://127.0.0.1:4000/main/evm/8453"
             PRIVATE_ROBINHOOD_RPC_URLS="http://127.0.0.1:4000/main/evm/4663"
+            replace_rpcs=(--replace-rpcs)
           fi
 
           if [ -z "${PRIVATE_BASE_RPC_URLS}" ]; then
@@ -73,6 +77,7 @@ jobs:
           scripts/build-private-registry-artifact.sh \
             --private-base-rpc-urls "${PRIVATE_BASE_RPC_URLS}" \
             --private-robinhood-rpc-urls "${PRIVATE_ROBINHOOD_RPC_URLS}" \
+            "${replace_rpcs[@]}" \
             --output "${RUNNER_TEMP}/private-registry-artifact.b64"
 
           registry_artifact_b64="$(cat "${RUNNER_TEMP}/private-registry-artifact.b64")"
