@@ -33,10 +33,12 @@ jobs:
           ref: ${{ inputs.raindex_ref || 'feat/st0x-v7-nav-fork-test' }}
           path: raindex
 
+      # Pinned: forge 1.8.7 no longer resolves the harness's
+      # raindex-interface-0.1.1 Soldeer import; 1.8.1 did.
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
         with:
-          version: stable
+          version: v1.8.1
 
       - name: Install Soldeer dependencies
         working-directory: raindex
