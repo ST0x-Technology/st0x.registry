@@ -24,6 +24,11 @@ jobs:
   upload:
     name: Upload private registry artifact
     runs-on: ubuntu-latest
+    # One upload per target at a time, so a rollback (rpc_proxy off) never
+    # lands before a proxy upload that was still in flight.
+    concurrency:
+      group: upload-private-registry-${{ inputs.target }}
+      cancel-in-progress: false
     # Environment secrets override the repo-level ones of the same name, so
     # each API gets its own RPC URLs (one Alchemy app per deployment) while a
     # target without its own PRIVATE_*_RPC_URLS falls back to the repo secret.
