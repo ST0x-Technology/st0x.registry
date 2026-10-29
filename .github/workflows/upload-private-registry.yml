@@ -12,7 +12,7 @@ on:
           - staging
           - production
       rpc_proxy:
-        description: "Point the API at its local RPC failover proxy instead of the PRIVATE_*_RPC_URLS secrets"
+        description: "Make the API's local RPC failover proxy the only Base and Robinhood RPC. Only after that API's latest deploy log, step Check RPC proxy, shows a head for both 8453 and 4663 and no 'not installed' warning"
         required: true
         type: boolean
         default: false
