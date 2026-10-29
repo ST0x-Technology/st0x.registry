@@ -107,7 +107,10 @@ END {
   }
 
   rpcs_end = block_end(rpcs_idx, 4)
-  for (idx = rpcs_idx + 1; idx < rpcs_end; idx++) {
+  # replace=1 drops the settings' own RPCs: the API's RPC client sends every
+  # request to every listed URL in parallel, so anything listed after a
+  # failover proxy is called directly as well, not held in reserve.
+  for (idx = rpcs_idx + 1; idx < rpcs_end && replace != "1"; idx++) {
     if (lines[idx] ~ /^[[:space:]]*-[[:space:]]*/) {
       value = lines[idx]
       sub(/^[[:space:]]*-[[:space:]]*/, "", value)

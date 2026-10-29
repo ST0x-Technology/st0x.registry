@@ -9,6 +9,7 @@ private_base_rpc_csv=""
 private_base_rpc_urls=()
 private_robinhood_rpc_csv=""
 private_robinhood_rpc_urls=()
+replace_rpcs=0
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 usage() {
@@ -25,6 +26,8 @@ Options:
   --private-robinhood-rpc-url URL  private Robinhood RPC URL; can be passed more than once
   --private-robinhood-rpc-urls URLS
                                    comma- or newline-separated private Robinhood RPC URLs
+  --replace-rpcs                   use only the private RPCs for Base and Robinhood, dropping
+                                   the settings' public ones (for the API's local RPC proxy)
   --output PATH                    write registry artifact base64 to PATH instead of stdout
   --settings-output PATH           write updated settings YAML to PATH for inspection
   -h, --help                       show this help
@@ -91,6 +94,10 @@ while [[ $# -gt 0 ]]; do
       private_robinhood_rpc_csv="$2"
       shift 2
       ;;
+    --replace-rpcs)
+      replace_rpcs=1
+      shift
+      ;;
     --output)
       [[ $# -ge 2 ]] || die "--output requires a path"
       output_path="$2"
@@ -152,12 +159,12 @@ for url in "${private_robinhood_rpc_urls[@]}"; do
   fi
 done
 
-awk -v target_network="base" \
+awk -v target_network="base" -v replace="$replace_rpcs" \
   -v private_urls_file="$private_base_urls_file" \
   -f "$script_dir/prepend-network-rpcs.awk" \
   "$settings_path" > "$base_settings_file"
 
-awk -v target_network="robinhood" \
+awk -v target_network="robinhood" -v replace="$replace_rpcs" \
   -v private_urls_file="$private_robinhood_urls_file" \
   -f "$script_dir/prepend-network-rpcs.awk" \
   "$base_settings_file" > "$updated_settings_file"

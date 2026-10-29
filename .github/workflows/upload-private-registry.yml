@@ -11,6 +11,11 @@ on:
         options:
           - staging
           - production
+      rpc_proxy:
+        description: "Make the API's local RPC failover proxy the only Base and Robinhood RPC. Only after that API's latest deploy log, step Check RPC proxy, shows a head for both 8453 and 4663 and no 'not installed' warning"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -19,6 +24,11 @@ jobs:
   upload:
     name: Upload private registry artifact
     runs-on: ubuntu-latest
+    # One upload per target at a time, so a rollback (rpc_proxy off) never
+    # lands before a proxy upload that was still in flight.
+    concurrency:
+      group: upload-private-registry-${{ inputs.target }}
+      cancel-in-progress: false
     # Environment secrets override the repo-level ones of the same name, so
     # each API gets its own RPC URLs (one Alchemy app per deployment) while a
     # target without its own PRIVATE_*_RPC_URLS falls back to the repo secret.
@@ -40,10 +50,25 @@ jobs:
 
       - name: Build private registry artifact
         env:
+          RPC_PROXY: ${{ inputs.rpc_proxy }}
           PRIVATE_BASE_RPC_URLS: ${{ secrets.PRIVATE_BASE_RPC_URLS }}
           PRIVATE_ROBINHOOD_RPC_URLS: ${{ secrets.PRIVATE_ROBINHOOD_RPC_URLS }}
         run: |
           set -euo pipefail
+
+          # The API runs eRPC on 127.0.0.1:4000 (st0x.rest.api nix/rpc-proxy.nix):
+          # per request it tries our own node, then the public RPCs, then the
+          # deployment's own Alchemy app, whose key lives on the droplet, not
+          # here. The proxy is then the ONLY RPC for those chains: the API's
+          # RPC client sends every request to every listed URL in parallel,
+          # so a public RPC listed after the proxy would be called directly
+          # too (twice the public load, more throttling, more Alchemy).
+          replace_rpcs=()
+          if [ "${RPC_PROXY}" = "true" ]; then
+            PRIVATE_BASE_RPC_URLS="http://127.0.0.1:4000/main/evm/8453"
+            PRIVATE_ROBINHOOD_RPC_URLS="http://127.0.0.1:4000/main/evm/4663"
+            replace_rpcs=(--replace-rpcs)
+          fi
 
           if [ -z "${PRIVATE_BASE_RPC_URLS}" ]; then
             echo "PRIVATE_BASE_RPC_URLS secret is required" >&2
@@ -57,6 +82,7 @@ jobs:
           scripts/build-private-registry-artifact.sh \
             --private-base-rpc-urls "${PRIVATE_BASE_RPC_URLS}" \
             --private-robinhood-rpc-urls "${PRIVATE_ROBINHOOD_RPC_URLS}" \
+            "${replace_rpcs[@]}" \
             --output "${RUNNER_TEMP}/private-registry-artifact.b64"
 
           registry_artifact_b64="$(cat "${RUNNER_TEMP}/private-registry-artifact.b64")"
