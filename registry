@@ -1,5 +1,6 @@
 https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a3e674bbcbe533a707a56118fad66bb2c027b5cb/settings.yaml
 fixed-limit https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a3e674bbcbe533a707a56118fad66bb2c027b5cb/src/fixed-limit.rain
+two-way-limit https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/dc99d002467f271f890276465f32a1a9d27d3fbf/src/two-way-limit.rain
 auction-dca https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a3e674bbcbe533a707a56118fad66bb2c027b5cb/src/auction-dca.rain
 grid https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a3e674bbcbe533a707a56118fad66bb2c027b5cb/src/grid.rain
 dynamic-spread https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/a3e674bbcbe533a707a56118fad66bb2c027b5cb/src/dynamic-spread.rain
