@@ -1,10 +1,10 @@
 {
     "name": "ST0x Base Token List",
-    "timestamp": "2026-10-28T00:00:00.000Z",
+    "timestamp": "2026-10-30T00:00:00.000Z",
     "version": {
         "major": 1,
         "minor": 14,
-        "patch": 0
+        "patch": 1
     },
     "keywords": [
         "st0x",
@@ -40,7 +40,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "NVDAs",
+                "nextName": "NVIDIA Corporation (ST0x)"
             }
         },
         {
@@ -63,7 +65,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "AMZNs",
+                "nextName": "Amazon.com Inc (ST0x)"
             }
         },
         {
@@ -86,7 +90,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-07"
+                "inceptionDate": "2026-02-07",
+                "nextSymbol": "TSLAs",
+                "nextName": "Tesla Inc (ST0x)"
             }
         },
         {
@@ -109,7 +115,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "MSTRs",
+                "nextName": "Strategy Inc (ST0x)"
             }
         },
         {
@@ -132,7 +140,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "IAUs",
+                "nextName": "iShares Gold Trust (ST0x)"
             }
         },
         {
@@ -155,7 +165,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "COINs",
+                "nextName": "Coinbase Global Inc (ST0x)"
             }
         },
         {
@@ -179,7 +191,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "SPYMs",
+                "nextName": "State Street SPDR Portfolio S&P 500 ETF (ST0x)"
             }
         },
         {
@@ -202,7 +216,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "SIVRs",
+                "nextName": "abrdn Physical Silver Shares ETF (ST0x)"
             }
         },
         {
@@ -225,7 +241,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "CRCLs",
+                "nextName": "Circle Internet Group Inc (ST0x)"
             }
         },
         {
@@ -248,7 +266,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "BMNRs",
+                "nextName": "Bitmine Immersion Technologies, Inc (ST0x)"
             }
         },
         {
@@ -271,7 +291,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "PPLTs",
+                "nextName": "abrdn Physical Platinum Shares ETF (ST0x)"
             }
         },
         {
@@ -293,7 +315,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-05-08"
+                "inceptionDate": "2026-05-08",
+                "nextSymbol": "QQQMs",
+                "nextName": "Invesco NASDAQ 100 ETF (ST0x)"
             }
         },
         {
@@ -315,7 +339,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-05-08"
+                "inceptionDate": "2026-05-08",
+                "nextSymbol": "VWOs",
+                "nextName": "Vanguard Emerging Markets Stock Index Fund (ST0x)"
             }
         },
         {
@@ -337,7 +363,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-05-08"
+                "inceptionDate": "2026-05-08",
+                "nextSymbol": "ARKKs",
+                "nextName": "ARK Innovation ETF (ST0x)"
             }
         },
         {
@@ -359,7 +387,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-04-20"
+                "inceptionDate": "2026-04-20",
+                "nextSymbol": "SGOVs",
+                "nextName": "iShares 0-3 Month Treasury Bond ETF (ST0x)"
             }
         },
         {
@@ -381,7 +411,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "CEGs",
+                "nextName": "Constellation Energy Corporation (ST0x)"
             }
         },
         {
@@ -403,7 +435,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "DRAMs",
+                "nextName": "Roundhill Memory ETF (ST0x)"
             }
         },
         {
@@ -425,7 +459,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "TSMs",
+                "nextName": "Taiwan Semiconductor Manufacturing Company Limited ADR (ST0x)"
             }
         },
         {
@@ -447,7 +483,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "ASMLs",
+                "nextName": "ASML Holding N.V. (ST0x)"
             }
         },
         {
@@ -469,7 +507,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "SKHYs",
+                "nextName": "SK hynix Inc. ADR (ST0x)"
             }
         },
         {
@@ -491,7 +531,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-06-12"
+                "inceptionDate": "2026-06-12",
+                "nextSymbol": "SPCXs",
+                "nextName": "Space Exploration Technologies Corp. (ST0x)"
             }
         },
         {
@@ -513,7 +555,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "MUs",
+                "nextName": "Micron Technology, Inc. (ST0x)"
             }
         },
         {
@@ -535,7 +579,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "AMDs",
+                "nextName": "Advanced Micro Devices, Inc. (ST0x)"
             }
         },
         {
@@ -557,7 +603,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "AVGOs",
+                "nextName": "Broadcom Inc. (ST0x)"
             }
         },
         {
@@ -579,7 +627,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "AMATs",
+                "nextName": "Applied Materials, Inc. (ST0x)"
             }
         },
         {
@@ -601,7 +651,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "LRCXs",
+                "nextName": "Lam Research Corporation (ST0x)"
             }
         },
         {
@@ -623,7 +675,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "TTWOs",
+                "nextName": "Take-Two Interactive Software, Inc. (ST0x)"
             }
         },
         {
@@ -645,7 +699,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "GOOGLs",
+                "nextName": "Alphabet Inc. Class A (ST0x)"
             }
         },
         {
@@ -667,7 +723,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "INTCs",
+                "nextName": "Intel Corporation (ST0x)"
             }
         },
         {
@@ -689,7 +747,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "AAPLs",
+                "nextName": "Apple Inc. (ST0x)"
             }
         },
         {
@@ -711,7 +771,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "MSFTs",
+                "nextName": "Microsoft Corporation (ST0x)"
             }
         },
         {
@@ -733,7 +795,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "LLYs",
+                "nextName": "Eli Lilly and Company (ST0x)"
             }
         },
         {
@@ -755,7 +819,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "PTYs",
+                "nextName": "PIMCO Corporate & Income Opportunity Fund (ST0x)"
             }
         },
         {
@@ -777,7 +843,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "HOODs",
+                "nextName": "Robinhood Markets, Inc. (ST0x)"
             }
         },
         {
@@ -799,7 +867,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "ORCLs",
+                "nextName": "Oracle Corporation (ST0x)"
             }
         },
         {
@@ -821,7 +891,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "SMCIs",
+                "nextName": "Super Micro Computer, Inc. (ST0x)"
             }
         },
         {
@@ -843,7 +915,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "BABAs",
+                "nextName": "Alibaba Group Holding Limited ADR (ST0x)"
             }
         },
         {
@@ -865,7 +939,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "TQQQs",
+                "nextName": "ProShares UltraPro QQQ (ST0x)"
             }
         },
         {
@@ -887,7 +963,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-25"
+                "inceptionDate": "2026-08-25",
+                "nextSymbol": "FTFs",
+                "nextName": "Franklin Limited Duration Income Trust (ST0x)"
             }
         },
         {
@@ -909,7 +987,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-17"
+                "inceptionDate": "2026-08-17",
+                "nextSymbol": "CBRSs",
+                "nextName": "Cerebras Systems Inc. (ST0x)"
             }
         },
         {
@@ -931,7 +1011,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-04"
+                "inceptionDate": "2026-09-04",
+                "nextSymbol": "NKEs",
+                "nextName": "NIKE, Inc. (ST0x)"
             }
         },
         {
@@ -953,7 +1035,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-04"
+                "inceptionDate": "2026-09-04",
+                "nextSymbol": "MCDs",
+                "nextName": "McDonald's Corporation (ST0x)"
             }
         },
         {
@@ -975,7 +1059,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-04"
+                "inceptionDate": "2026-09-04",
+                "nextSymbol": "GRNDs",
+                "nextName": "Grindr Inc. (ST0x)"
             }
         },
         {
@@ -997,7 +1083,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "DNUTs",
+                "nextName": "Krispy Kreme, Inc. (ST0x)"
             }
         },
         {
@@ -1019,7 +1107,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "FGIs",
+                "nextName": "FGI Industries Ltd. (ST0x)"
             }
         },
         {
@@ -1041,7 +1131,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "PLBYs",
+                "nextName": "Playboy, Inc. (ST0x)"
             }
         },
         {
@@ -1063,7 +1155,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "TRs",
+                "nextName": "Tootsie Roll Industries, Inc. (ST0x)"
             }
         },
         {
@@ -1085,7 +1179,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "WENs",
+                "nextName": "The Wendy's Company (ST0x)"
             }
         },
         {
@@ -1107,7 +1203,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-30"
+                "inceptionDate": "2026-09-30",
+                "nextSymbol": "SPYs",
+                "nextName": "State Street SPDR S&P 500 ETF Trust (ST0x)"
             }
         },
         {
@@ -1129,7 +1227,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-10-08"
+                "inceptionDate": "2026-10-08",
+                "nextSymbol": "WMTs",
+                "nextName": "Walmart Inc. (ST0x)"
             }
         },
         {
@@ -1151,7 +1251,9 @@
                 "tradingViewMarket": "france",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-10-08"
+                "inceptionDate": "2026-10-08",
+                "nextSymbol": "MCs",
+                "nextName": "LVMH Mo\u00ebt Hennessy Louis Vuitton SE (ST0x)"
             }
         },
         {
@@ -1242,7 +1344,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "NVDAs",
+                "nextName": "NVIDIA Corporation (ST0x)"
             }
         },
         "8453_0x997baE3EC193a249596d3708C3fAB7C501Bb8a53": {
@@ -1265,7 +1369,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "AMZNs",
+                "nextName": "Amazon.com Inc (ST0x)"
             }
         },
         "8453_0x219A8d384a10BF19b9f24cB5cC53F79Dd0e5A03D": {
@@ -1288,7 +1394,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-07"
+                "inceptionDate": "2026-02-07",
+                "nextSymbol": "TSLAs",
+                "nextName": "Tesla Inc (ST0x)"
             }
         },
         "8453_0xFF05E1bD696900dc6A52CA35Ca61Bb1024eDa8e2": {
@@ -1311,7 +1419,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "MSTRs",
+                "nextName": "Strategy Inc (ST0x)"
             }
         },
         "8453_0x1E46d7eFef64A833AFB1CD49299a7AD5B439f4d8": {
@@ -1334,7 +1444,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "IAUs",
+                "nextName": "iShares Gold Trust (ST0x)"
             }
         },
         "8453_0x5cDa0E1CA4ce2af96315f7F8963C85399c172204": {
@@ -1357,7 +1469,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "COINs",
+                "nextName": "Coinbase Global Inc (ST0x)"
             }
         },
         "8453_0x31C2C14134e6E3B7ef9478297F199331133Fc2d8": {
@@ -1381,7 +1495,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "SPYMs",
+                "nextName": "State Street SPDR Portfolio S&P 500 ETF (ST0x)"
             }
         },
         "8453_0xEB7F3E4093C9d68253b6104FbbfF561F3eC0442F": {
@@ -1404,7 +1520,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "SIVRs",
+                "nextName": "abrdn Physical Silver Shares ETF (ST0x)"
             }
         },
         "8453_0x8AFba81DEc38DE0A18E2Df5E1967a7493651eebf": {
@@ -1427,7 +1545,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "CRCLs",
+                "nextName": "Circle Internet Group Inc (ST0x)"
             }
         },
         "8453_0x2512EC661f0bA089c275EA105E31bAD6FcFcf319": {
@@ -1450,7 +1570,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "BMNRs",
+                "nextName": "Bitmine Immersion Technologies, Inc (ST0x)"
             }
         },
         "8453_0x82f5BAEE1076334357a34A19E04f7c282D51cE47": {
@@ -1473,7 +1595,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-02-06"
+                "inceptionDate": "2026-02-06",
+                "nextSymbol": "PPLTs",
+                "nextName": "abrdn Physical Platinum Shares ETF (ST0x)"
             }
         },
         "8453_0x823FF7Bbde2869aAe73A6CD53e7f614442836757": {
@@ -1495,7 +1619,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-05-08"
+                "inceptionDate": "2026-05-08",
+                "nextSymbol": "QQQMs",
+                "nextName": "Invesco NASDAQ 100 ETF (ST0x)"
             }
         },
         "8453_0x23ec6886b49D7ab123E9ee8e474D2fa7AB6Cbc2d": {
@@ -1517,7 +1643,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-05-08"
+                "inceptionDate": "2026-05-08",
+                "nextSymbol": "VWOs",
+                "nextName": "Vanguard Emerging Markets Stock Index Fund (ST0x)"
             }
         },
         "8453_0x9FfF48B4535AF3765Ac9E1b164720EDc01DF8EE7": {
@@ -1539,7 +1667,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-05-08"
+                "inceptionDate": "2026-05-08",
+                "nextSymbol": "ARKKs",
+                "nextName": "ARK Innovation ETF (ST0x)"
             }
         },
         "8453_0x78c31580c97101694C70022c83D570150c11e935": {
@@ -1561,7 +1691,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-04-20"
+                "inceptionDate": "2026-04-20",
+                "nextSymbol": "SGOVs",
+                "nextName": "iShares 0-3 Month Treasury Bond ETF (ST0x)"
             }
         },
         "8453_0x3aF952888Cd89DAD3e8AF67cf4b7E740B36829C3": {
@@ -1583,7 +1715,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "CEGs",
+                "nextName": "Constellation Energy Corporation (ST0x)"
             }
         },
         "8453_0x1A91Df4a970EBaB1bB4AF32Eb6d10509028eE4b8": {
@@ -1605,7 +1739,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "DRAMs",
+                "nextName": "Roundhill Memory ETF (ST0x)"
             }
         },
         "8453_0x71C66449d2528E23514A9c197BFD55Ae9DB3B714": {
@@ -1627,7 +1763,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "TSMs",
+                "nextName": "Taiwan Semiconductor Manufacturing Company Limited ADR (ST0x)"
             }
         },
         "8453_0x8200c6d9AB9E02A25D7F2099244C476d99a085ef": {
@@ -1649,7 +1787,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "ASMLs",
+                "nextName": "ASML Holding N.V. (ST0x)"
             }
         },
         "8453_0xFcD17aC4c4BF6a72c93018096F3fC09e66573Ff9": {
@@ -1671,7 +1811,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-13"
+                "inceptionDate": "2026-07-13",
+                "nextSymbol": "SKHYs",
+                "nextName": "SK hynix Inc. ADR (ST0x)"
             }
         },
         "8453_0x19F89aaEf8a93f38A974beca9776f09aB844887F": {
@@ -1693,7 +1835,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-06-12"
+                "inceptionDate": "2026-06-12",
+                "nextSymbol": "SPCXs",
+                "nextName": "Space Exploration Technologies Corp. (ST0x)"
             }
         },
         "8453_0x89EcfE9E0728D6b3c5eb0EE7236f8C6F806C7B56": {
@@ -1715,7 +1859,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "MUs",
+                "nextName": "Micron Technology, Inc. (ST0x)"
             }
         },
         "8453_0x648042Acd8638E12fEfd51C2b25A9f993f21a612": {
@@ -1737,7 +1883,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "AMDs",
+                "nextName": "Advanced Micro Devices, Inc. (ST0x)"
             }
         },
         "8453_0x70A182f481AEF05836666B6CfDbe84dCBCE8AC19": {
@@ -1759,7 +1907,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "AVGOs",
+                "nextName": "Broadcom Inc. (ST0x)"
             }
         },
         "8453_0x522DC65c89C9Af4f410BAe01bbf53aF75854a9f9": {
@@ -1781,7 +1931,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "AMATs",
+                "nextName": "Applied Materials, Inc. (ST0x)"
             }
         },
         "8453_0x328B9aFFa511fE26673edBb4fEa37eDaF908A3bc": {
@@ -1803,7 +1955,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "LRCXs",
+                "nextName": "Lam Research Corporation (ST0x)"
             }
         },
         "8453_0x045Fb493D970f94a54FeaF931033622fC82192e6": {
@@ -1825,7 +1979,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-21"
+                "inceptionDate": "2026-07-21",
+                "nextSymbol": "TTWOs",
+                "nextName": "Take-Two Interactive Software, Inc. (ST0x)"
             }
         },
         "8453_0x6a2357Df4975C667B171bE53dA6FFe6deBf7030c": {
@@ -1847,7 +2003,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "GOOGLs",
+                "nextName": "Alphabet Inc. Class A (ST0x)"
             }
         },
         "8453_0xf567652fC2d7Db8D5469fD06AEbe8C9c4372d722": {
@@ -1869,7 +2027,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "INTCs",
+                "nextName": "Intel Corporation (ST0x)"
             }
         },
         "8453_0x1020EC8Aa3f709a1f3D8705cdBa89b950451bd88": {
@@ -1891,7 +2051,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "AAPLs",
+                "nextName": "Apple Inc. (ST0x)"
             }
         },
         "8453_0x515A3Ac2a6aB590bDFa970caFFFd7fAdC680886E": {
@@ -1913,7 +2075,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "MSFTs",
+                "nextName": "Microsoft Corporation (ST0x)"
             }
         },
         "8453_0x892CcF5E75f4a7Ee6402971a1587F65BEE4d52bd": {
@@ -1935,7 +2099,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "LLYs",
+                "nextName": "Eli Lilly and Company (ST0x)"
             }
         },
         "8453_0xb6D779A79E7493ed821a65D52bA419F0F6D5dD0a": {
@@ -1957,7 +2123,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-07-28"
+                "inceptionDate": "2026-07-28",
+                "nextSymbol": "PTYs",
+                "nextName": "PIMCO Corporate & Income Opportunity Fund (ST0x)"
             }
         },
         "8453_0xd50f561322fe3235DBc9Ec8b3aB7693383d8A425": {
@@ -1979,7 +2147,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "HOODs",
+                "nextName": "Robinhood Markets, Inc. (ST0x)"
             }
         },
         "8453_0xCB9571aB96aA47374eF30D8E9ACCC1cD51064726": {
@@ -2001,7 +2171,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "ORCLs",
+                "nextName": "Oracle Corporation (ST0x)"
             }
         },
         "8453_0xA759FAbbD866e6DB8bF76613C35825dC2e380bf0": {
@@ -2023,7 +2195,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "SMCIs",
+                "nextName": "Super Micro Computer, Inc. (ST0x)"
             }
         },
         "8453_0x7e5cc7eAe0455A07Ab4abf354E0f5657BA2888BD": {
@@ -2045,7 +2219,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "BABAs",
+                "nextName": "Alibaba Group Holding Limited ADR (ST0x)"
             }
         },
         "8453_0x295e9eCAb319006900a53b3f8D6Fcb0C131F4ada": {
@@ -2067,7 +2243,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-06"
+                "inceptionDate": "2026-08-06",
+                "nextSymbol": "TQQQs",
+                "nextName": "ProShares UltraPro QQQ (ST0x)"
             }
         },
         "8453_0x9bDe199Ac6E7E050334306D9267c93e3D6d38333": {
@@ -2089,7 +2267,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-25"
+                "inceptionDate": "2026-08-25",
+                "nextSymbol": "FTFs",
+                "nextName": "Franklin Limited Duration Income Trust (ST0x)"
             }
         },
         "8453_0xB457cfBF31995d3aAAa704dA9999cC0b011820ca": {
@@ -2111,7 +2291,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-08-17"
+                "inceptionDate": "2026-08-17",
+                "nextSymbol": "CBRSs",
+                "nextName": "Cerebras Systems Inc. (ST0x)"
             }
         },
         "8453_0x0883f32d23Ed5535057a4B5E3eB1970FE08606AF": {
@@ -2133,7 +2315,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-04"
+                "inceptionDate": "2026-09-04",
+                "nextSymbol": "NKEs",
+                "nextName": "NIKE, Inc. (ST0x)"
             }
         },
         "8453_0x7ecAE30Ed8ee4F72653ada7b0941bDE7a0a8eE8d": {
@@ -2155,7 +2339,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-04"
+                "inceptionDate": "2026-09-04",
+                "nextSymbol": "MCDs",
+                "nextName": "McDonald's Corporation (ST0x)"
             }
         },
         "8453_0x1197E6FA778c4D13E47875bD1761c68C22c928e0": {
@@ -2177,7 +2363,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-04"
+                "inceptionDate": "2026-09-04",
+                "nextSymbol": "GRNDs",
+                "nextName": "Grindr Inc. (ST0x)"
             }
         },
         "8453_0x1db49Ff8BEe88ec73F82F395B0BEAd372BdcAdb7": {
@@ -2199,7 +2387,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "DNUTs",
+                "nextName": "Krispy Kreme, Inc. (ST0x)"
             }
         },
         "8453_0x6aed8b1aCfb04F4e0e6db580F12fF41438a394e5": {
@@ -2221,7 +2411,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "FGIs",
+                "nextName": "FGI Industries Ltd. (ST0x)"
             }
         },
         "8453_0x35fDe767dBFAa610D12cf99914bCd6CFEda73B7B": {
@@ -2243,7 +2435,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "PLBYs",
+                "nextName": "Playboy, Inc. (ST0x)"
             }
         },
         "8453_0x433fd2Fc0964B07E9820e4cd01774eDE59D1F002": {
@@ -2265,7 +2459,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "TRs",
+                "nextName": "Tootsie Roll Industries, Inc. (ST0x)"
             }
         },
         "8453_0x31Fa821F8B1BDea7Db357ec9622d1A2f6aFE903d": {
@@ -2287,7 +2483,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-08"
+                "inceptionDate": "2026-09-08",
+                "nextSymbol": "WENs",
+                "nextName": "The Wendy's Company (ST0x)"
             }
         },
         "8453_0x9Aa9c5a24e976096A6A7aB44986DAE8230fa5b27": {
@@ -2309,7 +2507,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-09-30"
+                "inceptionDate": "2026-09-30",
+                "nextSymbol": "SPYs",
+                "nextName": "State Street SPDR S&P 500 ETF Trust (ST0x)"
             }
         },
         "8453_0xc7370cb84159df9760F87ef7092B97cB850AD9d4": {
@@ -2331,7 +2531,9 @@
                 "tradingViewMarket": "america",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-10-08"
+                "inceptionDate": "2026-10-08",
+                "nextSymbol": "WMTs",
+                "nextName": "Walmart Inc. (ST0x)"
             }
         },
         "8453_0x378a04202D25659763A02dA5FE77c0a35e64Ce1D": {
@@ -2353,7 +2555,9 @@
                 "tradingViewMarket": "france",
                 "marketListed": true,
                 "marketQuote": false,
-                "inceptionDate": "2026-10-08"
+                "inceptionDate": "2026-10-08",
+                "nextSymbol": "MCs",
+                "nextName": "LVMH Mo\u00ebt Hennessy Louis Vuitton SE (ST0x)"
             }
         },
         "8453_0x339ad5e0d1Cc8B014eB6aCacbE8991214C5A9325": {

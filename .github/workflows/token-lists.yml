@@ -1,0 +1,39 @@
+name: Token lists
+
+# Checks the nextSymbol and nextName extensions of every wrapper against
+# st0x.deploy at the commit pinned in scripts/underlying_naming.py.
+
+on:
+  pull_request:
+    paths:
+      - "token-lists/**"
+      - "scripts/underlying_naming.py"
+      - "scripts/test_underlying_naming.py"
+      - ".github/workflows/token-lists.yml"
+  push:
+    branches: [main]
+    paths:
+      - "token-lists/**"
+      - "scripts/underlying_naming.py"
+      - "scripts/test_underlying_naming.py"
+      - ".github/workflows/token-lists.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  underlying-naming:
+    name: Underlying naming
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - name: Check out registry
+        uses: actions/checkout@v6
+
+      - name: Check the token lists
+        run: python3 scripts/underlying_naming.py check
+
+      - name: Test the checker
+        run: python3 -m unittest discover -s scripts -p 'test_*.py' -v
