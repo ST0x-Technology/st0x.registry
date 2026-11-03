@@ -110,7 +110,7 @@ deployments:
 
 builder:
   name: ST0x fixed spread limit v7
-  description: https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c8ffa6bbc490bacb2f577ed8b7fdc36ef19685dd/src/st0x-fixed-spread-v7.md
+  description: https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/076dc5286fae6ea38b23ff0222574a6b1bbd375d/src/st0x-fixed-spread-v7.md
   short-description: >
     A strategy whose ratio is DERIVED on-chain from the ST0x v7 oracle's
     signed underlying price and the wrapped-token vault's live NAV,
@@ -376,12 +376,16 @@ oracle-expiry: signed-context<0 8>(),
 ),
 
 /* Active-session guard (no deployer field). Oracle expiry is already
- * clamped to session end; this rejects overnight/weekend closed tags. */
+ * clamped to session end; this rejects the closed tag (weekends, holidays,
+ * and the overnight hours of an asset that pricing does not quote
+ * overnight). The oracle signs "overnight" only for an asset that pricing
+ * quotes in the US 20:00-04:00 ET session. */
 :ensure(
   any(
     equal-to(oracle-session "rth")
     equal-to(oracle-session "premarket")
     equal-to(oracle-session "afterhours")
+    equal-to(oracle-session "overnight")
   )
   "Not in active market session"
 ),
