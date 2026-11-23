@@ -1,0 +1,54 @@
+{
+  "name": "ST0x 0G Quote Token List",
+  "timestamp": "2026-11-23T00:00:00.000Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "st0x",
+    "quote",
+    "zerog"
+  ],
+  "tags": {
+    "quote": {
+      "name": "Quote",
+      "description": "Quote tokens for ST0x 0G deployments"
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 16661,
+      "address": "0x1f3AA82227281cA364bFb3d253B0f1af1Da6473E",
+      "decimals": 6,
+      "name": "Bridged USDC",
+      "symbol": "USDC.e",
+      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "tags": [
+        "quote"
+      ],
+      "extensions": {
+        "marketListed": true,
+        "marketQuote": true
+      }
+    }
+  ],
+  "tokenMap": {
+    "16661_0x1f3AA82227281cA364bFb3d253B0f1af1Da6473E": {
+      "chainId": 16661,
+      "address": "0x1f3AA82227281cA364bFb3d253B0f1af1Da6473E",
+      "decimals": 6,
+      "name": "Bridged USDC",
+      "symbol": "USDC.e",
+      "logoURI": "https://static.optimism.io/data/USDC/logo.png",
+      "tags": [
+        "quote"
+      ],
+      "extensions": {
+        "marketListed": true,
+        "marketQuote": true
+      }
+    }
+  }
+}
