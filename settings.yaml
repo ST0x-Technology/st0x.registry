@@ -79,7 +79,8 @@ rainlangs:
     address: 0x2DdEa6131E0e46536c6b658D5ACFf922E6133be5
     network: robinhood
   zerog:
-    # The 0_1_9 IRainlang from rainlang.deploy, the same facade as Robinhood's.
+    # The 0_1_9 IRainlang from rainlang.deploy, a newer build than Robinhood's
+    # entry above (a different contract, with no code on 16661).
     # It and its parser, interpreter, store and expression deployer have the
     # release record's codehash on 16661.
     address: 0x820FB8ae43350f6F4F60117955751b0a6777aC54

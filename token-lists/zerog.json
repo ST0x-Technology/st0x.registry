@@ -1097,8 +1097,6 @@
         "tradingViewSymbol": "EURONEXT:MC",
         "isin": "FR0000121014",
         "tradingViewMarket": "france",
-        "marketListed": true,
-        "marketQuote": false,
         "inceptionDate": "2026-11-23"
       }
     },
