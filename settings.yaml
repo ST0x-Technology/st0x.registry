@@ -29,6 +29,12 @@ networks:
     chain-id: 4663
     network-id: 4663
     currency: ETH
+  zerog:
+    rpcs:
+      - https://evmrpc.0g.ai
+    chain-id: 16661
+    network-id: 16661
+    currency: 0G
 subgraphs:
   base: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/raindex-base/prod/gn
   sft-base: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/sft-base/prod/gn
@@ -37,6 +43,8 @@ subgraphs:
   sft-robinhood: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/sft-robinhood/prod/gn
   # Raindex on Robinhood Chain, indexed by Ormi as raindex-robinhood/prod.
   robinhood: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/raindex-robinhood/prod/gn
+  # Raindex on 0G, indexed by Goldsky (Ormi does not list 0G).
+  zerog: https://api.goldsky.com/api/public/project_cmjr2df7svg6t01tl2ic706ao/subgraphs/raindex-v6-0g/0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20-a7cd1a0d5ced9f70/gn
 metaboards:
   base: https://api.subgraph.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/metadata-base/prod/gn
   robinhood: https://subgraph.api.ormilabs.com/api/public/9f4fc2fa-4a15-44f7-a7c1-66fdaa518a71/subgraphs/metadata-robinhood/prod/gn
@@ -56,6 +64,13 @@ raindexes:
     deployment-block: 59557818
     subgraph: robinhood
     local-db-remote: raindex
+  zerog:
+    # The same canonical RaindexV6 as on Robinhood. No code on 16661 at the
+    # block before deployment-block, code from it on.
+    address: 0x37FC0EFec37D19f8A221aa4F8F7600C9ba2AcD20
+    network: zerog
+    deployment-block: 50763646
+    subgraph: zerog
 rainlangs:
   base:
     address: 0x22508460712C350e914b49155982d3A92D923b10
@@ -63,6 +78,8 @@ rainlangs:
   robinhood:
     address: 0x2DdEa6131E0e46536c6b658D5ACFf922E6133be5
     network: robinhood
+  # No zerog entry yet: the Rainlang parser, interpreter, store and expression
+  # deployer are not deployed on 0G.
 local-db-remotes:
   raindex: https://raindex-bootstrap-db.lon1.digitaloceanspaces.com/local-db-manifests/1779881382550/manifest.yaml
 local-db-sync:
@@ -93,3 +110,5 @@ using-tokens-from:
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c33d852afc8e0cb4c089cd569c95650e3c62efc7/token-lists/hyperevm-quotes.json
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c33d852afc8e0cb4c089cd569c95650e3c62efc7/token-lists/robinhood.json
   - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/c33d852afc8e0cb4c089cd569c95650e3c62efc7/token-lists/robinhood-quotes.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/11ae1bd22e097b7596e5cdfd06905df307c40c7f/token-lists/zerog.json
+  - https://raw.githubusercontent.com/ST0x-Technology/st0x.registry/11ae1bd22e097b7596e5cdfd06905df307c40c7f/token-lists/zerog-quotes.json
