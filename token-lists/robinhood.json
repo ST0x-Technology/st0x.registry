@@ -4,7 +4,7 @@
   "version": {
     "major": 1,
     "minor": 7,
-    "patch": 1
+    "patch": 2
   },
   "keywords": [
     "st0x",
@@ -277,7 +277,7 @@
         "receiptAddress": "0x8e05CB17994Ee9B207e87993717F6Fb2ee7D0bD3",
         "category": "ST0x",
         "tradingViewSymbol": "BATS:IBHG",
-        "isin": "US46436E3128",
+        "isin": "US46436E4787",
         "tradingViewMarket": "america",
         "inceptionDate": "2026-09-10",
         "nextSymbol": "IBHGs",
@@ -849,7 +849,7 @@
         "receiptAddress": "0x9a288A27a9898f145AF9575b46617bB1DF705106",
         "category": "ST0x",
         "tradingViewSymbol": "NASDAQ:SMCI",
-        "isin": "US86800U1043",
+        "isin": "US86800U3023",
         "tradingViewMarket": "america",
         "inceptionDate": "2026-09-10",
         "nextSymbol": "SMCIs",
