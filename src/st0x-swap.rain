@@ -128,7 +128,7 @@ builder:
           name: Output vault (wtSTOX)
           description: Token you deposit and give. Select wtSTOX.
     zerog-unwrap:
-      name: 0G — Unwrap wtSTOX to tSTOX
+      name: 0G - Unwrap wtSTOX to tSTOX
       description: >
         Lets others unwrap wtSTOX into tSTOX on 0G.
         Output vault is tSTOX (what you deposit and give). Input vault is wtSTOX (what you receive).
@@ -158,7 +158,7 @@ builder:
           name: Output vault (tSTOX)
           description: Token you deposit and give. Select tSTOX.
     zerog-wrap:
-      name: 0G — Wrap tSTOX to wtSTOX
+      name: 0G - Wrap tSTOX to wtSTOX
       description: >
         Lets others wrap tSTOX into wtSTOX on 0G.
         Output vault is wtSTOX (what you deposit and give). Input vault is tSTOX (what you receive).
