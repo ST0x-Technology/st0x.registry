@@ -22,6 +22,14 @@ orders:
     outputs:
       - token: output
 
+  zerog:
+    raindex: zerog
+    oracle-url: https://oracle-zerog.t0trade.com/context/v7
+    inputs:
+      - token: input
+    outputs:
+      - token: output
+
 scenarios:
   base-sell:
     raindex: base
@@ -93,6 +101,30 @@ scenarios:
       oracle-schema-version: 7
       wt-vault: ${order.inputs.0.token.address}
       derive-fn: '''derive-buy'
+  zerog-sell:
+    raindex: zerog
+    rainlang: zerog
+    runs: 1
+    bindings:
+      raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
+      erc4626-subparser: 0x03e3f0C80332fB1b57EC884E9d481bAa58969883
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      expected-chain-id: 16661
+      oracle-schema-version: 7
+      wt-vault: ${order.outputs.0.token.address}
+      derive-fn: '''derive-sell'
+  zerog-buy:
+    raindex: zerog
+    rainlang: zerog
+    runs: 1
+    bindings:
+      raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
+      erc4626-subparser: 0x03e3f0C80332fB1b57EC884E9d481bAa58969883
+      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      expected-chain-id: 16661
+      oracle-schema-version: 7
+      wt-vault: ${order.inputs.0.token.address}
+      derive-fn: '''derive-buy'
 
 deployments:
   base-sell:
@@ -107,6 +139,12 @@ deployments:
   robinhood-buy:
     order: robinhood
     scenario: robinhood-buy
+  zerog-sell:
+    order: zerog
+    scenario: zerog-sell
+  zerog-buy:
+    order: zerog
+    scenario: zerog-buy
 
 builder:
   name: ST0x fixed spread limit v7
@@ -274,13 +312,91 @@ builder:
             Select the wrapped-token vault share you want to receive
             (e.g. wtCOIN). This token must be an ERC4626 vault - its
             live NAV is read at every fill to derive the price.
+    zerog-sell:
+      name: 0G ST0x fixed spread v7 (sell shares)
+      description: >
+        Deploy a fixed-spread strategy on 0G selling wrapped-token
+        vault shares, pair-bound to the deployed IO pair. The order ratio
+        is derived at every fill from the signed underlying price and the
+        vault's live convertToAssets, so a NAV step (e.g. a dividend
+        deposit) re-prices the fill at the new NAV instead of reverting.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the DERIVED vault price is
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the DERIVED vault price is
+            above this, the order reverts. Protects against overflow or
+            encoding errors. Set generously above the asset's expected
+            range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: >
+            Select the wrapped-token vault share you want to sell
+            (e.g. wtCOIN). This token must be an ERC4626 vault - its
+            live NAV is read at every fill to derive the price.
+        - key: input
+          name: Token to Buy
+          description: Select the token you want to receive (e.g. USDC.e)
+    zerog-buy:
+      name: 0G ST0x fixed spread v7 (buy shares)
+      description: >
+        Deploy a fixed-spread strategy on 0G buying wrapped-token
+        vault shares, pair-bound to the deployed IO pair. The order ratio
+        is derived at every fill from the signed underlying price and the
+        vault's live convertToShares, so a NAV step (e.g. a dividend
+        deposit) re-prices the fill at the new NAV instead of reverting.
+      deposits:
+        - token: output
+      fields:
+        - binding: min-price
+          name: Minimum Price
+          description: >
+            Floor price as a safety guard. If the DERIVED vault price is
+            below this, the order reverts. Protects against catastrophic
+            mispricings or broken oracle data. Set based on the asset -
+            e.g. 0.01 for penny stocks, 10 for blue chips.
+          default: 0.01
+          min: 0.000001
+        - binding: max-price
+          name: Maximum Price
+          description: >
+            Ceiling price as a safety guard. If the DERIVED vault price is
+            above this, the order reverts. Protects against overflow or
+            encoding errors. Set generously above the asset's expected
+            range.
+          default: 100000
+          min: 1
+      select-tokens:
+        - key: output
+          name: Token to Sell
+          description: Select the token you want to sell (e.g. USDC.e)
+        - key: input
+          name: Token to Buy
+          description: >
+            Select the wrapped-token vault share you want to receive
+            (e.g. wtCOIN). This token must be an ERC4626 vault - its
+            live NAV is read at every fill to derive the price.
 
 ---
 #raindex-subparser !Raindex subparser.
 #erc4626-subparser !ERC4626 words subparser (rainlanguage/rain.erc4626.words). Per chain: Base is on the legacy EOA-deployed 0xd69dC3d5..., every other chain on the Zoltu-deterministic 0x03e3f0C8....
 #oracle-signer !The trusted signer address for the st0x oracle server.
 #oracle-schema-version !Expected oracle context schema version (= 7 for v7).
-#expected-chain-id !Chain id this order is deployed on, asserted against the chain id the oracle signs at slot 9. Bound per deployment: 8453 on Base, 4663 on Robinhood Chain.
+#expected-chain-id !Chain id this order is deployed on, asserted against the chain id the oracle signs at slot 9. Bound per deployment: 8453 on Base, 4663 on Robinhood Chain, 16661 on 0G.
 #wt-vault !The ERC4626 wrapped-token vault whose shares this order trades (the wt token IS the vault). Bound per scenario from the order's IO: the output token when selling shares, the input token when buying.
 #derive-fn !Per-scenario derivation binding: 'derive-sell when the vault is the output token, 'derive-buy when it is the input token. Selects the vault conversion that matches the order's IO direction.
 #min-price !Minimum acceptable DERIVED vault price. Orders revert below this. Catches catastrophic mispricings.
