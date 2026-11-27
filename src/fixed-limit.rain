@@ -13,6 +13,12 @@ orders:
       - token: token1
     outputs:
       - token: token2
+  zerog:
+    raindex: zerog
+    inputs:
+      - token: token1
+    outputs:
+      - token: token2
 
 scenarios:
   base:
@@ -28,6 +34,12 @@ scenarios:
       # Robinhood's Raindex subparser. Base's 0x22839F16 has no code on 4663.
       raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
       fixed-io-output-token: ${order.outputs.0.token.address}
+  zerog:
+    raindex: zerog
+    runs: 1
+    bindings:
+      raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
+      fixed-io-output-token: ${order.outputs.0.token.address}
 
 deployments:
   base:
@@ -36,6 +48,9 @@ deployments:
   robinhood:
     order: robinhood
     scenario: robinhood
+  zerog:
+    order: zerog
+    scenario: zerog
 builder:
   name: Fixed limit
   description: A very simple order that places a limit order at a fixed price.
@@ -60,6 +75,22 @@ builder:
     robinhood:
       name: Robinhood Chain
       description: Deploy a limit order on Robinhood Chain.
+      deposits:
+        - token: token2
+      fields:
+        - binding: fixed-io
+          name: ${order.inputs.0.token.symbol} per ${order.outputs.0.token.symbol}
+          description: Fixed exchange rate (${order.inputs.0.token.symbol} received per 1 ${order.outputs.0.token.symbol} sold)
+      select-tokens:
+        - key: token1
+          name: Token to Buy
+          description: Select the token you want to purchase
+        - key: token2
+          name: Token to Sell
+          description: Select the token you want to sell
+    zerog:
+      name: 0G
+      description: Deploy a limit order on 0G.
       deposits:
         - token: token2
       fields:
