@@ -108,7 +108,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
       erc4626-subparser: 0x03e3f0C80332fB1b57EC884E9d481bAa58969883
-      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-signer: 0x1B54888bCDD5f6f1bd9720Ab39AaAB0e052bC569
       expected-chain-id: 16661
       oracle-schema-version: 7
       wt-vault: ${order.outputs.0.token.address}
@@ -120,7 +120,7 @@ scenarios:
     bindings:
       raindex-subparser: 0x09Bc7AF266012F44fb41D8Bd682da931666605e1
       erc4626-subparser: 0x03e3f0C80332fB1b57EC884E9d481bAa58969883
-      oracle-signer: 0xdB665B5ef8Bd04Fd977bB3A64790eaa52749ACcc
+      oracle-signer: 0x1B54888bCDD5f6f1bd9720Ab39AaAB0e052bC569
       expected-chain-id: 16661
       oracle-schema-version: 7
       wt-vault: ${order.inputs.0.token.address}
